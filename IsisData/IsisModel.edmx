@@ -1,0 +1,798 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="CST.ISIS.Data.Store" Alias="Self" Provider="Oracle.DataAccess.Client" ProviderManifestToken="10.2" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="CSTISISDataStoreContainer">
+          <EntitySet Name="FG_IMAGE" EntityType="CST.ISIS.Data.Store.FG_IMAGE" store:Type="Tables" Schema="SYSADM" />
+          <EntitySet Name="FG_IMAGE_INFO" EntityType="CST.ISIS.Data.Store.FG_IMAGE_INFO" store:Type="Tables" Schema="SYSADM" />
+          <EntitySet Name="FG_IMAGE_SET" EntityType="CST.ISIS.Data.Store.FG_IMAGE_SET" store:Type="Tables" Schema="SYSADM" />
+          <EntitySet Name="FG_MIME_TYPE" EntityType="CST.ISIS.Data.Store.FG_MIME_TYPE" store:Type="Tables" Schema="SYSADM" />
+          <EntitySet Name="FG_PROD_IMAGE_SET" EntityType="CST.ISIS.Data.Store.FG_PROD_IMAGE_SET" store:Type="Tables" Schema="SYSADM" />
+          <EntitySet Name="FG_PROD_PRNT_IMG_SET_VW" EntityType="CST.ISIS.Data.Store.FG_PROD_PRNT_IMG_SET_VW" store:Type="Views" store:Schema="SYSADM" store:Name="FG_PROD_PRNT_IMG_SET_VW">
+            <DefiningQuery>SELECT 
+      "FG_PROD_PRNT_IMG_SET_VW"."FG_PROD_CD" AS "FG_PROD_CD", 
+      "FG_PROD_PRNT_IMG_SET_VW"."FG_PROD_SETID" AS "FG_PROD_SETID", 
+      "FG_PROD_PRNT_IMG_SET_VW"."FG_IMAGE_SET_CD" AS "FG_IMAGE_SET_CD", 
+      "FG_PROD_PRNT_IMG_SET_VW"."FG_IMAGE_ID" AS "FG_IMAGE_ID", 
+      "FG_PROD_PRNT_IMG_SET_VW"."FG_SORT_ORDER" AS "FG_SORT_ORDER", 
+      "FG_PROD_PRNT_IMG_SET_VW"."FG_PROD_IMAGE_SET_CD" AS "FG_PROD_IMAGE_SET_CD", 
+      "FG_PROD_PRNT_IMG_SET_VW"."FG_PROD_IMAGE_ID" AS "FG_PROD_IMAGE_ID", 
+      "FG_PROD_PRNT_IMG_SET_VW"."FG_PROD_SORT_ORDER" AS "FG_PROD_SORT_ORDER", 
+      "FG_PROD_PRNT_IMG_SET_VW"."FG_PARENT_IMAGE_SET_CD" AS "FG_PARENT_IMAGE_SET_CD", 
+      "FG_PROD_PRNT_IMG_SET_VW"."FG_PARENT_IMAGE_ID" AS "FG_PARENT_IMAGE_ID", 
+      "FG_PROD_PRNT_IMG_SET_VW"."FG_PARENT_SORT_ORDER" AS "FG_PARENT_SORT_ORDER"
+      FROM "SYSADM"."FG_PROD_PRNT_IMG_SET_VW" "FG_PROD_PRNT_IMG_SET_VW"</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="FG_SLS_CUST_ADDR_VW" EntityType="CST.ISIS.Data.Store.FG_SLS_CUST_ADDR_VW" store:Type="Views" store:Schema="SYSADM" store:Name="FG_SLS_CUST_ADDR_VW">
+            <DefiningQuery>SELECT 
+      "FG_SLS_CUST_ADDR_VW"."CUST_ID" AS "CUST_ID", 
+      "FG_SLS_CUST_ADDR_VW"."NAME1" AS "NAME1", 
+      "FG_SLS_CUST_ADDR_VW"."NAME2" AS "NAME2", 
+      "FG_SLS_CUST_ADDR_VW"."NAMESHORT" AS "NAMESHORT", 
+      "FG_SLS_CUST_ADDR_VW"."DEPTID" AS "DEPTID", 
+      "FG_SLS_CUST_ADDR_VW"."CUST_STATUS" AS "CUST_STATUS", 
+      "FG_SLS_CUST_ADDR_VW"."SALES_PERSON" AS "SALES_PERSON", 
+      "FG_SLS_CUST_ADDR_VW"."SD_SEQ_NUM" AS "SD_SEQ_NUM", 
+      "FG_SLS_CUST_ADDR_VW"."SD_ADDRESS1" AS "SD_ADDRESS1", 
+      "FG_SLS_CUST_ADDR_VW"."SD_ADDRESS2" AS "SD_ADDRESS2", 
+      "FG_SLS_CUST_ADDR_VW"."SD_ADDRESS3" AS "SD_ADDRESS3", 
+      "FG_SLS_CUST_ADDR_VW"."SD_ADDRESS4" AS "SD_ADDRESS4", 
+      "FG_SLS_CUST_ADDR_VW"."SD_CITY" AS "SD_CITY", 
+      "FG_SLS_CUST_ADDR_VW"."SD_STATE" AS "SD_STATE", 
+      "FG_SLS_CUST_ADDR_VW"."SD_POSTAL" AS "SD_POSTAL", 
+      "FG_SLS_CUST_ADDR_VW"."SD_COUNTY" AS "SD_COUNTY", 
+      "FG_SLS_CUST_ADDR_VW"."SD_COUNTRY" AS "SD_COUNTRY", 
+      "FG_SLS_CUST_ADDR_VW"."SP_SEQ_NUM" AS "SP_SEQ_NUM", 
+      "FG_SLS_CUST_ADDR_VW"."SP_ADDRESS1" AS "SP_ADDRESS1", 
+      "FG_SLS_CUST_ADDR_VW"."SP_ADDRESS2" AS "SP_ADDRESS2", 
+      "FG_SLS_CUST_ADDR_VW"."SP_ADDRESS3" AS "SP_ADDRESS3", 
+      "FG_SLS_CUST_ADDR_VW"."SP_ADDRESS4" AS "SP_ADDRESS4", 
+      "FG_SLS_CUST_ADDR_VW"."SP_CITY" AS "SP_CITY", 
+      "FG_SLS_CUST_ADDR_VW"."SP_STATE" AS "SP_STATE", 
+      "FG_SLS_CUST_ADDR_VW"."SP_POSTAL" AS "SP_POSTAL", 
+      "FG_SLS_CUST_ADDR_VW"."SP_COUNTY" AS "SP_COUNTY", 
+      "FG_SLS_CUST_ADDR_VW"."SP_COUNTRY" AS "SP_COUNTRY", 
+      "FG_SLS_CUST_ADDR_VW"."BI_SEQ_NUM" AS "BI_SEQ_NUM", 
+      "FG_SLS_CUST_ADDR_VW"."BI_ADDRESS1" AS "BI_ADDRESS1", 
+      "FG_SLS_CUST_ADDR_VW"."BI_ADDRESS2" AS "BI_ADDRESS2", 
+      "FG_SLS_CUST_ADDR_VW"."BI_ADDRESS3" AS "BI_ADDRESS3", 
+      "FG_SLS_CUST_ADDR_VW"."BI_ADDRESS4" AS "BI_ADDRESS4", 
+      "FG_SLS_CUST_ADDR_VW"."BI_CITY" AS "BI_CITY", 
+      "FG_SLS_CUST_ADDR_VW"."BI_STATE" AS "BI_STATE", 
+      "FG_SLS_CUST_ADDR_VW"."BI_POSTAL" AS "BI_POSTAL", 
+      "FG_SLS_CUST_ADDR_VW"."BI_COUNTY" AS "BI_COUNTY", 
+      "FG_SLS_CUST_ADDR_VW"."BI_COUNTRY" AS "BI_COUNTRY"
+      FROM "SYSADM"."FG_SLS_CUST_ADDR_VW" "FG_SLS_CUST_ADDR_VW"</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="FG_SLS_DEPT_VW" EntityType="CST.ISIS.Data.Store.FG_SLS_DEPT_VW" store:Type="Views" store:Schema="SYSADM" store:Name="FG_SLS_DEPT_VW">
+            <DefiningQuery>SELECT 
+      "FG_SLS_DEPT_VW"."SETID" AS "SETID", 
+      "FG_SLS_DEPT_VW"."DEPTID" AS "DEPTID", 
+      "FG_SLS_DEPT_VW"."EFFDT" AS "EFFDT", 
+      "FG_SLS_DEPT_VW"."EFF_STATUS" AS "EFF_STATUS", 
+      "FG_SLS_DEPT_VW"."DESCR" AS "DESCR", 
+      "FG_SLS_DEPT_VW"."DESCRSHORT" AS "DESCRSHORT", 
+      "FG_SLS_DEPT_VW"."MANAGER_NAME" AS "MANAGER_NAME"
+      FROM "SYSADM"."FG_SLS_DEPT_VW" "FG_SLS_DEPT_VW"</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="FG_SLS_SHIP_METHOD_VW" EntityType="CST.ISIS.Data.Store.FG_SLS_SHIP_METHOD_VW" store:Type="Views" store:Schema="SYSADM" store:Name="FG_SLS_SHIP_METHOD_VW">
+            <DefiningQuery>SELECT 
+      "FG_SLS_SHIP_METHOD_VW"."SETID" AS "SETID", 
+      "FG_SLS_SHIP_METHOD_VW"."SHIP_TYPE_ID" AS "SHIP_TYPE_ID", 
+      "FG_SLS_SHIP_METHOD_VW"."DESCR" AS "DESCR", 
+      "FG_SLS_SHIP_METHOD_VW"."DESCRSHORT" AS "DESCRSHORT", 
+      "FG_SLS_SHIP_METHOD_VW"."SHIP_OUT_FLAG" AS "SHIP_OUT_FLAG"
+      FROM "SYSADM"."FG_SLS_SHIP_METHOD_VW" "FG_SLS_SHIP_METHOD_VW"</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="IMAI_IMA" Association="CST.ISIS.Data.Store.IMAI_IMA">
+            <End Role="FG_IMAGE_INFO" EntitySet="FG_IMAGE_INFO" />
+            <End Role="FG_IMAGE" EntitySet="FG_IMAGE" />
+          </AssociationSet>
+          <AssociationSet Name="IMAI_PROIS" Association="CST.ISIS.Data.Store.IMAI_PROIS">
+            <End Role="FG_IMAGE_INFO" EntitySet="FG_IMAGE_INFO" />
+            <End Role="FG_PROD_IMAGE_SET" EntitySet="FG_PROD_IMAGE_SET" />
+          </AssociationSet>
+          <AssociationSet Name="IMAS_PROIS" Association="CST.ISIS.Data.Store.IMAS_PROIS">
+            <End Role="FG_IMAGE_SET" EntitySet="FG_IMAGE_SET" />
+            <End Role="FG_PROD_IMAGE_SET" EntitySet="FG_PROD_IMAGE_SET" />
+          </AssociationSet>
+          <AssociationSet Name="MIMT_IMAI" Association="CST.ISIS.Data.Store.MIMT_IMAI">
+            <End Role="FG_MIME_TYPE" EntitySet="FG_MIME_TYPE" />
+            <End Role="FG_IMAGE_INFO" EntitySet="FG_IMAGE_INFO" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="FG_IMAGE">
+          <Key>
+            <PropertyRef Name="FG_IMAGE_ID" />
+          </Key>
+          <Property Name="FG_IMAGE_ID" Type="number" Nullable="false" />
+          <Property Name="FG_IMAGE_DATA" Type="long raw" />
+        </EntityType>
+        <EntityType Name="FG_IMAGE_INFO">
+          <Key>
+            <PropertyRef Name="FG_IMAGE_ID" />
+          </Key>
+          <Property Name="FG_IMAGE_ID" Type="number" Nullable="false" />
+          <Property Name="FG_MIME_TYPE_CD" Type="varchar2" Nullable="false" MaxLength="30" />
+          <Property Name="FG_DESCRIPTION" Type="varchar2" Nullable="false" MaxLength="250" />
+          <Property Name="FG_FILE_NAME" Type="varchar2" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="FG_IMAGE_SET">
+          <Key>
+            <PropertyRef Name="FG_IMAGE_SET_CD" />
+          </Key>
+          <Property Name="FG_IMAGE_SET_CD" Type="varchar2" Nullable="false" MaxLength="30" />
+          <Property Name="FG_DESCRIPTION" Type="varchar2" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="FG_MIME_TYPE">
+          <Key>
+            <PropertyRef Name="FG_MIME_TYPE_CD" />
+          </Key>
+          <Property Name="FG_MIME_TYPE_CD" Type="varchar2" Nullable="false" MaxLength="30" />
+          <Property Name="FG_DESCRIPTION" Type="varchar2" Nullable="false" MaxLength="250" />
+          <Property Name="FG_CONTENT_TYPE" Type="varchar2" Nullable="false" MaxLength="30" />
+          <Property Name="FG_FILE_EXT" Type="varchar2" Nullable="false" MaxLength="5" />
+        </EntityType>
+        <EntityType Name="FG_PROD_IMAGE_SET">
+          <Key>
+            <PropertyRef Name="FG_PROD_CD" />
+            <PropertyRef Name="FG_PROD_SETID" />
+            <PropertyRef Name="FG_IMAGE_SET_CD" />
+            <PropertyRef Name="FG_IMAGE_ID" />
+          </Key>
+          <Property Name="FG_PROD_CD" Type="varchar2" Nullable="false" MaxLength="30" />
+          <Property Name="FG_PROD_SETID" Type="varchar2" Nullable="false" MaxLength="5" />
+          <Property Name="FG_IMAGE_SET_CD" Type="varchar2" Nullable="false" MaxLength="30" />
+          <Property Name="FG_IMAGE_ID" Type="number" Nullable="false" />
+          <Property Name="FG_SORT_ORDER" Type="number" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'SYSADM.FG_PROD_PRNT_IMG_SET_VW' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="FG_PROD_PRNT_IMG_SET_VW">
+          <Key>
+            <PropertyRef Name="FG_PROD_CD" />
+            <PropertyRef Name="FG_PROD_SETID" />
+          </Key>
+          <Property Name="FG_PROD_CD" Type="varchar2" Nullable="false" MaxLength="30" />
+          <Property Name="FG_PROD_SETID" Type="varchar2" Nullable="false" MaxLength="5" />
+          <Property Name="FG_IMAGE_SET_CD" Type="varchar2" MaxLength="30" />
+          <Property Name="FG_IMAGE_ID" Type="number" />
+          <Property Name="FG_SORT_ORDER" Type="number" />
+          <Property Name="FG_PROD_IMAGE_SET_CD" Type="varchar2" MaxLength="30" />
+          <Property Name="FG_PROD_IMAGE_ID" Type="number" />
+          <Property Name="FG_PROD_SORT_ORDER" Type="number" />
+          <Property Name="FG_PARENT_IMAGE_SET_CD" Type="varchar2" MaxLength="30" />
+          <Property Name="FG_PARENT_IMAGE_ID" Type="number" />
+          <Property Name="FG_PARENT_SORT_ORDER" Type="number" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'SYSADM.FG_SLS_CUST_ADDR_VW' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="FG_SLS_CUST_ADDR_VW">
+          <Key>
+            <PropertyRef Name="CUST_ID" />
+            <PropertyRef Name="NAME1" />
+            <PropertyRef Name="NAME2" />
+            <PropertyRef Name="NAMESHORT" />
+            <PropertyRef Name="DEPTID" />
+            <PropertyRef Name="CUST_STATUS" />
+            <PropertyRef Name="SALES_PERSON" />
+            <PropertyRef Name="SD_SEQ_NUM" />
+            <PropertyRef Name="SD_ADDRESS1" />
+            <PropertyRef Name="SD_ADDRESS2" />
+            <PropertyRef Name="SD_ADDRESS3" />
+            <PropertyRef Name="SD_ADDRESS4" />
+            <PropertyRef Name="SD_CITY" />
+            <PropertyRef Name="SD_STATE" />
+            <PropertyRef Name="SD_POSTAL" />
+            <PropertyRef Name="SD_COUNTY" />
+            <PropertyRef Name="SD_COUNTRY" />
+            <PropertyRef Name="SP_SEQ_NUM" />
+            <PropertyRef Name="SP_ADDRESS1" />
+            <PropertyRef Name="SP_ADDRESS2" />
+            <PropertyRef Name="SP_ADDRESS3" />
+            <PropertyRef Name="SP_ADDRESS4" />
+            <PropertyRef Name="SP_CITY" />
+            <PropertyRef Name="SP_STATE" />
+            <PropertyRef Name="SP_POSTAL" />
+            <PropertyRef Name="SP_COUNTY" />
+            <PropertyRef Name="SP_COUNTRY" />
+            <PropertyRef Name="BI_SEQ_NUM" />
+            <PropertyRef Name="BI_ADDRESS1" />
+            <PropertyRef Name="BI_ADDRESS2" />
+            <PropertyRef Name="BI_ADDRESS3" />
+            <PropertyRef Name="BI_ADDRESS4" />
+            <PropertyRef Name="BI_CITY" />
+            <PropertyRef Name="BI_STATE" />
+            <PropertyRef Name="BI_POSTAL" />
+            <PropertyRef Name="BI_COUNTY" />
+            <PropertyRef Name="BI_COUNTRY" />
+          </Key>
+          <Property Name="CUST_ID" Type="varchar2" Nullable="false" MaxLength="15" />
+          <Property Name="NAME1" Type="varchar2" Nullable="false" MaxLength="40" />
+          <Property Name="NAME2" Type="varchar2" Nullable="false" MaxLength="40" />
+          <Property Name="NAMESHORT" Type="varchar2" Nullable="false" MaxLength="10" />
+          <Property Name="DEPTID" Type="varchar2" Nullable="false" MaxLength="10" />
+          <Property Name="CUST_STATUS" Type="varchar2" Nullable="false" MaxLength="1" />
+          <Property Name="SALES_PERSON" Type="varchar2" Nullable="false" MaxLength="8" />
+          <Property Name="SD_SEQ_NUM" Type="number" Nullable="false" />
+          <Property Name="SD_ADDRESS1" Type="varchar2" Nullable="false" MaxLength="35" />
+          <Property Name="SD_ADDRESS2" Type="varchar2" Nullable="false" MaxLength="35" />
+          <Property Name="SD_ADDRESS3" Type="varchar2" Nullable="false" MaxLength="35" />
+          <Property Name="SD_ADDRESS4" Type="varchar2" Nullable="false" MaxLength="35" />
+          <Property Name="SD_CITY" Type="varchar2" Nullable="false" MaxLength="30" />
+          <Property Name="SD_STATE" Type="varchar2" Nullable="false" MaxLength="4" />
+          <Property Name="SD_POSTAL" Type="varchar2" Nullable="false" MaxLength="12" />
+          <Property Name="SD_COUNTY" Type="varchar2" Nullable="false" MaxLength="30" />
+          <Property Name="SD_COUNTRY" Type="varchar2" Nullable="false" MaxLength="3" />
+          <Property Name="SP_SEQ_NUM" Type="number" Nullable="false" />
+          <Property Name="SP_ADDRESS1" Type="varchar2" Nullable="false" MaxLength="35" />
+          <Property Name="SP_ADDRESS2" Type="varchar2" Nullable="false" MaxLength="35" />
+          <Property Name="SP_ADDRESS3" Type="varchar2" Nullable="false" MaxLength="35" />
+          <Property Name="SP_ADDRESS4" Type="varchar2" Nullable="false" MaxLength="35" />
+          <Property Name="SP_CITY" Type="varchar2" Nullable="false" MaxLength="30" />
+          <Property Name="SP_STATE" Type="varchar2" Nullable="false" MaxLength="4" />
+          <Property Name="SP_POSTAL" Type="varchar2" Nullable="false" MaxLength="12" />
+          <Property Name="SP_COUNTY" Type="varchar2" Nullable="false" MaxLength="30" />
+          <Property Name="SP_COUNTRY" Type="varchar2" Nullable="false" MaxLength="3" />
+          <Property Name="BI_SEQ_NUM" Type="number" Nullable="false" />
+          <Property Name="BI_ADDRESS1" Type="varchar2" Nullable="false" MaxLength="35" />
+          <Property Name="BI_ADDRESS2" Type="varchar2" Nullable="false" MaxLength="35" />
+          <Property Name="BI_ADDRESS3" Type="varchar2" Nullable="false" MaxLength="35" />
+          <Property Name="BI_ADDRESS4" Type="varchar2" Nullable="false" MaxLength="35" />
+          <Property Name="BI_CITY" Type="varchar2" Nullable="false" MaxLength="30" />
+          <Property Name="BI_STATE" Type="varchar2" Nullable="false" MaxLength="4" />
+          <Property Name="BI_POSTAL" Type="varchar2" Nullable="false" MaxLength="12" />
+          <Property Name="BI_COUNTY" Type="varchar2" Nullable="false" MaxLength="30" />
+          <Property Name="BI_COUNTRY" Type="varchar2" Nullable="false" MaxLength="3" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'SYSADM.FG_SLS_DEPT_VW' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="FG_SLS_DEPT_VW">
+          <Key>
+            
+            <PropertyRef Name="DEPTID" />
+            
+            
+            
+            
+            
+          </Key>
+          <Property Name="SETID" Type="varchar2" Nullable="false" MaxLength="5" />
+          <Property Name="DEPTID" Type="varchar2" Nullable="false" MaxLength="10" />
+          <Property Name="EFFDT" Type="date" Nullable="false" />
+          <Property Name="EFF_STATUS" Type="varchar2" Nullable="false" MaxLength="1" />
+          <Property Name="DESCR" Type="varchar2" Nullable="false" MaxLength="30" />
+          <Property Name="DESCRSHORT" Type="varchar2" Nullable="false" MaxLength="10" />
+          <Property Name="MANAGER_NAME" Type="varchar2" Nullable="false" MaxLength="30" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'SYSADM.FG_SLS_SHIP_METHOD_VW' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="FG_SLS_SHIP_METHOD_VW">
+          <Key>
+            
+            <PropertyRef Name="SHIP_TYPE_ID" />
+            
+            
+            
+          </Key>
+          <Property Name="SETID" Type="varchar2" Nullable="false" MaxLength="5" />
+          <Property Name="SHIP_TYPE_ID" Type="varchar2" Nullable="false" MaxLength="10" />
+          <Property Name="DESCR" Type="varchar2" Nullable="false" MaxLength="30" />
+          <Property Name="DESCRSHORT" Type="varchar2" Nullable="false" MaxLength="10" />
+          <Property Name="SHIP_OUT_FLAG" Type="varchar2" Nullable="false" MaxLength="1" />
+        </EntityType>
+        <Association Name="IMAI_IMA">
+          <End Role="FG_IMAGE_INFO" Type="CST.ISIS.Data.Store.FG_IMAGE_INFO" Multiplicity="1" />
+          <End Role="FG_IMAGE" Type="CST.ISIS.Data.Store.FG_IMAGE" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="FG_IMAGE_INFO">
+              <PropertyRef Name="FG_IMAGE_ID" />
+            </Principal>
+            <Dependent Role="FG_IMAGE">
+              <PropertyRef Name="FG_IMAGE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="IMAI_PROIS">
+          <End Role="FG_IMAGE_INFO" Type="CST.ISIS.Data.Store.FG_IMAGE_INFO" Multiplicity="1" />
+          <End Role="FG_PROD_IMAGE_SET" Type="CST.ISIS.Data.Store.FG_PROD_IMAGE_SET" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FG_IMAGE_INFO">
+              <PropertyRef Name="FG_IMAGE_ID" />
+            </Principal>
+            <Dependent Role="FG_PROD_IMAGE_SET">
+              <PropertyRef Name="FG_IMAGE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="IMAS_PROIS">
+          <End Role="FG_IMAGE_SET" Type="CST.ISIS.Data.Store.FG_IMAGE_SET" Multiplicity="1" />
+          <End Role="FG_PROD_IMAGE_SET" Type="CST.ISIS.Data.Store.FG_PROD_IMAGE_SET" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FG_IMAGE_SET">
+              <PropertyRef Name="FG_IMAGE_SET_CD" />
+            </Principal>
+            <Dependent Role="FG_PROD_IMAGE_SET">
+              <PropertyRef Name="FG_IMAGE_SET_CD" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="MIMT_IMAI">
+          <End Role="FG_MIME_TYPE" Type="CST.ISIS.Data.Store.FG_MIME_TYPE" Multiplicity="1" />
+          <End Role="FG_IMAGE_INFO" Type="CST.ISIS.Data.Store.FG_IMAGE_INFO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FG_MIME_TYPE">
+              <PropertyRef Name="FG_MIME_TYPE_CD" />
+            </Principal>
+            <Dependent Role="FG_IMAGE_INFO">
+              <PropertyRef Name="FG_MIME_TYPE_CD" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CST.ISIS.Data" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="IsisEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Images" EntityType="CST.ISIS.Data.Image" />
+          <EntitySet Name="ImageInfoes" EntityType="CST.ISIS.Data.ImageInfo" />
+          <EntitySet Name="ImageSets" EntityType="CST.ISIS.Data.ImageSet" />
+          <EntitySet Name="MimeTypes" EntityType="CST.ISIS.Data.MimeType" />
+          <EntitySet Name="ProdImageSets" EntityType="CST.ISIS.Data.ProdImageSet" />
+          <AssociationSet Name="IMAI_IMA" Association="CST.ISIS.Data.IMAI_IMA">
+            <End Role="FG_IMAGE_INFO" EntitySet="ImageInfoes" />
+            <End Role="FG_IMAGE" EntitySet="Images" />
+          </AssociationSet>
+          <AssociationSet Name="IMAI_PROIS" Association="CST.ISIS.Data.IMAI_PROIS">
+            <End Role="FG_IMAGE_INFO" EntitySet="ImageInfoes" />
+            <End Role="FG_PROD_IMAGE_SET" EntitySet="ProdImageSets" />
+          </AssociationSet>
+          <AssociationSet Name="MIMT_IMAI" Association="CST.ISIS.Data.MIMT_IMAI">
+            <End Role="FG_MIME_TYPE" EntitySet="MimeTypes" />
+            <End Role="FG_IMAGE_INFO" EntitySet="ImageInfoes" />
+          </AssociationSet>
+          <AssociationSet Name="IMAS_PROIS" Association="CST.ISIS.Data.IMAS_PROIS">
+            <End Role="FG_IMAGE_SET" EntitySet="ImageSets" />
+            <End Role="FG_PROD_IMAGE_SET" EntitySet="ProdImageSets" />
+          </AssociationSet>
+          <EntitySet Name="SalesDepts" EntityType="CST.ISIS.Data.SalesDept" />
+          <EntitySet Name="ProdPrntImageSetVWs" EntityType="CST.ISIS.Data.ProdPrntImageSetVW" />
+          <AssociationSet Name="ImageInfoProdPrntImageSetVW" Association="CST.ISIS.Data.ImageInfoProdPrntImageSetVW">
+            <End Role="ImageInfo" EntitySet="ImageInfoes" />
+            <End Role="ProdPrntImageSetVW" EntitySet="ProdPrntImageSetVWs" />
+          </AssociationSet>
+          <AssociationSet Name="ImageSetProdPrntImageSetVW" Association="CST.ISIS.Data.ImageSetProdPrntImageSetVW">
+            <End Role="ImageSet" EntitySet="ImageSets" />
+            <End Role="ProdPrntImageSetVW" EntitySet="ProdPrntImageSetVWs" />
+          </AssociationSet>
+          <EntitySet Name="SalesShipTypes" EntityType="CST.ISIS.Data.SalesShipType" />
+          <EntitySet Name="SalesCustAddrs" EntityType="CST.ISIS.Data.SalesCustAddr" />
+          </EntityContainer>
+        <EntityType Name="Image">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="ImageData" Type="Binary" MaxLength="2147483647" FixedLength="false" />
+          <NavigationProperty Name="ImageInfo" Relationship="CST.ISIS.Data.IMAI_IMA" FromRole="FG_IMAGE" ToRole="FG_IMAGE_INFO" />
+        </EntityType>
+        <EntityType Name="ImageInfo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="MimeTypeCD" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="250" Unicode="false" FixedLength="false" />
+          <Property Name="FileName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Image" Relationship="CST.ISIS.Data.IMAI_IMA" FromRole="FG_IMAGE_INFO" ToRole="FG_IMAGE" />
+          <NavigationProperty Name="ProdImageSets" Relationship="CST.ISIS.Data.IMAI_PROIS" FromRole="FG_IMAGE_INFO" ToRole="FG_PROD_IMAGE_SET" />
+          <NavigationProperty Name="MimeType" Relationship="CST.ISIS.Data.MIMT_IMAI" FromRole="FG_IMAGE_INFO" ToRole="FG_MIME_TYPE" />
+          <NavigationProperty Name="ProdPrntImageSetVWs" Relationship="CST.ISIS.Data.ImageInfoProdPrntImageSetVW" FromRole="ImageInfo" ToRole="ProdPrntImageSetVW" />
+        </EntityType>
+        <EntityType Name="ImageSet">
+          <Key>
+            <PropertyRef Name="ImageSetCD" />
+          </Key>
+          <Property Name="ImageSetCD" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="250" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="ProdImageSets" Relationship="CST.ISIS.Data.IMAS_PROIS" FromRole="FG_IMAGE_SET" ToRole="FG_PROD_IMAGE_SET" />
+          <NavigationProperty Name="ProdPrntImageSetVWs" Relationship="CST.ISIS.Data.ImageSetProdPrntImageSetVW" FromRole="ImageSet" ToRole="ProdPrntImageSetVW" />
+        </EntityType>
+        <EntityType Name="MimeType">
+          <Key>
+            <PropertyRef Name="MimeTypeCD" />
+          </Key>
+          <Property Name="MimeTypeCD" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="250" Unicode="false" FixedLength="false" />
+          <Property Name="ContentType" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="FileExt" Type="String" Nullable="false" MaxLength="5" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="ImageInfos" Relationship="CST.ISIS.Data.MIMT_IMAI" FromRole="FG_MIME_TYPE" ToRole="FG_IMAGE_INFO" />
+        </EntityType>
+        <EntityType Name="ProdImageSet">
+          <Key>
+            <PropertyRef Name="ProdCD" />
+            <PropertyRef Name="ProdSetid" />
+            <PropertyRef Name="ImageSetID" />
+            <PropertyRef Name="ImageID" />
+          </Key>
+          <Property Name="ProdCD" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="ProdSetid" Type="String" Nullable="false" MaxLength="5" Unicode="false" FixedLength="false" />
+          <Property Name="ImageSetID" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="ImageID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="SortOrder" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <NavigationProperty Name="ImageInfo" Relationship="CST.ISIS.Data.IMAI_PROIS" FromRole="FG_PROD_IMAGE_SET" ToRole="FG_IMAGE_INFO" />
+          <NavigationProperty Name="ImageSet" Relationship="CST.ISIS.Data.IMAS_PROIS" FromRole="FG_PROD_IMAGE_SET" ToRole="FG_IMAGE_SET" />
+        </EntityType>
+        <Association Name="IMAI_IMA">
+          <End Role="FG_IMAGE_INFO" Type="CST.ISIS.Data.ImageInfo" Multiplicity="1" />
+          <End Role="FG_IMAGE" Type="CST.ISIS.Data.Image" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="FG_IMAGE_INFO">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="FG_IMAGE">
+              <PropertyRef Name="ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="IMAI_PROIS">
+          <End Role="FG_IMAGE_INFO" Type="CST.ISIS.Data.ImageInfo" Multiplicity="1" />
+          <End Role="FG_PROD_IMAGE_SET" Type="CST.ISIS.Data.ProdImageSet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FG_IMAGE_INFO">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="FG_PROD_IMAGE_SET">
+              <PropertyRef Name="ImageID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="MIMT_IMAI">
+          <End Role="FG_MIME_TYPE" Type="CST.ISIS.Data.MimeType" Multiplicity="1" />
+          <End Role="FG_IMAGE_INFO" Type="CST.ISIS.Data.ImageInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FG_MIME_TYPE">
+              <PropertyRef Name="MimeTypeCD" />
+            </Principal>
+            <Dependent Role="FG_IMAGE_INFO">
+              <PropertyRef Name="MimeTypeCD" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="IMAS_PROIS">
+          <End Role="FG_IMAGE_SET" Type="CST.ISIS.Data.ImageSet" Multiplicity="1" />
+          <End Role="FG_PROD_IMAGE_SET" Type="CST.ISIS.Data.ProdImageSet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FG_IMAGE_SET">
+              <PropertyRef Name="ImageSetCD" />
+            </Principal>
+            <Dependent Role="FG_PROD_IMAGE_SET">
+              <PropertyRef Name="ImageSetID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="SalesDept">
+          <Key>
+            <PropertyRef Name="DeptID" />
+          </Key>
+          <Property Type="String" Name="Setid" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="DeptID" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="EffDt" Nullable="false" />
+          <Property Type="String" Name="EffStatus" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Description" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="DescrShort" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ManagerName" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="ProdPrntImageSetVW">
+          <Key>
+            <PropertyRef Name="ProdCD" />
+            <PropertyRef Name="ProdSetid" />
+          </Key>
+          <Property Type="String" Name="ProdCD" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ProdSetid" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ImageSetCD" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Type="Decimal" Name="ImageID" Precision="38" Scale="0" Nullable="false" />
+          <Property Type="Decimal" Name="SortOrder" Precision="38" Scale="0" />
+          <Property Type="String" Name="ProdImageSetCD" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="ProdImageID" Precision="38" Scale="0" />
+          <Property Type="Decimal" Name="ProdSortOrder" Precision="38" Scale="0" />
+          <Property Type="String" Name="ParentImageSetCD" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="ParentImageID" Precision="38" Scale="0" />
+          <Property Type="Decimal" Name="ParentSortOrder" Precision="38" Scale="0" />
+          <NavigationProperty Name="ImageInfo" Relationship="CST.ISIS.Data.ImageInfoProdPrntImageSetVW" FromRole="ProdPrntImageSetVW" ToRole="ImageInfo" />
+          <NavigationProperty Name="ImageSet" Relationship="CST.ISIS.Data.ImageSetProdPrntImageSetVW" FromRole="ProdPrntImageSetVW" ToRole="ImageSet" />
+        </EntityType>
+        <Association Name="ImageInfoProdPrntImageSetVW">
+          <End Type="CST.ISIS.Data.ImageInfo" Role="ImageInfo" Multiplicity="1" />
+          <End Type="CST.ISIS.Data.ProdPrntImageSetVW" Role="ProdPrntImageSetVW" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ImageInfo">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ProdPrntImageSetVW">
+              <PropertyRef Name="ImageID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ImageSetProdPrntImageSetVW">
+          <End Type="CST.ISIS.Data.ImageSet" Role="ImageSet" Multiplicity="1" />
+          <End Type="CST.ISIS.Data.ProdPrntImageSetVW" Role="ProdPrntImageSetVW" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ImageSet">
+              <PropertyRef Name="ImageSetCD" />
+            </Principal>
+            <Dependent Role="ProdPrntImageSetVW">
+              <PropertyRef Name="ImageSetCD" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="SalesShipType">
+          <Key>
+            <PropertyRef Name="TypeID" />
+          </Key>
+          <Property Type="String" Name="Setid" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="TypeID" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Description" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="DescrShort" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ShipOutFlag" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="SalesCustAddr">
+          <Key>
+            <PropertyRef Name="CustID" />
+            <PropertyRef Name="Name1" />
+            <PropertyRef Name="Name2" />
+            <PropertyRef Name="NameShort" />
+            <PropertyRef Name="DeptID" />
+            <PropertyRef Name="SalesPerson" />
+            <PropertyRef Name="SoldSeqNum" />
+            <PropertyRef Name="SoldAddr1" />
+            <PropertyRef Name="SoldAdd2" />
+            <PropertyRef Name="SoldAddr3" />
+            <PropertyRef Name="SoldAddr4" />
+            <PropertyRef Name="SoldCity" />
+            <PropertyRef Name="SoldState" />
+            <PropertyRef Name="SoldPostal" />
+            <PropertyRef Name="SoldCounty" />
+            <PropertyRef Name="SoldCountry" />
+            <PropertyRef Name="ShipSeqNum" />
+            <PropertyRef Name="ShipAddr1" />
+            <PropertyRef Name="ShipAddr2" />
+            <PropertyRef Name="ShipAddr3" />
+            <PropertyRef Name="ShipAddr4" />
+            <PropertyRef Name="ShipCity" />
+            <PropertyRef Name="ShipState" />
+            <PropertyRef Name="ShipPostal" />
+            <PropertyRef Name="ShipCounty" />
+            <PropertyRef Name="ShipCountry" />
+            <PropertyRef Name="BillSeqNum" />
+            <PropertyRef Name="BillAddr1" />
+            <PropertyRef Name="BillAddr2" />
+            <PropertyRef Name="BillAddr3" />
+            <PropertyRef Name="BillAddr4" />
+            <PropertyRef Name="BillCity" />
+            <PropertyRef Name="BillState" />
+            <PropertyRef Name="BillPostal" />
+            <PropertyRef Name="BillCounty" />
+            <PropertyRef Name="BillCountry" />
+            <PropertyRef Name="CustStatus" />
+          </Key>
+          <Property Type="String" Name="CustID" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Name1" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Name2" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="NameShort" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="DeptID" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="SalesPerson" Nullable="false" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="SoldSeqNum" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="String" Name="SoldAddr1" Nullable="false" MaxLength="35" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="SoldAdd2" Nullable="false" MaxLength="35" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="SoldAddr3" Nullable="false" MaxLength="35" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="SoldAddr4" Nullable="false" MaxLength="35" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="SoldCity" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="SoldState" Nullable="false" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="SoldPostal" Nullable="false" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="SoldCounty" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="SoldCountry" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="ShipSeqNum" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="String" Name="ShipAddr1" Nullable="false" MaxLength="35" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ShipAddr2" Nullable="false" MaxLength="35" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ShipAddr3" Nullable="false" MaxLength="35" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ShipAddr4" Nullable="false" MaxLength="35" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ShipCity" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ShipState" Nullable="false" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ShipPostal" Nullable="false" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ShipCounty" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ShipCountry" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="BillSeqNum" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="String" Name="BillAddr1" Nullable="false" MaxLength="35" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="BillAddr2" Nullable="false" MaxLength="35" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="BillAddr3" Nullable="false" MaxLength="35" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="BillAddr4" Nullable="false" MaxLength="35" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="BillCity" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="BillState" Nullable="false" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="BillPostal" Nullable="false" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="BillCounty" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="BillCountry" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CustStatus" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+        </EntityType>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CSTISISDataStoreContainer" CdmEntityContainer="IsisEntities">
+          <EntitySetMapping Name="Images"><EntityTypeMapping TypeName="CST.ISIS.Data.Image"><MappingFragment StoreEntitySet="FG_IMAGE">
+            <ScalarProperty Name="ID" ColumnName="FG_IMAGE_ID" />
+            <ScalarProperty Name="ImageData" ColumnName="FG_IMAGE_DATA" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="ImageInfoes"><EntityTypeMapping TypeName="CST.ISIS.Data.ImageInfo"><MappingFragment StoreEntitySet="FG_IMAGE_INFO">
+            <ScalarProperty Name="ID" ColumnName="FG_IMAGE_ID" />
+            <ScalarProperty Name="MimeTypeCD" ColumnName="FG_MIME_TYPE_CD" />
+            <ScalarProperty Name="Description" ColumnName="FG_DESCRIPTION" />
+            <ScalarProperty Name="FileName" ColumnName="FG_FILE_NAME" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="ImageSets"><EntityTypeMapping TypeName="CST.ISIS.Data.ImageSet"><MappingFragment StoreEntitySet="FG_IMAGE_SET">
+            <ScalarProperty Name="ImageSetCD" ColumnName="FG_IMAGE_SET_CD" />
+            <ScalarProperty Name="Description" ColumnName="FG_DESCRIPTION" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="MimeTypes"><EntityTypeMapping TypeName="CST.ISIS.Data.MimeType"><MappingFragment StoreEntitySet="FG_MIME_TYPE">
+            <ScalarProperty Name="MimeTypeCD" ColumnName="FG_MIME_TYPE_CD" />
+            <ScalarProperty Name="Description" ColumnName="FG_DESCRIPTION" />
+            <ScalarProperty Name="ContentType" ColumnName="FG_CONTENT_TYPE" />
+            <ScalarProperty Name="FileExt" ColumnName="FG_FILE_EXT" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="ProdImageSets"><EntityTypeMapping TypeName="CST.ISIS.Data.ProdImageSet"><MappingFragment StoreEntitySet="FG_PROD_IMAGE_SET">
+            <ScalarProperty Name="ProdCD" ColumnName="FG_PROD_CD" />
+            <ScalarProperty Name="ProdSetid" ColumnName="FG_PROD_SETID" />
+            <ScalarProperty Name="ImageSetID" ColumnName="FG_IMAGE_SET_CD" />
+            <ScalarProperty Name="ImageID" ColumnName="FG_IMAGE_ID" />
+            <ScalarProperty Name="SortOrder" ColumnName="FG_SORT_ORDER" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="SalesDepts">
+            <EntityTypeMapping TypeName="CST.ISIS.Data.SalesDept">
+              <MappingFragment StoreEntitySet="FG_SLS_DEPT_VW">
+                <ScalarProperty Name="ManagerName" ColumnName="MANAGER_NAME" />
+                <ScalarProperty Name="DescrShort" ColumnName="DESCRSHORT" />
+                <ScalarProperty Name="Description" ColumnName="DESCR" />
+                <ScalarProperty Name="EffStatus" ColumnName="EFF_STATUS" />
+                <ScalarProperty Name="EffDt" ColumnName="EFFDT" />
+                <ScalarProperty Name="DeptID" ColumnName="DEPTID" />
+                <ScalarProperty Name="Setid" ColumnName="SETID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProdPrntImageSetVWs">
+            <EntityTypeMapping TypeName="CST.ISIS.Data.ProdPrntImageSetVW">
+              <MappingFragment StoreEntitySet="FG_PROD_PRNT_IMG_SET_VW">
+                <ScalarProperty Name="ParentSortOrder" ColumnName="FG_PARENT_SORT_ORDER" />
+                <ScalarProperty Name="ParentImageID" ColumnName="FG_PARENT_IMAGE_ID" />
+                <ScalarProperty Name="ParentImageSetCD" ColumnName="FG_PARENT_IMAGE_SET_CD" />
+                <ScalarProperty Name="ProdSortOrder" ColumnName="FG_PROD_SORT_ORDER" />
+                <ScalarProperty Name="ProdImageID" ColumnName="FG_PROD_IMAGE_ID" />
+                <ScalarProperty Name="ProdImageSetCD" ColumnName="FG_PROD_IMAGE_SET_CD" />
+                <ScalarProperty Name="SortOrder" ColumnName="FG_SORT_ORDER" />
+                <ScalarProperty Name="ImageID" ColumnName="FG_IMAGE_ID" />
+                <ScalarProperty Name="ImageSetCD" ColumnName="FG_IMAGE_SET_CD" />
+                <ScalarProperty Name="ProdSetid" ColumnName="FG_PROD_SETID" />
+                <ScalarProperty Name="ProdCD" ColumnName="FG_PROD_CD" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SalesShipTypes">
+            <EntityTypeMapping TypeName="CST.ISIS.Data.SalesShipType">
+              <MappingFragment StoreEntitySet="FG_SLS_SHIP_METHOD_VW">
+                <ScalarProperty Name="ShipOutFlag" ColumnName="SHIP_OUT_FLAG" />
+                <ScalarProperty Name="DescrShort" ColumnName="DESCRSHORT" />
+                <ScalarProperty Name="Description" ColumnName="DESCR" />
+                <ScalarProperty Name="TypeID" ColumnName="SHIP_TYPE_ID" />
+                <ScalarProperty Name="Setid" ColumnName="SETID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SalesCustAddrs">
+            <EntityTypeMapping TypeName="CST.ISIS.Data.SalesCustAddr">
+              <MappingFragment StoreEntitySet="FG_SLS_CUST_ADDR_VW">
+                <ScalarProperty Name="CustStatus" ColumnName="CUST_STATUS" />
+                <ScalarProperty Name="BillCountry" ColumnName="BI_COUNTRY" />
+                <ScalarProperty Name="BillCounty" ColumnName="BI_COUNTY" />
+                <ScalarProperty Name="BillPostal" ColumnName="BI_POSTAL" />
+                <ScalarProperty Name="BillState" ColumnName="BI_STATE" />
+                <ScalarProperty Name="BillCity" ColumnName="BI_CITY" />
+                <ScalarProperty Name="BillAddr4" ColumnName="BI_ADDRESS4" />
+                <ScalarProperty Name="BillAddr3" ColumnName="BI_ADDRESS3" />
+                <ScalarProperty Name="BillAddr2" ColumnName="BI_ADDRESS2" />
+                <ScalarProperty Name="BillAddr1" ColumnName="BI_ADDRESS1" />
+                <ScalarProperty Name="BillSeqNum" ColumnName="BI_SEQ_NUM" />
+                <ScalarProperty Name="ShipCountry" ColumnName="SP_COUNTRY" />
+                <ScalarProperty Name="ShipCounty" ColumnName="SP_COUNTY" />
+                <ScalarProperty Name="ShipPostal" ColumnName="SP_POSTAL" />
+                <ScalarProperty Name="ShipState" ColumnName="SP_STATE" />
+                <ScalarProperty Name="ShipCity" ColumnName="SP_CITY" />
+                <ScalarProperty Name="ShipAddr4" ColumnName="SP_ADDRESS4" />
+                <ScalarProperty Name="ShipAddr3" ColumnName="SP_ADDRESS3" />
+                <ScalarProperty Name="ShipAddr2" ColumnName="SP_ADDRESS2" />
+                <ScalarProperty Name="ShipAddr1" ColumnName="SP_ADDRESS1" />
+                <ScalarProperty Name="ShipSeqNum" ColumnName="SP_SEQ_NUM" />
+                <ScalarProperty Name="SoldCountry" ColumnName="SD_COUNTRY" />
+                <ScalarProperty Name="SoldCounty" ColumnName="SD_COUNTY" />
+                <ScalarProperty Name="SoldPostal" ColumnName="SD_POSTAL" />
+                <ScalarProperty Name="SoldState" ColumnName="SD_STATE" />
+                <ScalarProperty Name="SoldCity" ColumnName="SD_CITY" />
+                <ScalarProperty Name="SoldAddr4" ColumnName="SD_ADDRESS4" />
+                <ScalarProperty Name="SoldAddr3" ColumnName="SD_ADDRESS3" />
+                <ScalarProperty Name="SoldAdd2" ColumnName="SD_ADDRESS2" />
+                <ScalarProperty Name="SoldAddr1" ColumnName="SD_ADDRESS1" />
+                <ScalarProperty Name="SoldSeqNum" ColumnName="SD_SEQ_NUM" />
+                <ScalarProperty Name="SalesPerson" ColumnName="SALES_PERSON" />
+                <ScalarProperty Name="DeptID" ColumnName="DEPTID" />
+                <ScalarProperty Name="NameShort" ColumnName="NAMESHORT" />
+                <ScalarProperty Name="Name2" ColumnName="NAME2" />
+                <ScalarProperty Name="Name1" ColumnName="NAME1" />
+                <ScalarProperty Name="CustID" ColumnName="CUST_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="IsisModel" ZoomLevel="86">
+        <EntityTypeShape EntityType="CST.ISIS.Data.Image" Width="1.5" PointX="4.25" PointY="0.5" Height="1.5956835937499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="CST.ISIS.Data.ImageInfo" Width="1.875" PointX="4.125" PointY="2.75" Height="2.5571907552083326" IsExpanded="true" />
+        <EntityTypeShape EntityType="CST.ISIS.Data.ImageSet" Width="2.75" PointX="0.5" PointY="6.375" Height="1.59568359375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CST.ISIS.Data.MimeType" Width="1.875" PointX="6.75" PointY="2.75" Height="1.9802864583333335" IsExpanded="true" />
+        <EntityTypeShape EntityType="CST.ISIS.Data.ProdImageSet" Width="2" PointX="4.125" PointY="6.125" Height="2.3648893229166656" IsExpanded="true" />
+        <AssociationConnector Association="CST.ISIS.Data.IMAI_IMA" ManuallyRouted="false">
+          <ConnectorPoint PointX="5" PointY="2.75" />
+          <ConnectorPoint PointX="5" PointY="2.0956835937499996" />
+        </AssociationConnector>
+        <AssociationConnector Association="CST.ISIS.Data.IMAI_PROIS" ManuallyRouted="false">
+          <ConnectorPoint PointX="5.0625" PointY="5.3071907552083326" />
+          <ConnectorPoint PointX="5.0625" PointY="6.125" />
+        </AssociationConnector>
+        <AssociationConnector Association="CST.ISIS.Data.MIMT_IMAI" ManuallyRouted="false">
+          <ConnectorPoint PointX="6.75" PointY="3.7401432291666667" />
+          <ConnectorPoint PointX="6" PointY="3.7401432291666667" />
+        </AssociationConnector>
+        <AssociationConnector Association="CST.ISIS.Data.IMAS_PROIS" ManuallyRouted="false">
+          <ConnectorPoint PointX="3.25" PointY="7.172841796875" />
+          <ConnectorPoint PointX="4.125" PointY="7.172841796875" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="CST.ISIS.Data.SalesDept" Width="2" PointX="9.25" PointY="0.5" Height="2.3648893229166674" />
+        <EntityTypeShape EntityType="CST.ISIS.Data.ProdPrntImageSetVW" Width="2.5" PointX="0.5" PointY="0.5" Height="3.3263964843749996" />
+        <AssociationConnector Association="CST.ISIS.Data.ImageInfoProdPrntImageSetVW">
+          <ConnectorPoint PointX="4.125" PointY="3.2881982421875" />
+          <ConnectorPoint PointX="3" PointY="3.2881982421875" />
+        </AssociationConnector>
+        <AssociationConnector Association="CST.ISIS.Data.ImageSetProdPrntImageSetVW">
+          <ConnectorPoint PointX="1.75" PointY="6.375" />
+          <ConnectorPoint PointX="1.75" PointY="4.0186979166666656" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="CST.ISIS.Data.SalesShipType" Width="2.25" PointX="9.25" PointY="3.25" Height="1.9802864583333317" />
+        <EntityTypeShape EntityType="CST.ISIS.Data.SalesCustAddr" Width="2" PointX="12.875" PointY="0.5" Height="7.9416308593750031" />
+        </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

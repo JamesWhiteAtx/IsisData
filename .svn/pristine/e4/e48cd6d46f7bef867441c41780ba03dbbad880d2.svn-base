@@ -1,0 +1,80 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Data.Objects;
+
+namespace CST.ISIS.Data
+{
+    public partial class IsisEntities : ObjectContext
+    {
+        public const string SalesSetid = "SALES";
+        public const string CstBu = "CST";
+
+
+        public IQueryable<FG_PROD_VW> SalesProdsView()
+        {
+            return from p in FG_PROD_VW
+                   where p.FG_PROD_SETID == SalesSetid
+                   select p;
+        }
+
+        public IQueryable<FG_REQ_PART> SalesPartReqs()
+        {
+            return from r in FG_REQ_PART
+                   where r.FG_REQUEST_DEPTID_SETID == SalesSetid
+                   select r;
+        }
+
+        public IQueryable<FG_REQ_PART_ELAP> SalesPartElapReqs()
+        {
+            return from r in FG_REQ_PART_ELAP
+                   where r.FG_REQUEST_DEPTID_SETID == SalesSetid
+                   select r;
+        }
+
+        public IQueryable<FG_DEPARTMENT_VW> SalesDepartments()
+        {
+            return from d in FG_DEPARTMENT_VW
+                   where d.SETID == SalesSetid
+                   select d;
+        }
+
+        public IQueryable<FG_PROD_IMAGE_SET> SalesProdImageSets()
+        {
+            return from m in FG_PROD_IMAGE_SET
+                   where m.FG_PROD_SETID == SalesSetid
+                   select m;
+        }
+        /*var list = from i in ctx.SalesProdImageSets()
+                        i.FG_IMAGE_SET_CD
+                        i.FG_IMAGE_INFO.FG_FILE_NAME
+                        i.FG_IMAGE_INFO.FG_MIME_TYPE.FG_CONTENT_TYPE
+                        i.FG_IMAGE_SET.FG_DESCRIPTION
+         */
+        /*var list = from i in ctx.FG_IMAGE
+
+                        i.FG_IMAGE_DATA
+                        i.FG_IMAGE_INFO.FG_FILE_NAME
+                        i.FG_IMAGE_INFO.FG_MIME_TYPE.FG_CONTENT_TYPE
+        */
+        
+        #region People Soft Tables
+
+        public IQueryable<PS_SHIP_METHOD> SalesShipMethods()
+        {
+            return from m in PS_SHIP_METHOD
+                   where m.SETID == SalesSetid
+                   select m;
+        }
+
+        public IQueryable<PS_CUSTOMER> SalesCustomers()
+        {
+            return from c in PS_CUSTOMER
+                   where (c.SETID == SalesSetid && c.CUST_STATUS == "A")
+                   select c;
+        }
+
+        #endregion
+    }
+}

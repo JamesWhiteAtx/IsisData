@@ -1,0 +1,445 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Data;
+using System.Data.Common;
+using System.Data.Objects;
+using System.Data.Objects.DataClasses;
+using System.Configuration;
+using Oracle.DataAccess.Client;
+
+namespace CST.ISIS.Data
+{
+    public static class IsisDataHelper
+    {
+        public static DbConnection GetDbConnection(string connectionString)
+        {
+            string connString = ConfigurationManager.ConnectionStrings[connectionString].ConnectionString;
+            return new OracleConnection(connString);
+        }
+
+        public static void AddParm(this DbCommand cmd, string parameterName, object value)
+        {
+            ((OracleCommand)cmd).BindByName = true;
+
+            DbParameter dbParameter = cmd.CreateParameter();
+            dbParameter.IsNullable = true;
+            dbParameter.ParameterName = parameterName;
+            if (value != null)
+            {
+                dbParameter.Value = value;
+            }
+            else
+            {
+                dbParameter.Value = DBNull.Value;
+            }
+
+            cmd.Parameters.Add(dbParameter);
+        }
+    }
+
+    public partial class IsisEntities : ObjectContext
+    {
+        public const string SalesSetid = "SALES";
+        public const string CstBu = "CST";
+        public const string BoolYNTrue = "Y";
+        public const string BoolYNFalse = "N";
+        public const string RequestCanceled = "CANCELED";
+        public const string LeatherProdCd = "300";
+
+        public IQueryable<FG_PROD_IMAGE_SET> SalesProdImageSets()
+        {
+            return from m in FG_PROD_IMAGE_SET
+                   where m.FG_PROD_SETID == SalesSetid
+                   select m;
+        }
+        /*var list = from i in ctx.SalesProdImageSets()
+                        i.FG_IMAGE_SET_CD
+                        i.FG_IMAGE_INFO.FG_FILE_NAME
+                        i.FG_IMAGE_INFO.FG_MIME_TYPE.FG_CONTENT_TYPE
+                        i.FG_IMAGE_SET.FG_DESCRIPTION
+         */
+        /*var list = from i in ctx.FG_IMAGE
+
+                        i.FG_IMAGE_DATA
+                        i.FG_IMAGE_INFO.FG_FILE_NAME
+                        i.FG_IMAGE_INFO.FG_MIME_TYPE.FG_CONTENT_TYPE
+        */
+        
+        #region People Soft 
+
+        #endregion
+    }
+
+    public enum OptionType { Characteristic, Component };
+
+    public class CharCompOpt
+    {
+
+        public CharCompOpt()
+        {
+            Overriden = false;
+        }
+
+        public virtual void LoadFromDataRecord(IDataRecord dataRecord)
+        {
+            Level = (int)dataRecord.GetDecimal(dataRecord.GetOrdinal("LEVEL"));
+            Type = OptTypeForString(dataRecord["OPT_TYPE"].ToString());
+            TypeCD = dataRecord["TYPE_CD"].ToString();
+            TypeDescr = dataRecord["TYPE_DESCR"].ToString();
+            OptionCode1 = dataRecord["OPT_CD1"].ToString();
+            OptionCode2 = dataRecord["OPT_CD2"].ToString();
+            OptionCode3 = dataRecord["OPT_CD3"].ToString();
+            OptionDescr = dataRecord["OPT_DESCR"].ToString();
+            ParentOptionCode1 = dataRecord["PARENT_OPT_CD1"].ToString();
+            ParentOptionCode2 = dataRecord["PARENT_OPT_CD2"].ToString();
+            ParentOptionCode3 = dataRecord["PARENT_OPT_CD3"].ToString();
+            CharTypeCD = dataRecord["FG_PROD_CHAR_TYPE_CD"].ToString();
+            CharInternalName = dataRecord["FG_PCT_INTERNAL_NAME"].ToString();
+            CharCD = dataRecord["FG_PROD_CHAR_CD"].ToString();
+            CompProdTypeCD = dataRecord["FG_COMP_PROD_TYPE_CD"].ToString();
+            CompProdCD = dataRecord["FG_COMP_PROD_CD"].ToString();
+            CompProdSetid = dataRecord["FG_COMP_PROD_SETID"].ToString();
+            ImgCount = (int)dataRecord.GetDecimal(dataRecord.GetOrdinal("IMG_COUNT"));
+        }
+
+        public bool Overriden { get; set; }
+
+        public int Level { get; set; }
+
+        public OptionType Type { get; set; }
+
+        public string TypeCD { get; set; }
+
+        public string TypeDescr { get; set; }
+
+        public string OptionCode1 { get; set; }
+
+        public string OptionCode2 { get; set; }
+
+        public string OptionCode3 { get; set; }
+
+        public string OptionDescr { get; set; }
+
+        public string ParentOptionCode1 { get; set; }
+
+        public string ParentOptionCode2 { get; set; }
+
+        public string ParentOptionCode3 { get; set; }
+
+        public string CharTypeCD { get; set; }
+
+        public string CharInternalName { get; set; }
+
+        public string CharCD { get; set; }
+
+        public string CompProdTypeCD { get; set; }
+
+        public string CompProdCD { get; set; }
+
+        public string CompProdSetid { get; set; }
+
+        public int ImgCount { get; set; }
+
+        public List<ProdImgInfo> ProdImageSet { get; set; }
+
+        public bool OverrideMatch(CharCompOpt opt)
+        {
+            bool match =
+            (
+                ((!Overriden) && (Type == opt.Type) && (CharTypeCD == opt.CharTypeCD))
+                &&
+                (
+                    (
+                        (Type == OptionType.Characteristic)
+                        &&
+                        (OptionCode1 == opt.OptionCode1)
+                        &&
+                        (ParentOptionCode1 == opt.ParentOptionCode1)
+                        &&
+                        (ParentOptionCode2 == opt.ParentOptionCode2)
+                    )
+                    ||
+                    ((Type == OptionType.Component)
+                        &&
+                        (OptionCode1 == opt.OptionCode1)
+                        &&
+                        (
+                            (String.IsNullOrEmpty(ParentOptionCode1)
+                                &&
+                                (OptionCode2 == opt.OptionCode2)
+                            )
+                            ||
+                            ((!String.IsNullOrEmpty(ParentOptionCode1))
+                                &&
+                                (ParentOptionCode1 == opt.ParentOptionCode1)
+                                &&
+                                (ParentOptionCode2 == opt.ParentOptionCode2)
+                            )
+                        )
+
+                    )
+                )
+            );
+            return match;
+        }
+
+        public static OptionType OptTypeForString(string optTypeString)
+        {
+            if (optTypeString.Trim().ToUpper().Equals("CHAR"))
+            {
+                return OptionType.Characteristic;
+            }
+            else
+            {
+                return OptionType.Component;
+            }
+        }
+
+        public static CharCompOpt FindCharTypeIntrnl(List<CharCompOpt> list, CharCompOpt charCompOpt)
+        {
+            return list.Find(item => item.OverrideMatch(charCompOpt));
+        }
+
+    }
+
+    public class ProdOptDefn : CharCompOpt
+    {
+        public static List<ProdOptDefn> ProdOptions(string prodCD, string parentProdCD)
+        {
+            List<ProdOptDefn> prodOpts = ProdOptions(prodCD);
+
+            if (parentProdCD != null)
+            {
+                List<ProdOptDefn> parentProdOpts = ProdOptions(parentProdCD);
+                if (parentProdOpts.Count() > 0)
+                {
+                    parentProdOpts.AddRange(prodOpts);
+                    prodOpts = parentProdOpts;
+                }
+            }
+
+            return prodOpts;
+        }
+
+        public static List<ProdOptDefn> ProdOptions(string prodCD)
+        {
+            var prodOptions = new List<ProdOptDefn>();
+
+            using (DbConnection conn = IsisDataHelper.GetDbConnection("OraIsis"))
+            {
+                using (DbCommand cmd = conn.CreateCommand())
+                {
+                    cmd.CommandText = ProdOptionsSql();
+                    cmd.AddParm(":PROD_CD", prodCD);
+
+                    conn.Open();
+                    using (DbDataReader rdr = cmd.ExecuteReader())
+                    {
+                        while (rdr.Read())
+                        {
+                            ProdOptDefn prodOptDefn = new ProdOptDefn();
+                            prodOptDefn.LoadFromDataRecord(rdr);
+                            if (prodOptDefn.ImgCount > 0)
+                            {
+                                if (prodOptDefn.Type == OptionType.Component)
+                                {
+                                    prodOptDefn.ProdImageSet =
+                                        ProdImgInfo.ProdImageSet(prodOptDefn.CompProdCD);
+                                }
+                            }
+                            prodOptions.Add(prodOptDefn);
+                        }
+                    }
+                }
+            }
+            return prodOptions;
+        }
+
+        public static string ProdOptionsSql()
+        {
+            return
+@"SELECT 
+SORT1,
+SORT2,
+SORT3,
+LEVEL,
+FG_PROD_CD,
+FG_PROD_SETID,
+OPT_TYPE,
+TYPE_CD,
+TYPE_DESCR,
+OPT_CD1,
+OPT_CD2,
+OPT_CD3,
+OPT_DESCR,
+PARENT_OPT_CD1,
+PARENT_OPT_CD2,
+PARENT_OPT_CD3,
+FG_PROD_ITEM_FLAG,
+FG_PROD_CHAR_TYPE_CD,
+FG_PCT_INTERNAL_NAME, 
+FG_PROD_CHAR_CD,
+FG_COMP_PROD_TYPE_CD,
+FG_COMP_PROD_CD, 
+FG_COMP_PROD_SETID, 
+FG_SEQUENCE,
+IMG_COUNT
+FROM (
+  SELECT   
+  PV.SORT1,
+  PV.SORT2,
+  PV.SORT3,
+  PV.FG_PROD_CD,
+  PV.FG_PROD_SETID,
+  PV.OPT_TYPE,
+  PV.TYPE_CD,
+  PV.TYPE_DESCR,
+  PV.OPT_CD1,
+  PV.OPT_CD2,
+  PV.OPT_CD3,
+  PV.OPT_DESCR,
+  PV.PARENT_OPT_CD1,
+  PV.PARENT_OPT_CD2,
+  PV.PARENT_OPT_CD3,
+  PV.FG_PROD_ITEM_FLAG,
+  PV.FG_PRODUCTION_FLAG,
+  PV.FG_PROD_CHAR_TYPE_CD,
+  PV.FG_PCT_INTERNAL_NAME, 
+  PV.FG_PROD_CHAR_CD,
+  PV.FG_COMP_PROD_TYPE_CD,
+  PV.FG_COMP_PROD_CD, 
+  PV.FG_COMP_PROD_SETID, 
+  PV.FG_SEQUENCE,
+  PV.IMG_COUNT
+  FROM 
+  FG_PROD_OPT_VW PV
+  WHERE PV.FG_PROD_CD = :PROD_CD
+) 
+START WITH PARENT_OPT_CD1 IS NULL
+AND FG_PRODUCTION_FLAG = 'Y'
+AND ((OPT_CD1 NOT IN ('SPECIAL', 'ALL LEATHER')) OR (OPT_CD2 <> 'N'))
+CONNECT BY FG_PROD_CD = PRIOR FG_PROD_CD
+AND PARENT_OPT_CD1 = PRIOR OPT_CD1
+AND PARENT_OPT_CD2 = PRIOR OPT_CD2
+AND PARENT_OPT_CD3 = PRIOR OPT_CD3
+ORDER BY SORT1, SORT2, SORT3, LEVEL";
+        }
+    }
+
+    public class WorksheetOpt : CharCompOpt
+    {
+        public string WorksheetID { get; set; }
+
+        public override void LoadFromDataRecord(IDataRecord dataRecord)
+        {
+            base.LoadFromDataRecord(dataRecord);
+            WorksheetID = dataRecord["FG_WORKSHEET_ID"].ToString();
+        }
+
+        public static List<WorksheetOpt> ReqWorksheet(string requestID)
+        {
+            var worksheetOpts = new List<WorksheetOpt>();
+
+            using (DbConnection conn = IsisDataHelper.GetDbConnection("ora"))
+            {
+                using (DbCommand cmd = conn.CreateCommand())
+                {
+                    cmd.CommandText = ReqWorksheetSql();
+                    cmd.AddParm(":REQUEST_ID", requestID);
+
+                    conn.Open();
+                    using (DbDataReader rdr = cmd.ExecuteReader())
+                    {
+                        while (rdr.Read())
+                        {
+                            WorksheetOpt worksheetOpt = new WorksheetOpt();
+                            worksheetOpt.LoadFromDataRecord(rdr);
+                            if (worksheetOpt.ImgCount > 0)
+                            {
+                                if (worksheetOpt.Type == OptionType.Characteristic)
+                                {
+                                    worksheetOpt.ProdImageSet =
+                                        ProdImgInfo.ProdImageSet(worksheetOpt.CompProdCD);
+                                }
+                            }
+                            worksheetOpts.Add(worksheetOpt);
+                        }
+                    }
+                }
+            }
+            return worksheetOpts;
+        }
+
+        public static string ReqWorksheetSql()
+        {
+            return
+@"SELECT 
+FG_WORKSHEET_ID,
+SORT1,
+SORT2,
+SORT3,
+LEVEL,
+FG_PROD_CD,
+FG_PROD_SETID,
+OPT_TYPE,
+TYPE_CD,
+TYPE_DESCR,
+OPT_CD1,
+OPT_CD2,
+OPT_CD3,
+OPT_DESCR,
+PARENT_OPT_CD1,
+PARENT_OPT_CD2,
+PARENT_OPT_CD3,
+FG_PROD_CHAR_TYPE_CD,
+FG_PCT_INTERNAL_NAME, 
+FG_PROD_CHAR_CD,
+FG_COMP_PROD_TYPE_CD,
+FG_COMP_PROD_CD, 
+FG_COMP_PROD_SETID, 
+FG_SEQUENCE,
+IMG_COUNT
+FROM (
+  SELECT   
+  WV.FG_WORKSHEET_ID,
+  WV.SORT1,
+  WV.SORT2,
+  WV.SORT3,
+  WV.FG_PROD_CD,
+  WV.FG_PROD_SETID,
+  WV.OPT_TYPE,
+  WV.TYPE_CD,
+  WV.TYPE_DESCR,
+  WV.OPT_CD1,
+  WV.OPT_CD2,
+  WV.OPT_CD3,
+  WV.OPT_DESCR,
+  WV.PARENT_OPT_CD1,
+  WV.PARENT_OPT_CD2,
+  WV.PARENT_OPT_CD3,
+  WV.FG_PROD_CHAR_TYPE_CD,
+  WV.FG_PCT_INTERNAL_NAME, 
+  WV.FG_PROD_CHAR_CD,
+  WV.FG_COMP_PROD_TYPE_CD,
+  WV.FG_COMP_PROD_CD, 
+  WV.FG_COMP_PROD_SETID, 
+  WV.FG_SEQUENCE,
+  WV.IMG_COUNT
+  FROM 
+  FG_REQ_PART_WKSHT RW,
+  FG_WORKSHEET_OPT_VW WV
+  WHERE RW.FG_WORKSHEET_ID = WV.FG_WORKSHEET_ID
+  AND RW.FG_REQUEST_ID = :REQUEST_ID
+) 
+START WITH PARENT_OPT_CD1 IS NULL
+CONNECT BY PARENT_OPT_CD1 = PRIOR OPT_CD1
+AND PARENT_OPT_CD2 = PRIOR OPT_CD2
+AND PARENT_OPT_CD3 = PRIOR OPT_CD3
+ORDER BY SORT1, SORT2, SORT3, LEVEL";
+        }
+
+    }
+
+}

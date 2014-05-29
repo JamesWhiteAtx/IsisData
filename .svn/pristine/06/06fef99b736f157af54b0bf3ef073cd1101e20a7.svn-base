@@ -1,0 +1,2256 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="CST.ISIS.Data.Store" Alias="Self" Provider="Oracle.DataAccess.Client" ProviderManifestToken="10.2" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="CSTISISDataStoreContainer">
+          <EntitySet Name="FG_IMAGE" EntityType="CST.ISIS.Data.Store.FG_IMAGE" store:Type="Tables" Schema="SYSADM" />
+          <EntitySet Name="FG_IMAGE_INFO" EntityType="CST.ISIS.Data.Store.FG_IMAGE_INFO" store:Type="Tables" Schema="SYSADM" />
+          <EntitySet Name="FG_IMAGE_SET" EntityType="CST.ISIS.Data.Store.FG_IMAGE_SET" store:Type="Tables" Schema="SYSADM" />
+          <EntitySet Name="FG_MIME_TYPE" EntityType="CST.ISIS.Data.Store.FG_MIME_TYPE" store:Type="Tables" Schema="SYSADM" />
+          <EntitySet Name="FG_OL_ORDER" EntityType="CST.ISIS.Data.Store.FG_OL_ORDER" store:Type="Tables" Schema="SYSADM" />
+          <EntitySet Name="FG_OL_ORDER_LINE" EntityType="CST.ISIS.Data.Store.FG_OL_ORDER_LINE" store:Type="Tables" Schema="SYSADM" />
+          <EntitySet Name="FG_PROD" EntityType="CST.ISIS.Data.Store.FG_PROD" store:Type="Tables" Schema="SYSADM" />
+          <EntitySet Name="FG_PROD_IMAGE_SET" EntityType="CST.ISIS.Data.Store.FG_PROD_IMAGE_SET" store:Type="Tables" Schema="SYSADM" />
+          <EntitySet Name="FG_PROD_TYPE" EntityType="CST.ISIS.Data.Store.FG_PROD_TYPE" store:Type="Tables" Schema="SYSADM" />
+          <EntitySet Name="FG_REQ_PART" EntityType="CST.ISIS.Data.Store.FG_REQ_PART" store:Type="Tables" Schema="SYSADM" />
+          <EntitySet Name="PS_CUSTOMER" EntityType="CST.ISIS.Data.Store.PS_CUSTOMER" store:Type="Tables" store:Schema="SYSADM" store:Name="PS_CUSTOMER">
+            <DefiningQuery>SELECT 
+      "PS_CUSTOMER"."SETID" AS "SETID", 
+      "PS_CUSTOMER"."CUST_ID" AS "CUST_ID", 
+      "PS_CUSTOMER"."CUST_STATUS" AS "CUST_STATUS", 
+      "PS_CUSTOMER"."CUST_STATUS_DT" AS "CUST_STATUS_DT", 
+      "PS_CUSTOMER"."NAMESHORT" AS "NAMESHORT", 
+      "PS_CUSTOMER"."CUSTOMER_TYPE" AS "CUSTOMER_TYPE", 
+      "PS_CUSTOMER"."SINCE_DT" AS "SINCE_DT", 
+      "PS_CUSTOMER"."ADD_DT" AS "ADD_DT", 
+      "PS_CUSTOMER"."NAME1" AS "NAME1", 
+      "PS_CUSTOMER"."NAME2" AS "NAME2", 
+      "PS_CUSTOMER"."NAME3" AS "NAME3", 
+      "PS_CUSTOMER"."ADDRESS_SEQ_NUM" AS "ADDRESS_SEQ_NUM", 
+      "PS_CUSTOMER"."CR_ANALYST" AS "CR_ANALYST", 
+      "PS_CUSTOMER"."SALES_PERSON" AS "SALES_PERSON", 
+      "PS_CUSTOMER"."COLLECTOR" AS "COLLECTOR", 
+      "PS_CUSTOMER"."DB_SETID" AS "DB_SETID", 
+      "PS_CUSTOMER"."DB_NUMBER" AS "DB_NUMBER", 
+      "PS_CUSTOMER"."CORPORATE_SETID" AS "CORPORATE_SETID", 
+      "PS_CUSTOMER"."CORPORATE_CUST_ID" AS "CORPORATE_CUST_ID", 
+      "PS_CUSTOMER"."REMIT_FROM_SETID" AS "REMIT_FROM_SETID", 
+      "PS_CUSTOMER"."REMIT_FROM_CUST_ID" AS "REMIT_FROM_CUST_ID", 
+      "PS_CUSTOMER"."CRSPD_SETID" AS "CRSPD_SETID", 
+      "PS_CUSTOMER"."CRSPD_CUST_ID" AS "CRSPD_CUST_ID", 
+      "PS_CUSTOMER"."VENDOR_SETID" AS "VENDOR_SETID", 
+      "PS_CUSTOMER"."VENDOR_ID" AS "VENDOR_ID", 
+      "PS_CUSTOMER"."REFER_TO_SETID" AS "REFER_TO_SETID", 
+      "PS_CUSTOMER"."REFER_TO_CUST_ID" AS "REFER_TO_CUST_ID", 
+      "PS_CUSTOMER"."SIC_CD1" AS "SIC_CD1", 
+      "PS_CUSTOMER"."SIC_CD2" AS "SIC_CD2", 
+      "PS_CUSTOMER"."SIC_CD3" AS "SIC_CD3", 
+      "PS_CUSTOMER"."REVIEW_DAYS" AS "REVIEW_DAYS", 
+      "PS_CUSTOMER"."FORMER_NAME_1" AS "FORMER_NAME_1", 
+      "PS_CUSTOMER"."FORMER_NAME_2" AS "FORMER_NAME_2", 
+      "PS_CUSTOMER"."CNTCT_SEQ_NUM" AS "CNTCT_SEQ_NUM", 
+      "PS_CUSTOMER"."SUBCUST_USE" AS "SUBCUST_USE", 
+      "PS_CUSTOMER"."SUBCUST_QUAL1" AS "SUBCUST_QUAL1", 
+      "PS_CUSTOMER"."SUBCUST_QUAL2" AS "SUBCUST_QUAL2", 
+      "PS_CUSTOMER"."CUR_RT_TYPE" AS "CUR_RT_TYPE", 
+      "PS_CUSTOMER"."CURRENCY_CD" AS "CURRENCY_CD", 
+      "PS_CUSTOMER"."VAT_CUST_EDIT" AS "VAT_CUST_EDIT", 
+      "PS_CUSTOMER"."SHIP_TO_FLG" AS "SHIP_TO_FLG", 
+      "PS_CUSTOMER"."BILL_TO_FLG" AS "BILL_TO_FLG", 
+      "PS_CUSTOMER"."SOLD_TO_FLG" AS "SOLD_TO_FLG", 
+      "PS_CUSTOMER"."CUST_LEVEL" AS "CUST_LEVEL", 
+      "PS_CUSTOMER"."ADDRESS_SEQ_SOLD" AS "ADDRESS_SEQ_SOLD", 
+      "PS_CUSTOMER"."CNTCT_SEQ_SOLD" AS "CNTCT_SEQ_SOLD", 
+      "PS_CUSTOMER"."ADDRESS_SEQ_SHIP" AS "ADDRESS_SEQ_SHIP", 
+      "PS_CUSTOMER"."CNTCT_SEQ_SHIP" AS "CNTCT_SEQ_SHIP", 
+      "PS_CUSTOMER"."HOLD_UPDATE_SW" AS "HOLD_UPDATE_SW", 
+      "PS_CUSTOMER"."BILLING_SPECIALIST" AS "BILLING_SPECIALIST", 
+      "PS_CUSTOMER"."BILL_INQUIRY_PHONE" AS "BILL_INQUIRY_PHONE", 
+      "PS_CUSTOMER"."ROLEUSER" AS "ROLEUSER", 
+      "PS_CUSTOMER"."LAST_MAINT_OPRID" AS "LAST_MAINT_OPRID", 
+      "PS_CUSTOMER"."DATE_LAST_MAINT" AS "DATE_LAST_MAINT", 
+      "PS_CUSTOMER"."DEPTID" AS "DEPTID", 
+      "PS_CUSTOMER"."NO_STMT_REQD" AS "NO_STMT_REQD"
+      FROM "SYSADM"."PS_CUSTOMER" "PS_CUSTOMER"</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="PS_SHIP_METHOD" EntityType="CST.ISIS.Data.Store.PS_SHIP_METHOD" store:Type="Tables" store:Schema="SYSADM" store:Name="PS_SHIP_METHOD">
+            <DefiningQuery>SELECT 
+      "PS_SHIP_METHOD"."SETID" AS "SETID", 
+      "PS_SHIP_METHOD"."SHIP_TYPE_ID" AS "SHIP_TYPE_ID", 
+      "PS_SHIP_METHOD"."DESCR" AS "DESCR", 
+      "PS_SHIP_METHOD"."DESCRSHORT" AS "DESCRSHORT", 
+      "PS_SHIP_METHOD"."MAX_WEIGHT" AS "MAX_WEIGHT", 
+      "PS_SHIP_METHOD"."MAX_VOLUME" AS "MAX_VOLUME", 
+      "PS_SHIP_METHOD"."UNIT_MEASURE_WT" AS "UNIT_MEASURE_WT", 
+      "PS_SHIP_METHOD"."UNIT_MEASURE_VOL" AS "UNIT_MEASURE_VOL", 
+      "PS_SHIP_METHOD"."SHIP_OUT_FLAG" AS "SHIP_OUT_FLAG"
+      FROM "SYSADM"."PS_SHIP_METHOD" "PS_SHIP_METHOD"</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="FG_DEPARTMENT_VW" EntityType="CST.ISIS.Data.Store.FG_DEPARTMENT_VW" store:Type="Views" store:Schema="SYSADM" store:Name="FG_DEPARTMENT_VW">
+            <DefiningQuery>SELECT 
+      "FG_DEPARTMENT_VW"."SETID" AS "SETID", 
+      "FG_DEPARTMENT_VW"."DEPTID" AS "DEPTID", 
+      "FG_DEPARTMENT_VW"."EFFDT" AS "EFFDT", 
+      "FG_DEPARTMENT_VW"."EFF_STATUS" AS "EFF_STATUS", 
+      "FG_DEPARTMENT_VW"."DESCR" AS "DESCR", 
+      "FG_DEPARTMENT_VW"."DESCRSHORT" AS "DESCRSHORT"
+      FROM "SYSADM"."FG_DEPARTMENT_VW" "FG_DEPARTMENT_VW"</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="FG_PROD_VW" EntityType="CST.ISIS.Data.Store.FG_PROD_VW" store:Type="Views" store:Schema="SYSADM" store:Name="FG_PROD_VW">
+            <DefiningQuery>SELECT 
+      "FG_PROD_VW"."FG_PROD_CD" AS "FG_PROD_CD", 
+      "FG_PROD_VW"."FG_PROD_SETID" AS "FG_PROD_SETID", 
+      "FG_PROD_VW"."FG_PROD_TYPE_CD" AS "FG_PROD_TYPE_CD", 
+      "FG_PROD_VW"."FG_PROD_DESC" AS "FG_PROD_DESC", 
+      "FG_PROD_VW"."FG_PROD_TYPE_DESC" AS "FG_PROD_TYPE_DESC", 
+      "FG_PROD_VW"."FG_PATTERN" AS "FG_PATTERN", 
+      "FG_PROD_VW"."FG_PATTERN_DESC" AS "FG_PATTERN_DESC", 
+      "FG_PROD_VW"."FG_COLOR" AS "FG_COLOR", 
+      "FG_PROD_VW"."FG_COLOR_DESC" AS "FG_COLOR_DESC", 
+      "FG_PROD_VW"."FG_1ST_INSERT" AS "FG_1ST_INSERT", 
+      "FG_PROD_VW"."FG_1ST_INSERT_DESC" AS "FG_1ST_INSERT_DESC", 
+      "FG_PROD_VW"."FG_2ND_INSERT" AS "FG_2ND_INSERT", 
+      "FG_PROD_VW"."FG_2ND_INSERT_DESC" AS "FG_2ND_INSERT_DESC", 
+      "FG_PROD_VW"."FG_SPECIAL" AS "FG_SPECIAL", 
+      "FG_PROD_VW"."FG_SPECIAL_DESC" AS "FG_SPECIAL_DESC", 
+      "FG_PROD_VW"."FG_ALL_LEATHER" AS "FG_ALL_LEATHER", 
+      "FG_PROD_VW"."FG_ALL_LEATHER_DESC" AS "FG_ALL_LEATHER_DESC", 
+      "FG_PROD_VW"."FG_ABC_CODE" AS "FG_ABC_CODE", 
+      "FG_PROD_VW"."FG_ABC_CODE_DESC" AS "FG_ABC_CODE_DESC", 
+      "FG_PROD_VW"."FG_DI_CHARGE" AS "FG_DI_CHARGE", 
+      "FG_PROD_VW"."FG_DI_CHARGE_DESC" AS "FG_DI_CHARGE_DESC", 
+      "FG_PROD_VW"."FG_EXTRA_QUANTITY" AS "FG_EXTRA_QUANTITY", 
+      "FG_PROD_VW"."FG_EXTRA_QUANTITY_DESC" AS "FG_EXTRA_QUANTITY_DESC", 
+      "FG_PROD_VW"."FG_AIRBAGS" AS "FG_AIRBAGS", 
+      "FG_PROD_VW"."FG_AIRBAGS_DESC" AS "FG_AIRBAGS_DESC", 
+      "FG_PROD_VW"."FG_TRIM_LEVEL" AS "FG_TRIM_LEVEL", 
+      "FG_PROD_VW"."FG_TRIM_LEVEL_DESC" AS "FG_TRIM_LEVEL_DESC", 
+      "FG_PROD_VW"."FG_PROD_COST" AS "FG_PROD_COST", 
+      "FG_PROD_VW"."FG_SUNROOF_TYPE" AS "FG_SUNROOF_TYPE", 
+      "FG_PROD_VW"."FG_SUNROOF_TYPE_DESC" AS "FG_SUNROOF_TYPE_DESC", 
+      "FG_PROD_VW"."FG_MARKET_CONDITIONS" AS "FG_MARKET_CONDITIONS", 
+      "FG_PROD_VW"."FG_MARKET_CONDITIONS_DESC" AS "FG_MARKET_CONDITIONS_DESC", 
+      "FG_PROD_VW"."FG_MFG_LOCATION" AS "FG_MFG_LOCATION", 
+      "FG_PROD_VW"."FG_MFG_LOCATION_DESC" AS "FG_MFG_LOCATION_DESC", 
+      "FG_PROD_VW"."FG_PRIMARY_WHSE_ONLY" AS "FG_PRIMARY_WHSE_ONLY", 
+      "FG_PROD_VW"."FG_PRIMARY_WHSE_ONLY_DESC" AS "FG_PRIMARY_WHSE_ONLY_DESC", 
+      "FG_PROD_VW"."FG_NUMBER_OF_ROWS" AS "FG_NUMBER_OF_ROWS"
+      FROM "SYSADM"."FG_PROD_VW" "FG_PROD_VW"</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="FG_REQ_PART_ELAP" EntityType="CST.ISIS.Data.Store.FG_REQ_PART_ELAP" store:Type="Views" store:Schema="SYSADM" store:Name="FG_REQ_PART_ELAP">
+            <DefiningQuery>SELECT 
+      "FG_REQ_PART_ELAP"."FG_CANCEL_DT" AS "FG_CANCEL_DT", 
+      "FG_REQ_PART_ELAP"."FG_CANCEL_USER" AS "FG_CANCEL_USER", 
+      "FG_REQ_PART_ELAP"."FG_COLOR_DESC" AS "FG_COLOR_DESC", 
+      "FG_REQ_PART_ELAP"."FG_ORDER_BUS_UNIT" AS "FG_ORDER_BUS_UNIT", 
+      "FG_REQ_PART_ELAP"."FG_ORDER_LINE" AS "FG_ORDER_LINE", 
+      "FG_REQ_PART_ELAP"."FG_ORDER_NUM" AS "FG_ORDER_NUM", 
+      "FG_REQ_PART_ELAP"."FG_PART_DESC" AS "FG_PART_DESC", 
+      "FG_REQ_PART_ELAP"."FG_PART_NO" AS "FG_PART_NO", 
+      "FG_REQ_PART_ELAP"."FG_PROC_COMMENT" AS "FG_PROC_COMMENT", 
+      "FG_REQ_PART_ELAP"."FG_PROC_DT" AS "FG_PROC_DT", 
+      "FG_REQ_PART_ELAP"."FG_EXP_ARRIVAL_DT" AS "FG_EXP_ARRIVAL_DT", 
+      "FG_REQ_PART_ELAP"."FG_PROC_USER" AS "FG_PROC_USER", 
+      "FG_REQ_PART_ELAP"."FG_REQUEST_COMMENT" AS "FG_REQUEST_COMMENT", 
+      "FG_REQ_PART_ELAP"."FG_REQUEST_DEPTID" AS "FG_REQUEST_DEPTID", 
+      "FG_REQ_PART_ELAP"."FG_REQUEST_DEPTID_SETID" AS "FG_REQUEST_DEPTID_SETID", 
+      "FG_REQ_PART_ELAP"."FG_REQUEST_DT" AS "FG_REQUEST_DT", 
+      "FG_REQ_PART_ELAP"."FG_REQUIRED_DT" AS "FG_REQUIRED_DT", 
+      "FG_REQ_PART_ELAP"."FG_SPECIAL" AS "FG_SPECIAL", 
+      "FG_REQ_PART_ELAP"."FG_REQUEST_STATUS" AS "FG_REQUEST_STATUS", 
+      "FG_REQ_PART_ELAP"."FG_REQUEST_USER" AS "FG_REQUEST_USER", 
+      "FG_REQ_PART_ELAP"."FG_SHIP_CONTACT" AS "FG_SHIP_CONTACT", 
+      "FG_REQ_PART_ELAP"."FG_SHIP_DEPTID" AS "FG_SHIP_DEPTID", 
+      "FG_REQ_PART_ELAP"."FG_SHIP_DEPTID_SETID" AS "FG_SHIP_DEPTID_SETID", 
+      "FG_REQ_PART_ELAP"."FG_CONF_DT" AS "FG_CONF_DT", 
+      "FG_REQ_PART_ELAP"."FG_CONF_USER" AS "FG_CONF_USER", 
+      "FG_REQ_PART_ELAP"."FG_SHIP_VIA" AS "FG_SHIP_VIA", 
+      "FG_REQ_PART_ELAP"."FG_SHIP_VIA_SETID" AS "FG_SHIP_VIA_SETID", 
+      "FG_REQ_PART_ELAP"."FG_TRACKING_NO" AS "FG_TRACKING_NO", 
+      "FG_REQ_PART_ELAP"."FG_IN_PRODUCTION" AS "FG_IN_PRODUCTION", 
+      "FG_REQ_PART_ELAP"."FG_SHIP_BRANCH_VIA" AS "FG_SHIP_BRANCH_VIA", 
+      "FG_REQ_PART_ELAP"."FG_SHIP_BRANCH_VIA_SETID" AS "FG_SHIP_BRANCH_VIA_SETID", 
+      "FG_REQ_PART_ELAP"."FG_SERIAL_NUM" AS "FG_SERIAL_NUM", 
+      "FG_REQ_PART_ELAP"."FG_REQUEST_ID" AS "FG_REQUEST_ID", 
+      "FG_REQ_PART_ELAP"."FG_REQ_PATTERN" AS "FG_REQ_PATTERN", 
+      "FG_REQ_PART_ELAP"."FG_SOLD_ITEM" AS "FG_SOLD_ITEM", 
+      "FG_REQ_PART_ELAP"."DAYS" AS "DAYS", 
+      "FG_REQ_PART_ELAP"."HRS" AS "HRS", 
+      "FG_REQ_PART_ELAP"."MINS" AS "MINS", 
+      "FG_REQ_PART_ELAP"."SECS" AS "SECS"
+      FROM "SYSADM"."FG_REQ_PART_ELAP" "FG_REQ_PART_ELAP"</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="PS_CUST_ADDR_EF_VW" EntityType="CST.ISIS.Data.Store.PS_CUST_ADDR_EF_VW" store:Type="Views" store:Schema="SYSADM" store:Name="PS_CUST_ADDR_EF_VW">
+            <DefiningQuery>SELECT 
+      "PS_CUST_ADDR_EF_VW"."SETID" AS "SETID", 
+      "PS_CUST_ADDR_EF_VW"."CUST_ID" AS "CUST_ID", 
+      "PS_CUST_ADDR_EF_VW"."ADDRESS_SEQ_NUM" AS "ADDRESS_SEQ_NUM", 
+      "PS_CUST_ADDR_EF_VW"."DESCR" AS "DESCR", 
+      "PS_CUST_ADDR_EF_VW"."ADDRESS1" AS "ADDRESS1", 
+      "PS_CUST_ADDR_EF_VW"."ADDRESS2" AS "ADDRESS2", 
+      "PS_CUST_ADDR_EF_VW"."ADDRESS3" AS "ADDRESS3", 
+      "PS_CUST_ADDR_EF_VW"."ADDRESS4" AS "ADDRESS4", 
+      "PS_CUST_ADDR_EF_VW"."CITY" AS "CITY", 
+      "PS_CUST_ADDR_EF_VW"."IN_CITY_LIMIT" AS "IN_CITY_LIMIT", 
+      "PS_CUST_ADDR_EF_VW"."COUNTY" AS "COUNTY", 
+      "PS_CUST_ADDR_EF_VW"."STATE" AS "STATE", 
+      "PS_CUST_ADDR_EF_VW"."GEO_CODE" AS "GEO_CODE", 
+      "PS_CUST_ADDR_EF_VW"."POSTAL" AS "POSTAL", 
+      "PS_CUST_ADDR_EF_VW"."COUNTRY" AS "COUNTRY", 
+      "PS_CUST_ADDR_EF_VW"."PHONE" AS "PHONE", 
+      "PS_CUST_ADDR_EF_VW"."FAX" AS "FAX", 
+      "PS_CUST_ADDR_EF_VW"."ALT_NAME1" AS "ALT_NAME1", 
+      "PS_CUST_ADDR_EF_VW"."ALT_NAME2" AS "ALT_NAME2", 
+      "PS_CUST_ADDR_EF_VW"."LAST_MAINT_OPRID" AS "LAST_MAINT_OPRID"
+      FROM "SYSADM"."PS_CUST_ADDR_EF_VW" "PS_CUST_ADDR_EF_VW"</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FG_OL_ORD_ORDL" Association="CST.ISIS.Data.Store.FG_OL_ORD_ORDL">
+            <End Role="FG_OL_ORDER" EntitySet="FG_OL_ORDER" />
+            <End Role="FG_OL_ORDER_LINE" EntitySet="FG_OL_ORDER_LINE" />
+          </AssociationSet>
+          <AssociationSet Name="FG_PRO_PRO" Association="CST.ISIS.Data.Store.FG_PRO_PRO">
+            <End Role="FG_PROD" EntitySet="FG_PROD" />
+            <End Role="FG_PROD1" EntitySet="FG_PROD" />
+          </AssociationSet>
+          <AssociationSet Name="FG_PROT_PRO" Association="CST.ISIS.Data.Store.FG_PROT_PRO">
+            <End Role="FG_PROD_TYPE" EntitySet="FG_PROD_TYPE" />
+            <End Role="FG_PROD" EntitySet="FG_PROD" />
+          </AssociationSet>
+          <AssociationSet Name="IMAI_IMA" Association="CST.ISIS.Data.Store.IMAI_IMA">
+            <End Role="FG_IMAGE_INFO" EntitySet="FG_IMAGE_INFO" />
+            <End Role="FG_IMAGE" EntitySet="FG_IMAGE" />
+          </AssociationSet>
+          <AssociationSet Name="IMAI_PROIS" Association="CST.ISIS.Data.Store.IMAI_PROIS">
+            <End Role="FG_IMAGE_INFO" EntitySet="FG_IMAGE_INFO" />
+            <End Role="FG_PROD_IMAGE_SET" EntitySet="FG_PROD_IMAGE_SET" />
+          </AssociationSet>
+          <AssociationSet Name="IMAS_PROIS" Association="CST.ISIS.Data.Store.IMAS_PROIS">
+            <End Role="FG_IMAGE_SET" EntitySet="FG_IMAGE_SET" />
+            <End Role="FG_PROD_IMAGE_SET" EntitySet="FG_PROD_IMAGE_SET" />
+          </AssociationSet>
+          <AssociationSet Name="MIMT_IMAI" Association="CST.ISIS.Data.Store.MIMT_IMAI">
+            <End Role="FG_MIME_TYPE" EntitySet="FG_MIME_TYPE" />
+            <End Role="FG_IMAGE_INFO" EntitySet="FG_IMAGE_INFO" />
+          </AssociationSet>
+          <AssociationSet Name="ORD_ORD" Association="CST.ISIS.Data.Store.ORD_ORD">
+            <End Role="FG_OL_ORDER" EntitySet="FG_OL_ORDER" />
+            <End Role="FG_OL_ORDER1" EntitySet="FG_OL_ORDER" />
+          </AssociationSet>
+          <AssociationSet Name="ORDL_ORDL" Association="CST.ISIS.Data.Store.ORDL_ORDL">
+            <End Role="FG_OL_ORDER_LINE" EntitySet="FG_OL_ORDER_LINE" />
+            <End Role="FG_OL_ORDER_LINE1" EntitySet="FG_OL_ORDER_LINE" />
+          </AssociationSet>
+          <AssociationSet Name="PRO_ORDL" Association="CST.ISIS.Data.Store.PRO_ORDL">
+            <End Role="FG_PROD" EntitySet="FG_PROD" />
+            <End Role="FG_OL_ORDER_LINE" EntitySet="FG_OL_ORDER_LINE" />
+          </AssociationSet>
+          <AssociationSet Name="PRO_PROIS" Association="CST.ISIS.Data.Store.PRO_PROIS">
+            <End Role="FG_PROD" EntitySet="FG_PROD" />
+            <End Role="FG_PROD_IMAGE_SET" EntitySet="FG_PROD_IMAGE_SET" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="FG_IMAGE">
+          <Key>
+            <PropertyRef Name="FG_IMAGE_ID" />
+          </Key>
+          <Property Name="FG_IMAGE_ID" Type="number" Nullable="false" />
+          <Property Name="FG_IMAGE_DATA" Type="long raw" />
+        </EntityType>
+        <EntityType Name="FG_IMAGE_INFO">
+          <Key>
+            <PropertyRef Name="FG_IMAGE_ID" />
+          </Key>
+          <Property Name="FG_IMAGE_ID" Type="number" Nullable="false" />
+          <Property Name="FG_MIME_TYPE_CD" Type="varchar2" Nullable="false" MaxLength="30" />
+          <Property Name="FG_DESCRIPTION" Type="varchar2" Nullable="false" MaxLength="250" />
+          <Property Name="FG_FILE_NAME" Type="varchar2" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="FG_IMAGE_SET">
+          <Key>
+            <PropertyRef Name="FG_IMAGE_SET_CD" />
+          </Key>
+          <Property Name="FG_IMAGE_SET_CD" Type="varchar2" Nullable="false" MaxLength="30" />
+          <Property Name="FG_DESCRIPTION" Type="varchar2" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="FG_MIME_TYPE">
+          <Key>
+            <PropertyRef Name="FG_MIME_TYPE_CD" />
+          </Key>
+          <Property Name="FG_MIME_TYPE_CD" Type="varchar2" Nullable="false" MaxLength="30" />
+          <Property Name="FG_DESCRIPTION" Type="varchar2" Nullable="false" MaxLength="250" />
+          <Property Name="FG_CONTENT_TYPE" Type="varchar2" Nullable="false" MaxLength="30" />
+          <Property Name="FG_FILE_EXT" Type="varchar2" Nullable="false" MaxLength="5" />
+        </EntityType>
+        <EntityType Name="FG_OL_ORDER">
+          <Key>
+            <PropertyRef Name="FG_ORDER_NUM" />
+            <PropertyRef Name="FG_ORDER_BUS_UNIT" />
+          </Key>
+          <Property Name="FG_ORDER_NUM" Type="varchar2" Nullable="false" MaxLength="30" />
+          <Property Name="FG_ORDER_BUS_UNIT" Type="varchar2" Nullable="false" MaxLength="5" />
+          <Property Name="FG_ORDER_TYPE" Type="varchar2" MaxLength="30" />
+          <Property Name="FG_INVOICE_NUM" Type="varchar2" Nullable="false" MaxLength="30" />
+          <Property Name="FG_STATUS" Type="varchar2" MaxLength="30" />
+          <Property Name="FG_DEPTID" Type="varchar2" Nullable="false" MaxLength="10" />
+          <Property Name="FG_DEPTID_SETID" Type="varchar2" MaxLength="5" />
+          <Property Name="FG_CAR_NUM" Type="varchar2" MaxLength="30" />
+          <Property Name="FG_SOLD_TO_CUST_ID" Type="varchar2" MaxLength="30" />
+          <Property Name="FG_SOLD_TO_CUST_SETID" Type="varchar2" MaxLength="5" />
+          <Property Name="FG_SOLD_TO_ADDR_SEQ" Type="number" />
+          <Property Name="FG_SOLD_TO_NAME" Type="varchar2" MaxLength="40" />
+          <Property Name="FG_SOLD_TO_ADDR1" Type="varchar2" MaxLength="35" />
+          <Property Name="FG_SOLD_TO_ADDR2" Type="varchar2" MaxLength="35" />
+          <Property Name="FG_SOLD_TO_ADDR3" Type="varchar2" MaxLength="35" />
+          <Property Name="FG_SOLD_TO_ADDR4" Type="varchar2" MaxLength="35" />
+          <Property Name="FG_SOLD_TO_CITY" Type="varchar2" MaxLength="30" />
+          <Property Name="FG_SOLD_TO_COUNTY" Type="varchar2" MaxLength="30" />
+          <Property Name="FG_SOLD_TO_STATE" Type="varchar2" MaxLength="4" />
+          <Property Name="FG_SOLD_TO_POSTAL" Type="varchar2" MaxLength="12" />
+          <Property Name="FG_SOLD_TO_COUNTRY" Type="varchar2" MaxLength="3" />
+          <Property Name="FG_SHIP_TO_CUST_ID" Type="varchar2" MaxLength="30" />
+          <Property Name="FG_SHIP_TO_CUST_SETID" Type="varchar2" MaxLength="5" />
+          <Property Name="FG_SHIP_TO_ADDR_SEQ" Type="number" />
+          <Property Name="FG_SHIP_TO_NAME" Type="varchar2" MaxLength="40" />
+          <Property Name="FG_SHIP_TO_ADDR1" Type="varchar2" MaxLength="35" />
+          <Property Name="FG_SHIP_TO_ADDR2" Type="varchar2" MaxLength="35" />
+          <Property Name="FG_SHIP_TO_ADDR3" Type="varchar2" MaxLength="35" />
+          <Property Name="FG_SHIP_TO_ADDR4" Type="varchar2" MaxLength="35" />
+          <Property Name="FG_SHIP_TO_CITY" Type="varchar2" MaxLength="30" />
+          <Property Name="FG_SHIP_TO_COUNTY" Type="varchar2" MaxLength="30" />
+          <Property Name="FG_SHIP_TO_STATE" Type="varchar2" MaxLength="4" />
+          <Property Name="FG_SHIP_TO_POSTAL" Type="varchar2" MaxLength="12" />
+          <Property Name="FG_SHIP_TO_COUNTRY" Type="varchar2" MaxLength="3" />
+          <Property Name="FG_CONTACT" Type="varchar2" MaxLength="50" />
+          <Property Name="FG_CONTACT_PHONE" Type="varchar2" MaxLength="30" />
+          <Property Name="FG_CUST_PO" Type="varchar2" MaxLength="30" />
+          <Property Name="FG_CUST_STOCK" Type="varchar2" MaxLength="30" />
+          <Property Name="FG_SHIP_VIA" Type="varchar2" MaxLength="30" />
+          <Property Name="FG_SHIP_VIA_SETID" Type="varchar2" MaxLength="30" />
+          <Property Name="FG_PYMNT_TERMS_CD" Type="varchar2" Nullable="false" MaxLength="5" />
+          <Property Name="FG_OPEN_DT" Type="date" />
+          <Property Name="FG_REQUESTED_DT" Type="date" />
+          <Property Name="FG_INSTALL_DT" Type="date" />
+          <Property Name="FG_PICKUP_DT" Type="date" />
+          <Property Name="FG_DELIVERY_DT" Type="date" />
+          <Property Name="FG_CANCEL_DT" Type="date" />
+          <Property Name="FG_INVOICE_DT" Type="date" />
+          <Property Name="FG_CAR_CD" Type="varchar2" MaxLength="30" />
+          <Property Name="FG_YEAR_CD" Type="varchar2" MaxLength="8" />
+          <Property Name="FG_INTERIOR" Type="varchar2" MaxLength="30" />
+          <Property Name="FG_EXTERIOR" Type="varchar2" MaxLength="30" />
+          <Property Name="FG_DOOR_FLAG" Type="varchar2" MaxLength="1" />
+          <Property Name="FG_DOORS" Type="number" />
+          <Property Name="FG_CONDITION" Type="varchar2" MaxLength="1000" />
+          <Property Name="FG_VIN" Type="varchar2" MaxLength="30" />
+          <Property Name="FG_PROCESS_FLAG" Type="varchar2" MaxLength="1" />
+          <Property Name="FG_AG_USER" Type="varchar2" MaxLength="20" />
+          <Property Name="FG_SHIPPING" Type="number" />
+          <Property Name="FG_TAX" Type="number" />
+          <Property Name="FG_TRANSPORT" Type="number" />
+          <Property Name="FG_STOCK_TYPE" Type="varchar2" MaxLength="3" />
+          <Property Name="FG_COMMENT" Type="varchar2" MaxLength="1000" />
+          <Property Name="FG_PREPAID_TYPE" Type="varchar2" MaxLength="10" />
+          <Property Name="FG_CARD_TYPE" Type="varchar2" MaxLength="10" />
+          <Property Name="FG_EXPIRE_MONTH" Type="varchar2" MaxLength="2" />
+          <Property Name="FG_EXPIRE_YEAR" Type="varchar2" MaxLength="4" />
+          <Property Name="FG_APPROVAL_CD" Type="varchar2" MaxLength="15" />
+          <Property Name="FG_MILEAGE" Type="number" />
+          <Property Name="FG_CR_CARD" Type="varchar2" MaxLength="40" />
+          <Property Name="FG_BILL_TO_CUST_ID" Type="varchar2" MaxLength="30" />
+          <Property Name="FG_BILL_TO_CUST_SETID" Type="varchar2" MaxLength="5" />
+          <Property Name="FG_BILL_TO_ADDR_SEQ" Type="number" />
+          <Property Name="FG_BILL_TO_NAME" Type="varchar2" MaxLength="40" />
+          <Property Name="FG_BILL_TO_ADDR1" Type="varchar2" MaxLength="35" />
+          <Property Name="FG_BILL_TO_ADDR2" Type="varchar2" MaxLength="35" />
+          <Property Name="FG_BILL_TO_ADDR3" Type="varchar2" MaxLength="35" />
+          <Property Name="FG_BILL_TO_ADDR4" Type="varchar2" MaxLength="35" />
+          <Property Name="FG_BILL_TO_CITY" Type="varchar2" MaxLength="30" />
+          <Property Name="FG_BILL_TO_COUNTY" Type="varchar2" MaxLength="30" />
+          <Property Name="FG_BILL_TO_STATE" Type="varchar2" MaxLength="4" />
+          <Property Name="FG_BILL_TO_POSTAL" Type="varchar2" MaxLength="12" />
+          <Property Name="FG_BILL_TO_COUNTRY" Type="varchar2" MaxLength="3" />
+          <Property Name="FG_ORDER_REASON_CD" Type="varchar2" Nullable="false" MaxLength="30" />
+          <Property Name="FG_ADJUST_FLAG" Type="varchar2" Nullable="false" MaxLength="1" />
+          <Property Name="FG_ADJUST_ORDER_NUM" Type="varchar2" MaxLength="30" />
+          <Property Name="FG_ADJUST_ORDER_BUS_UNIT" Type="varchar2" MaxLength="5" />
+          <Property Name="FG_CUST_DELIVERY_FLAG" Type="varchar2" Nullable="false" MaxLength="1" />
+          <Property Name="FG_EXBI_STATUS" Type="varchar2" Nullable="false" MaxLength="1" />
+          <Property Name="FG_EXBI_STATUS_DT" Type="date" />
+          <Property Name="FG_CAR_TYPE_CD" Type="varchar2" Nullable="false" MaxLength="1" />
+          <Property Name="FG_LAST_USERID" Type="varchar2" MaxLength="30" />
+          <Property Name="FG_LAST_DT" Type="date" />
+          <Property Name="FG_CR_CARD_APPROVAL" Type="varchar2" MaxLength="30" />
+          <Property Name="FG_VIN_REVERSE" Type="varchar2" MaxLength="30" />
+          <Property Name="FG_CR_MERCHANT_ID" Type="varchar2" MaxLength="5" />
+          <Property Name="FG_DELIV_CONDITION" Type="varchar2" MaxLength="1000" />
+          <Property Name="FG_FORCE_SAVE_FLAG" Type="varchar2" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="FG_OL_ORDER_LINE">
+          <Key>
+            <PropertyRef Name="FG_ORDER_NUM" />
+            <PropertyRef Name="FG_ORDER_LINE" />
+            <PropertyRef Name="FG_ORDER_BUS_UNIT" />
+          </Key>
+          <Property Name="FG_ORDER_NUM" Type="varchar2" Nullable="false" MaxLength="30" />
+          <Property Name="FG_ORDER_LINE" Type="number" Nullable="false" />
+          <Property Name="FG_ORDER_BUS_UNIT" Type="varchar2" Nullable="false" MaxLength="5" />
+          <Property Name="FG_SERIAL_NUM" Type="varchar2" MaxLength="30" />
+          <Property Name="FG_PARTNO" Type="varchar2" MaxLength="30" />
+          <Property Name="FG_PART_DESC" Type="varchar2" MaxLength="100" />
+          <Property Name="FG_COLOR_DESC" Type="varchar2" MaxLength="100" />
+          <Property Name="FG_UNIT_PRICE" Type="number" />
+          <Property Name="FG_QUANTITY" Type="number" />
+          <Property Name="FG_DISCOUNT" Type="number" />
+          <Property Name="FG_DISCOUNT_CD" Type="varchar2" MaxLength="30" />
+          <Property Name="FG_LINE_TOTAL" Type="number" />
+          <Property Name="FG_SALES_PERSON" Type="varchar2" MaxLength="8" />
+          <Property Name="FG_SALES_PERSON_SETID" Type="varchar2" MaxLength="5" />
+          <Property Name="FG_TRACKING_NO" Type="varchar2" MaxLength="100" />
+          <Property Name="FG_SPECIAL_FLAG" Type="varchar2" MaxLength="1" />
+          <Property Name="FG_PATTERN" Type="varchar2" MaxLength="30" />
+          <Property Name="FG_INSTALLER" Type="varchar2" MaxLength="15" />
+          <Property Name="FG_MFG_SERIAL_NUM" Type="varchar2" MaxLength="15" />
+          <Property Name="FG_SHIP_ID" Type="number" />
+          <Property Name="FG_LR_CERTIFICATE" Type="varchar2" MaxLength="12" />
+          <Property Name="FG_ADJUST_REASON_CD" Type="varchar2" MaxLength="30" />
+          <Property Name="FG_ADJUST_ORDER_NUM" Type="varchar2" MaxLength="30" />
+          <Property Name="FG_ADJUST_ORDER_LINE" Type="number" />
+          <Property Name="FG_ADJUST_ORDER_BUS_UNIT" Type="varchar2" MaxLength="5" />
+          <Property Name="FG_PARTNO_SETID" Type="varchar2" MaxLength="5" />
+          <Property Name="FG_REQUEST_ID" Type="varchar2" MaxLength="20" />
+          <Property Name="FG_INSERT1_DESCR" Type="varchar2" MaxLength="100" />
+          <Property Name="FG_INSERT2_DESCR" Type="varchar2" MaxLength="100" />
+          <Property Name="FG_HIDE_PRICE" Type="varchar2" MaxLength="1" />
+          <Property Name="FG_OL_ORDER_LINE_ID" Type="number" />
+          <Property Name="FG_SUGGESTED_PRICE" Type="number" />
+          <Property Name="FG_MINIMUM_PRICE" Type="number" />
+        </EntityType>
+        <EntityType Name="FG_PROD">
+          <Key>
+            <PropertyRef Name="FG_PROD_CD" />
+            <PropertyRef Name="FG_PROD_SETID" />
+          </Key>
+          <Property Name="FG_PROD_CD" Type="varchar2" Nullable="false" MaxLength="30" />
+          <Property Name="FG_PROD_SETID" Type="varchar2" Nullable="false" MaxLength="5" />
+          <Property Name="FG_PROD_TYPE_CD" Type="varchar2" Nullable="false" MaxLength="30" />
+          <Property Name="FG_INTRO_DT" Type="date" />
+          <Property Name="FG_DISCONTINUE_DT" Type="date" />
+          <Property Name="FG_ORIG_USERID" Type="varchar2" MaxLength="30" />
+          <Property Name="FG_ORIG_DT" Type="date" />
+          <Property Name="FG_LAST_USERID" Type="varchar2" MaxLength="30" />
+          <Property Name="FG_LAST_DT" Type="date" />
+          <Property Name="FG_PARENT_PROD_CD" Type="varchar2" MaxLength="30" />
+          <Property Name="FG_PARENT_PROD_SETID" Type="varchar2" MaxLength="5" />
+          <Property Name="FG_DESCRIPTION" Type="varchar2" MaxLength="100" />
+          <Property Name="FG_DESCRIPTION_UPPER" Type="varchar2" MaxLength="100" />
+          <Property Name="FG_INV_SEARCH_TYPE_CD" Type="varchar2" MaxLength="30" />
+          <Property Name="FG_AGING_DAYS" Type="number" />
+          <Property Name="FG_SEL_DISPLAY" Type="varchar2" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="FG_PROD_IMAGE_SET">
+          <Key>
+            <PropertyRef Name="FG_PROD_CD" />
+            <PropertyRef Name="FG_PROD_SETID" />
+            <PropertyRef Name="FG_IMAGE_SET_CD" />
+            <PropertyRef Name="FG_IMAGE_ID" />
+          </Key>
+          <Property Name="FG_PROD_CD" Type="varchar2" Nullable="false" MaxLength="30" />
+          <Property Name="FG_PROD_SETID" Type="varchar2" Nullable="false" MaxLength="5" />
+          <Property Name="FG_IMAGE_SET_CD" Type="varchar2" Nullable="false" MaxLength="30" />
+          <Property Name="FG_IMAGE_ID" Type="number" Nullable="false" />
+          <Property Name="FG_SORT_ORDER" Type="number" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FG_PROD_TYPE">
+          <Key>
+            <PropertyRef Name="FG_PROD_TYPE_CD" />
+          </Key>
+          <Property Name="FG_PROD_TYPE_CD" Type="varchar2" Nullable="false" MaxLength="30" />
+          <Property Name="FG_SERIALIZED_FLAG" Type="varchar2" Nullable="false" MaxLength="1" />
+          <Property Name="FG_FINISHED_FLAG" Type="varchar2" Nullable="false" MaxLength="1" />
+          <Property Name="FG_COST_FLAG" Type="varchar2" Nullable="false" MaxLength="1" />
+          <Property Name="FG_DI_FLAG" Type="varchar2" Nullable="false" MaxLength="1" />
+          <Property Name="FG_STATUS" Type="varchar2" Nullable="false" MaxLength="1" />
+          <Property Name="FG_SUFFIX" Type="varchar2" MaxLength="5" />
+          <Property Name="FG_DESCRIPTION" Type="varchar2" MaxLength="100" />
+          <Property Name="FG_CONSUMED_FLAG" Type="varchar2" Nullable="false" MaxLength="1" />
+          <Property Name="FG_INSTALLER_REQUIRED" Type="varchar2" Nullable="false" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="FG_REQ_PART">
+          <Key>
+            <PropertyRef Name="FG_REQUEST_ID" />
+          </Key>
+          <Property Name="FG_CANCEL_DT" Type="date" />
+          <Property Name="FG_CANCEL_USER" Type="varchar2" MaxLength="20" />
+          <Property Name="FG_COLOR_DESC" Type="varchar2" MaxLength="100" />
+          <Property Name="FG_ORDER_BUS_UNIT" Type="varchar2" MaxLength="5" />
+          <Property Name="FG_ORDER_LINE" Type="number" />
+          <Property Name="FG_ORDER_NUM" Type="varchar2" MaxLength="30" />
+          <Property Name="FG_PART_DESC" Type="varchar2" MaxLength="100" />
+          <Property Name="FG_PART_NO" Type="varchar2" Nullable="false" MaxLength="30" />
+          <Property Name="FG_PROC_COMMENT" Type="varchar2" MaxLength="1000" />
+          <Property Name="FG_PROC_DT" Type="date" />
+          <Property Name="FG_EXP_ARRIVAL_DT" Type="date" />
+          <Property Name="FG_PROC_USER" Type="varchar2" MaxLength="20" />
+          <Property Name="FG_REQUEST_COMMENT" Type="varchar2" MaxLength="1000" />
+          <Property Name="FG_REQUEST_DEPTID" Type="varchar2" Nullable="false" MaxLength="10" />
+          <Property Name="FG_REQUEST_DEPTID_SETID" Type="varchar2" Nullable="false" MaxLength="5" />
+          <Property Name="FG_REQUEST_DT" Type="date" Nullable="false" />
+          <Property Name="FG_REQUIRED_DT" Type="date" />
+          <Property Name="FG_SPECIAL" Type="varchar2" Nullable="false" MaxLength="1" />
+          <Property Name="FG_REQUEST_STATUS" Type="varchar2" Nullable="false" MaxLength="30" />
+          <Property Name="FG_REQUEST_USER" Type="varchar2" Nullable="false" MaxLength="20" />
+          <Property Name="FG_SHIP_CONTACT" Type="varchar2" MaxLength="100" />
+          <Property Name="FG_SHIP_DEPTID" Type="varchar2" MaxLength="10" />
+          <Property Name="FG_SHIP_DEPTID_SETID" Type="varchar2" MaxLength="5" />
+          <Property Name="FG_CONF_DT" Type="date" />
+          <Property Name="FG_CONF_USER" Type="varchar2" MaxLength="20" />
+          <Property Name="FG_SHIP_VIA" Type="varchar2" MaxLength="30" />
+          <Property Name="FG_SHIP_VIA_SETID" Type="varchar2" MaxLength="5" />
+          <Property Name="FG_TRACKING_NO" Type="varchar2" MaxLength="100" />
+          <Property Name="FG_IN_PRODUCTION" Type="varchar2" MaxLength="1" />
+          <Property Name="FG_SHIP_BRANCH_VIA" Type="varchar2" MaxLength="30" />
+          <Property Name="FG_SHIP_BRANCH_VIA_SETID" Type="varchar2" MaxLength="5" />
+          <Property Name="FG_SERIAL_NUM" Type="varchar2" MaxLength="30" />
+          <Property Name="FG_REQUEST_ID" Type="varchar2" Nullable="false" MaxLength="20" />
+          <Property Name="FG_REQ_PATTERN" Type="varchar2" MaxLength="30" />
+          <Property Name="FG_SOLD_ITEM" Type="varchar2" Nullable="false" MaxLength="1" />
+          <Property Name="FG_MODIFIED_KIT" Type="varchar2" Nullable="false" MaxLength="1" />
+          <Property Name="FG_INTERIOR_COLOR" Type="varchar2" MaxLength="100" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'SYSADM.PS_CUSTOMER' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="PS_CUSTOMER">
+          <Key>
+            <PropertyRef Name="SETID" />
+            <PropertyRef Name="CUST_ID" />
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+          </Key>
+          <Property Name="SETID" Type="varchar2" Nullable="false" MaxLength="5" />
+          <Property Name="CUST_ID" Type="varchar2" Nullable="false" MaxLength="15" />
+          <Property Name="CUST_STATUS" Type="varchar2" Nullable="false" MaxLength="1" />
+          <Property Name="CUST_STATUS_DT" Type="date" />
+          <Property Name="NAMESHORT" Type="varchar2" Nullable="false" MaxLength="10" />
+          <Property Name="CUSTOMER_TYPE" Type="varchar2" Nullable="false" MaxLength="1" />
+          <Property Name="SINCE_DT" Type="date" Nullable="false" />
+          <Property Name="ADD_DT" Type="date" Nullable="false" />
+          <Property Name="NAME1" Type="varchar2" Nullable="false" MaxLength="40" />
+          <Property Name="NAME2" Type="varchar2" Nullable="false" MaxLength="40" />
+          <Property Name="NAME3" Type="varchar2" Nullable="false" MaxLength="40" />
+          <Property Name="ADDRESS_SEQ_NUM" Type="number" Nullable="false" />
+          <Property Name="CR_ANALYST" Type="varchar2" Nullable="false" MaxLength="8" />
+          <Property Name="SALES_PERSON" Type="varchar2" Nullable="false" MaxLength="8" />
+          <Property Name="COLLECTOR" Type="varchar2" Nullable="false" MaxLength="8" />
+          <Property Name="DB_SETID" Type="varchar2" Nullable="false" MaxLength="5" />
+          <Property Name="DB_NUMBER" Type="number" Nullable="false" />
+          <Property Name="CORPORATE_SETID" Type="varchar2" Nullable="false" MaxLength="5" />
+          <Property Name="CORPORATE_CUST_ID" Type="varchar2" Nullable="false" MaxLength="15" />
+          <Property Name="REMIT_FROM_SETID" Type="varchar2" Nullable="false" MaxLength="5" />
+          <Property Name="REMIT_FROM_CUST_ID" Type="varchar2" Nullable="false" MaxLength="15" />
+          <Property Name="CRSPD_SETID" Type="varchar2" Nullable="false" MaxLength="5" />
+          <Property Name="CRSPD_CUST_ID" Type="varchar2" Nullable="false" MaxLength="15" />
+          <Property Name="VENDOR_SETID" Type="varchar2" Nullable="false" MaxLength="5" />
+          <Property Name="VENDOR_ID" Type="varchar2" Nullable="false" MaxLength="10" />
+          <Property Name="REFER_TO_SETID" Type="varchar2" Nullable="false" MaxLength="5" />
+          <Property Name="REFER_TO_CUST_ID" Type="varchar2" Nullable="false" MaxLength="15" />
+          <Property Name="SIC_CD1" Type="number" Nullable="false" />
+          <Property Name="SIC_CD2" Type="number" Nullable="false" />
+          <Property Name="SIC_CD3" Type="number" Nullable="false" />
+          <Property Name="REVIEW_DAYS" Type="number" Nullable="false" />
+          <Property Name="FORMER_NAME_1" Type="varchar2" Nullable="false" MaxLength="40" />
+          <Property Name="FORMER_NAME_2" Type="varchar2" Nullable="false" MaxLength="40" />
+          <Property Name="CNTCT_SEQ_NUM" Type="number" Nullable="false" />
+          <Property Name="SUBCUST_USE" Type="varchar2" Nullable="false" MaxLength="1" />
+          <Property Name="SUBCUST_QUAL1" Type="varchar2" Nullable="false" MaxLength="15" />
+          <Property Name="SUBCUST_QUAL2" Type="varchar2" Nullable="false" MaxLength="15" />
+          <Property Name="CUR_RT_TYPE" Type="varchar2" Nullable="false" MaxLength="5" />
+          <Property Name="CURRENCY_CD" Type="varchar2" Nullable="false" MaxLength="3" />
+          <Property Name="VAT_CUST_EDIT" Type="varchar2" Nullable="false" MaxLength="1" />
+          <Property Name="SHIP_TO_FLG" Type="varchar2" Nullable="false" MaxLength="1" />
+          <Property Name="BILL_TO_FLG" Type="varchar2" Nullable="false" MaxLength="1" />
+          <Property Name="SOLD_TO_FLG" Type="varchar2" Nullable="false" MaxLength="1" />
+          <Property Name="CUST_LEVEL" Type="varchar2" Nullable="false" MaxLength="1" />
+          <Property Name="ADDRESS_SEQ_SOLD" Type="number" Nullable="false" />
+          <Property Name="CNTCT_SEQ_SOLD" Type="number" Nullable="false" />
+          <Property Name="ADDRESS_SEQ_SHIP" Type="number" Nullable="false" />
+          <Property Name="CNTCT_SEQ_SHIP" Type="number" Nullable="false" />
+          <Property Name="HOLD_UPDATE_SW" Type="varchar2" Nullable="false" MaxLength="1" />
+          <Property Name="BILLING_SPECIALIST" Type="varchar2" Nullable="false" MaxLength="8" />
+          <Property Name="BILL_INQUIRY_PHONE" Type="varchar2" Nullable="false" MaxLength="12" />
+          <Property Name="ROLEUSER" Type="varchar2" Nullable="false" MaxLength="30" />
+          <Property Name="LAST_MAINT_OPRID" Type="varchar2" Nullable="false" MaxLength="8" />
+          <Property Name="DATE_LAST_MAINT" Type="date" />
+          <Property Name="DEPTID" Type="varchar2" Nullable="false" MaxLength="10" />
+          <Property Name="NO_STMT_REQD" Type="varchar2" Nullable="false" MaxLength="1" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'SYSADM.PS_SHIP_METHOD' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="PS_SHIP_METHOD">
+          <Key>
+            <PropertyRef Name="SETID" />
+            <PropertyRef Name="SHIP_TYPE_ID" />
+            <PropertyRef Name="DESCR" />
+            <PropertyRef Name="DESCRSHORT" />
+            <PropertyRef Name="MAX_WEIGHT" />
+            <PropertyRef Name="MAX_VOLUME" />
+            <PropertyRef Name="UNIT_MEASURE_WT" />
+            <PropertyRef Name="UNIT_MEASURE_VOL" />
+            <PropertyRef Name="SHIP_OUT_FLAG" />
+          </Key>
+          <Property Name="SETID" Type="varchar2" Nullable="false" MaxLength="5" />
+          <Property Name="SHIP_TYPE_ID" Type="varchar2" Nullable="false" MaxLength="10" />
+          <Property Name="DESCR" Type="varchar2" Nullable="false" MaxLength="30" />
+          <Property Name="DESCRSHORT" Type="varchar2" Nullable="false" MaxLength="10" />
+          <Property Name="MAX_WEIGHT" Type="number" Nullable="false" Precision="15" Scale="4" />
+          <Property Name="MAX_VOLUME" Type="number" Nullable="false" Precision="15" Scale="4" />
+          <Property Name="UNIT_MEASURE_WT" Type="varchar2" Nullable="false" MaxLength="3" />
+          <Property Name="UNIT_MEASURE_VOL" Type="varchar2" Nullable="false" MaxLength="3" />
+          <Property Name="SHIP_OUT_FLAG" Type="varchar2" Nullable="false" MaxLength="1" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'SYSADM.FG_DEPARTMENT_VW' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="FG_DEPARTMENT_VW">
+          <Key>
+            <PropertyRef Name="SETID" />
+            <PropertyRef Name="DEPTID" />
+            <PropertyRef Name="EFFDT" />
+            <PropertyRef Name="EFF_STATUS" />
+            <PropertyRef Name="DESCR" />
+            <PropertyRef Name="DESCRSHORT" />
+          </Key>
+          <Property Name="SETID" Type="varchar2" Nullable="false" MaxLength="5" />
+          <Property Name="DEPTID" Type="varchar2" Nullable="false" MaxLength="10" />
+          <Property Name="EFFDT" Type="date" Nullable="false" />
+          <Property Name="EFF_STATUS" Type="varchar2" Nullable="false" MaxLength="1" />
+          <Property Name="DESCR" Type="varchar2" Nullable="false" MaxLength="30" />
+          <Property Name="DESCRSHORT" Type="varchar2" Nullable="false" MaxLength="10" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'SYSADM.FG_PROD_VW' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="FG_PROD_VW">
+          <Key>
+            <PropertyRef Name="FG_PROD_CD" />
+            <PropertyRef Name="FG_PROD_SETID" />
+            <PropertyRef Name="FG_PROD_TYPE_CD" />
+          </Key>
+          <Property Name="FG_PROD_CD" Type="varchar2" Nullable="false" MaxLength="30" />
+          <Property Name="FG_PROD_SETID" Type="varchar2" Nullable="false" MaxLength="5" />
+          <Property Name="FG_PROD_TYPE_CD" Type="varchar2" Nullable="false" MaxLength="30" />
+          <Property Name="FG_PROD_DESC" Type="varchar2" MaxLength="100" />
+          <Property Name="FG_PROD_TYPE_DESC" Type="varchar2" MaxLength="100" />
+          <Property Name="FG_PATTERN" Type="varchar2" MaxLength="50" />
+          <Property Name="FG_PATTERN_DESC" Type="varchar2" MaxLength="100" />
+          <Property Name="FG_COLOR" Type="varchar2" MaxLength="50" />
+          <Property Name="FG_COLOR_DESC" Type="varchar2" MaxLength="100" />
+          <Property Name="FG_1ST_INSERT" Type="varchar2" MaxLength="50" />
+          <Property Name="FG_1ST_INSERT_DESC" Type="varchar2" MaxLength="100" />
+          <Property Name="FG_2ND_INSERT" Type="varchar2" MaxLength="50" />
+          <Property Name="FG_2ND_INSERT_DESC" Type="varchar2" MaxLength="100" />
+          <Property Name="FG_SPECIAL" Type="varchar2" MaxLength="50" />
+          <Property Name="FG_SPECIAL_DESC" Type="varchar2" MaxLength="100" />
+          <Property Name="FG_ALL_LEATHER" Type="varchar2" MaxLength="50" />
+          <Property Name="FG_ALL_LEATHER_DESC" Type="varchar2" MaxLength="100" />
+          <Property Name="FG_ABC_CODE" Type="varchar2" MaxLength="50" />
+          <Property Name="FG_ABC_CODE_DESC" Type="varchar2" MaxLength="100" />
+          <Property Name="FG_DI_CHARGE" Type="varchar2" MaxLength="50" />
+          <Property Name="FG_DI_CHARGE_DESC" Type="varchar2" MaxLength="100" />
+          <Property Name="FG_EXTRA_QUANTITY" Type="varchar2" MaxLength="50" />
+          <Property Name="FG_EXTRA_QUANTITY_DESC" Type="varchar2" MaxLength="100" />
+          <Property Name="FG_AIRBAGS" Type="varchar2" />
+          <Property Name="FG_AIRBAGS_DESC" Type="varchar2" />
+          <Property Name="FG_TRIM_LEVEL" Type="varchar2" />
+          <Property Name="FG_TRIM_LEVEL_DESC" Type="varchar2" />
+          <Property Name="FG_PROD_COST" Type="number" />
+          <Property Name="FG_SUNROOF_TYPE" Type="varchar2" />
+          <Property Name="FG_SUNROOF_TYPE_DESC" Type="varchar2" />
+          <Property Name="FG_MARKET_CONDITIONS" Type="varchar2" />
+          <Property Name="FG_MARKET_CONDITIONS_DESC" Type="varchar2" />
+          <Property Name="FG_MFG_LOCATION" Type="varchar2" />
+          <Property Name="FG_MFG_LOCATION_DESC" Type="varchar2" />
+          <Property Name="FG_PRIMARY_WHSE_ONLY" Type="varchar2" />
+          <Property Name="FG_PRIMARY_WHSE_ONLY_DESC" Type="varchar2" />
+          <Property Name="FG_NUMBER_OF_ROWS" Type="varchar2" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'SYSADM.FG_REQ_PART_ELAP' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="FG_REQ_PART_ELAP">
+          <Key>
+            <PropertyRef Name="FG_PART_NO" />
+            <PropertyRef Name="FG_REQUEST_DEPTID" />
+            <PropertyRef Name="FG_REQUEST_DEPTID_SETID" />
+            <PropertyRef Name="FG_REQUEST_DT" />
+            <PropertyRef Name="FG_SPECIAL" />
+            <PropertyRef Name="FG_REQUEST_STATUS" />
+            <PropertyRef Name="FG_REQUEST_USER" />
+            <PropertyRef Name="FG_REQUEST_ID" />
+            <PropertyRef Name="FG_SOLD_ITEM" />
+          </Key>
+          <Property Name="FG_CANCEL_DT" Type="date" />
+          <Property Name="FG_CANCEL_USER" Type="varchar2" MaxLength="20" />
+          <Property Name="FG_COLOR_DESC" Type="varchar2" MaxLength="100" />
+          <Property Name="FG_ORDER_BUS_UNIT" Type="varchar2" MaxLength="5" />
+          <Property Name="FG_ORDER_LINE" Type="number" />
+          <Property Name="FG_ORDER_NUM" Type="varchar2" MaxLength="30" />
+          <Property Name="FG_PART_DESC" Type="varchar2" MaxLength="100" />
+          <Property Name="FG_PART_NO" Type="varchar2" Nullable="false" MaxLength="30" />
+          <Property Name="FG_PROC_COMMENT" Type="varchar2" MaxLength="1000" />
+          <Property Name="FG_PROC_DT" Type="date" />
+          <Property Name="FG_EXP_ARRIVAL_DT" Type="date" />
+          <Property Name="FG_PROC_USER" Type="varchar2" MaxLength="20" />
+          <Property Name="FG_REQUEST_COMMENT" Type="varchar2" MaxLength="1000" />
+          <Property Name="FG_REQUEST_DEPTID" Type="varchar2" Nullable="false" MaxLength="10" />
+          <Property Name="FG_REQUEST_DEPTID_SETID" Type="varchar2" Nullable="false" MaxLength="5" />
+          <Property Name="FG_REQUEST_DT" Type="date" Nullable="false" />
+          <Property Name="FG_REQUIRED_DT" Type="date" />
+          <Property Name="FG_SPECIAL" Type="varchar2" Nullable="false" MaxLength="1" />
+          <Property Name="FG_REQUEST_STATUS" Type="varchar2" Nullable="false" MaxLength="30" />
+          <Property Name="FG_REQUEST_USER" Type="varchar2" Nullable="false" MaxLength="20" />
+          <Property Name="FG_SHIP_CONTACT" Type="varchar2" MaxLength="100" />
+          <Property Name="FG_SHIP_DEPTID" Type="varchar2" MaxLength="10" />
+          <Property Name="FG_SHIP_DEPTID_SETID" Type="varchar2" MaxLength="5" />
+          <Property Name="FG_CONF_DT" Type="date" />
+          <Property Name="FG_CONF_USER" Type="varchar2" MaxLength="20" />
+          <Property Name="FG_SHIP_VIA" Type="varchar2" MaxLength="30" />
+          <Property Name="FG_SHIP_VIA_SETID" Type="varchar2" MaxLength="5" />
+          <Property Name="FG_TRACKING_NO" Type="varchar2" MaxLength="100" />
+          <Property Name="FG_IN_PRODUCTION" Type="varchar2" MaxLength="1" />
+          <Property Name="FG_SHIP_BRANCH_VIA" Type="varchar2" MaxLength="30" />
+          <Property Name="FG_SHIP_BRANCH_VIA_SETID" Type="varchar2" MaxLength="5" />
+          <Property Name="FG_SERIAL_NUM" Type="varchar2" MaxLength="30" />
+          <Property Name="FG_REQUEST_ID" Type="varchar2" Nullable="false" MaxLength="20" />
+          <Property Name="FG_REQ_PATTERN" Type="varchar2" MaxLength="30" />
+          <Property Name="FG_SOLD_ITEM" Type="varchar2" Nullable="false" MaxLength="1" />
+          <Property Name="DAYS" Type="number" />
+          <Property Name="HRS" Type="number" />
+          <Property Name="MINS" Type="number" />
+          <Property Name="SECS" Type="number" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'SYSADM.PS_CUST_ADDR_EF_VW' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="PS_CUST_ADDR_EF_VW">
+          <Key>
+            <PropertyRef Name="SETID" />
+            <PropertyRef Name="CUST_ID" />
+            <PropertyRef Name="ADDRESS_SEQ_NUM" />
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+          </Key>
+          <Property Name="SETID" Type="varchar2" Nullable="false" MaxLength="5" />
+          <Property Name="CUST_ID" Type="varchar2" Nullable="false" MaxLength="15" />
+          <Property Name="ADDRESS_SEQ_NUM" Type="number" Nullable="false" />
+          <Property Name="DESCR" Type="varchar2" Nullable="false" MaxLength="30" />
+          <Property Name="ADDRESS1" Type="varchar2" Nullable="false" MaxLength="35" />
+          <Property Name="ADDRESS2" Type="varchar2" Nullable="false" MaxLength="35" />
+          <Property Name="ADDRESS3" Type="varchar2" Nullable="false" MaxLength="35" />
+          <Property Name="ADDRESS4" Type="varchar2" Nullable="false" MaxLength="35" />
+          <Property Name="CITY" Type="varchar2" Nullable="false" MaxLength="30" />
+          <Property Name="IN_CITY_LIMIT" Type="varchar2" Nullable="false" MaxLength="1" />
+          <Property Name="COUNTY" Type="varchar2" Nullable="false" MaxLength="30" />
+          <Property Name="STATE" Type="varchar2" Nullable="false" MaxLength="4" />
+          <Property Name="GEO_CODE" Type="varchar2" Nullable="false" MaxLength="11" />
+          <Property Name="POSTAL" Type="varchar2" Nullable="false" MaxLength="12" />
+          <Property Name="COUNTRY" Type="varchar2" Nullable="false" MaxLength="3" />
+          <Property Name="PHONE" Type="varchar2" Nullable="false" MaxLength="24" />
+          <Property Name="FAX" Type="varchar2" Nullable="false" MaxLength="24" />
+          <Property Name="ALT_NAME1" Type="varchar2" Nullable="false" MaxLength="40" />
+          <Property Name="ALT_NAME2" Type="varchar2" Nullable="false" MaxLength="40" />
+          <Property Name="LAST_MAINT_OPRID" Type="varchar2" Nullable="false" MaxLength="8" />
+        </EntityType>
+        <Association Name="FG_OL_ORD_ORDL">
+          <End Role="FG_OL_ORDER" Type="CST.ISIS.Data.Store.FG_OL_ORDER" Multiplicity="1" />
+          <End Role="FG_OL_ORDER_LINE" Type="CST.ISIS.Data.Store.FG_OL_ORDER_LINE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FG_OL_ORDER">
+              <PropertyRef Name="FG_ORDER_NUM" />
+              <PropertyRef Name="FG_ORDER_BUS_UNIT" />
+            </Principal>
+            <Dependent Role="FG_OL_ORDER_LINE">
+              <PropertyRef Name="FG_ORDER_NUM" />
+              <PropertyRef Name="FG_ORDER_BUS_UNIT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FG_PRO_PRO">
+          <End Role="FG_PROD" Type="CST.ISIS.Data.Store.FG_PROD" Multiplicity="0..1" />
+          <End Role="FG_PROD1" Type="CST.ISIS.Data.Store.FG_PROD" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FG_PROD">
+              <PropertyRef Name="FG_PROD_CD" />
+              <PropertyRef Name="FG_PROD_SETID" />
+            </Principal>
+            <Dependent Role="FG_PROD1">
+              <PropertyRef Name="FG_PARENT_PROD_CD" />
+              <PropertyRef Name="FG_PARENT_PROD_SETID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FG_PROT_PRO">
+          <End Role="FG_PROD_TYPE" Type="CST.ISIS.Data.Store.FG_PROD_TYPE" Multiplicity="1" />
+          <End Role="FG_PROD" Type="CST.ISIS.Data.Store.FG_PROD" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FG_PROD_TYPE">
+              <PropertyRef Name="FG_PROD_TYPE_CD" />
+            </Principal>
+            <Dependent Role="FG_PROD">
+              <PropertyRef Name="FG_PROD_TYPE_CD" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="IMAI_IMA">
+          <End Role="FG_IMAGE_INFO" Type="CST.ISIS.Data.Store.FG_IMAGE_INFO" Multiplicity="1" />
+          <End Role="FG_IMAGE" Type="CST.ISIS.Data.Store.FG_IMAGE" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="FG_IMAGE_INFO">
+              <PropertyRef Name="FG_IMAGE_ID" />
+            </Principal>
+            <Dependent Role="FG_IMAGE">
+              <PropertyRef Name="FG_IMAGE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="IMAI_PROIS">
+          <End Role="FG_IMAGE_INFO" Type="CST.ISIS.Data.Store.FG_IMAGE_INFO" Multiplicity="1" />
+          <End Role="FG_PROD_IMAGE_SET" Type="CST.ISIS.Data.Store.FG_PROD_IMAGE_SET" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FG_IMAGE_INFO">
+              <PropertyRef Name="FG_IMAGE_ID" />
+            </Principal>
+            <Dependent Role="FG_PROD_IMAGE_SET">
+              <PropertyRef Name="FG_IMAGE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="IMAS_PROIS">
+          <End Role="FG_IMAGE_SET" Type="CST.ISIS.Data.Store.FG_IMAGE_SET" Multiplicity="1" />
+          <End Role="FG_PROD_IMAGE_SET" Type="CST.ISIS.Data.Store.FG_PROD_IMAGE_SET" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FG_IMAGE_SET">
+              <PropertyRef Name="FG_IMAGE_SET_CD" />
+            </Principal>
+            <Dependent Role="FG_PROD_IMAGE_SET">
+              <PropertyRef Name="FG_IMAGE_SET_CD" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="MIMT_IMAI">
+          <End Role="FG_MIME_TYPE" Type="CST.ISIS.Data.Store.FG_MIME_TYPE" Multiplicity="1" />
+          <End Role="FG_IMAGE_INFO" Type="CST.ISIS.Data.Store.FG_IMAGE_INFO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FG_MIME_TYPE">
+              <PropertyRef Name="FG_MIME_TYPE_CD" />
+            </Principal>
+            <Dependent Role="FG_IMAGE_INFO">
+              <PropertyRef Name="FG_MIME_TYPE_CD" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ORD_ORD">
+          <End Role="FG_OL_ORDER" Type="CST.ISIS.Data.Store.FG_OL_ORDER" Multiplicity="0..1" />
+          <End Role="FG_OL_ORDER1" Type="CST.ISIS.Data.Store.FG_OL_ORDER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FG_OL_ORDER">
+              <PropertyRef Name="FG_ORDER_NUM" />
+              <PropertyRef Name="FG_ORDER_BUS_UNIT" />
+            </Principal>
+            <Dependent Role="FG_OL_ORDER1">
+              <PropertyRef Name="FG_ADJUST_ORDER_NUM" />
+              <PropertyRef Name="FG_ADJUST_ORDER_BUS_UNIT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ORDL_ORDL">
+          <End Role="FG_OL_ORDER_LINE" Type="CST.ISIS.Data.Store.FG_OL_ORDER_LINE" Multiplicity="0..1" />
+          <End Role="FG_OL_ORDER_LINE1" Type="CST.ISIS.Data.Store.FG_OL_ORDER_LINE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FG_OL_ORDER_LINE">
+              <PropertyRef Name="FG_ORDER_NUM" />
+              <PropertyRef Name="FG_ORDER_LINE" />
+              <PropertyRef Name="FG_ORDER_BUS_UNIT" />
+            </Principal>
+            <Dependent Role="FG_OL_ORDER_LINE1">
+              <PropertyRef Name="FG_ADJUST_ORDER_NUM" />
+              <PropertyRef Name="FG_ADJUST_ORDER_LINE" />
+              <PropertyRef Name="FG_ADJUST_ORDER_BUS_UNIT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PRO_ORDL">
+          <End Role="FG_PROD" Type="CST.ISIS.Data.Store.FG_PROD" Multiplicity="0..1" />
+          <End Role="FG_OL_ORDER_LINE" Type="CST.ISIS.Data.Store.FG_OL_ORDER_LINE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FG_PROD">
+              <PropertyRef Name="FG_PROD_CD" />
+              <PropertyRef Name="FG_PROD_SETID" />
+            </Principal>
+            <Dependent Role="FG_OL_ORDER_LINE">
+              <PropertyRef Name="FG_PARTNO" />
+              <PropertyRef Name="FG_PARTNO_SETID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PRO_PROIS">
+          <End Role="FG_PROD" Type="CST.ISIS.Data.Store.FG_PROD" Multiplicity="1" />
+          <End Role="FG_PROD_IMAGE_SET" Type="CST.ISIS.Data.Store.FG_PROD_IMAGE_SET" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FG_PROD">
+              <PropertyRef Name="FG_PROD_CD" />
+              <PropertyRef Name="FG_PROD_SETID" />
+            </Principal>
+            <Dependent Role="FG_PROD_IMAGE_SET">
+              <PropertyRef Name="FG_PROD_CD" />
+              <PropertyRef Name="FG_PROD_SETID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CST.ISIS.Data" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="IsisEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="FG_IMAGE" EntityType="CST.ISIS.Data.FG_IMAGE" />
+          <EntitySet Name="FG_IMAGE_INFO" EntityType="CST.ISIS.Data.FG_IMAGE_INFO" />
+          <EntitySet Name="FG_IMAGE_SET" EntityType="CST.ISIS.Data.FG_IMAGE_SET" />
+          <EntitySet Name="FG_MIME_TYPE" EntityType="CST.ISIS.Data.FG_MIME_TYPE" />
+          <EntitySet Name="FG_PROD" EntityType="CST.ISIS.Data.FG_PROD" />
+          <EntitySet Name="FG_PROD_IMAGE_SET" EntityType="CST.ISIS.Data.FG_PROD_IMAGE_SET" />
+          <EntitySet Name="FG_REQ_PART" EntityType="CST.ISIS.Data.FG_REQ_PART" />
+          <EntitySet Name="PS_SHIP_METHOD" EntityType="CST.ISIS.Data.PS_SHIP_METHOD" />
+          <EntitySet Name="FG_PROD_VW" EntityType="CST.ISIS.Data.FG_PROD_VW" />
+          <EntitySet Name="FG_REQ_PART_ELAP" EntityType="CST.ISIS.Data.FG_REQ_PART_ELAP" />
+          <AssociationSet Name="IMAI_IMA" Association="CST.ISIS.Data.IMAI_IMA">
+            <End Role="FG_IMAGE_INFO" EntitySet="FG_IMAGE_INFO" />
+            <End Role="FG_IMAGE" EntitySet="FG_IMAGE" />
+          </AssociationSet>
+          <AssociationSet Name="IMAI_PROIS" Association="CST.ISIS.Data.IMAI_PROIS">
+            <End Role="FG_IMAGE_INFO" EntitySet="FG_IMAGE_INFO" />
+            <End Role="FG_PROD_IMAGE_SET" EntitySet="FG_PROD_IMAGE_SET" />
+          </AssociationSet>
+          <AssociationSet Name="MIMT_IMAI" Association="CST.ISIS.Data.MIMT_IMAI">
+            <End Role="FG_MIME_TYPE" EntitySet="FG_MIME_TYPE" />
+            <End Role="FG_IMAGE_INFO" EntitySet="FG_IMAGE_INFO" />
+          </AssociationSet>
+          <AssociationSet Name="IMAS_PROIS" Association="CST.ISIS.Data.IMAS_PROIS">
+            <End Role="FG_IMAGE_SET" EntitySet="FG_IMAGE_SET" />
+            <End Role="FG_PROD_IMAGE_SET" EntitySet="FG_PROD_IMAGE_SET" />
+          </AssociationSet>
+          <AssociationSet Name="FG_PRO_PRO" Association="CST.ISIS.Data.FG_PRO_PRO">
+            <End Role="FG_PROD" EntitySet="FG_PROD" />
+            <End Role="FG_PROD1" EntitySet="FG_PROD" />
+          </AssociationSet>
+          <AssociationSet Name="PRO_PROIS" Association="CST.ISIS.Data.PRO_PROIS">
+            <End Role="FG_PROD" EntitySet="FG_PROD" />
+            <End Role="FG_PROD_IMAGE_SET" EntitySet="FG_PROD_IMAGE_SET" />
+          </AssociationSet>
+          <EntitySet Name="FG_PROD_TYPE" EntityType="CST.ISIS.Data.FG_PROD_TYPE" />
+          <AssociationSet Name="FG_PROT_PRO" Association="CST.ISIS.Data.FG_PROT_PRO">
+            <End Role="FG_PROD_TYPE" EntitySet="FG_PROD_TYPE" />
+            <End Role="FG_PROD" EntitySet="FG_PROD" />
+          </AssociationSet>
+          <EntitySet Name="FG_DEPARTMENT_VW" EntityType="CST.ISIS.Data.FG_DEPARTMENT_VW" />
+          <EntitySet Name="PS_CUSTOMER" EntityType="CST.ISIS.Data.PS_CUSTOMER" />
+          <EntitySet Name="PS_CUST_ADDR_EF_VW" EntityType="CST.ISIS.Data.PS_CUST_ADDR_EF_VW" />
+          <AssociationSet Name="CUST_SHIP_ADDRESS" Association="CST.ISIS.Data.CUST_SHIP_ADDRESS">
+            <End Role="PS_CUST_ADDR_EF_VW" EntitySet="PS_CUST_ADDR_EF_VW" />
+            <End Role="PS_CUSTOMER" EntitySet="PS_CUSTOMER" />
+          </AssociationSet>
+          <EntitySet Name="FG_OL_ORDER" EntityType="CST.ISIS.Data.FG_OL_ORDER" />
+          <EntitySet Name="FG_OL_ORDER_LINE" EntityType="CST.ISIS.Data.FG_OL_ORDER_LINE" />
+          <AssociationSet Name="FG_OL_ORD_ORDL" Association="CST.ISIS.Data.FG_OL_ORD_ORDL">
+            <End Role="FG_OL_ORDER" EntitySet="FG_OL_ORDER" />
+            <End Role="FG_OL_ORDER_LINE" EntitySet="FG_OL_ORDER_LINE" />
+          </AssociationSet>
+          <AssociationSet Name="ORD_ORD" Association="CST.ISIS.Data.ORD_ORD">
+            <End Role="FG_OL_ORDER" EntitySet="FG_OL_ORDER" />
+            <End Role="FG_OL_ORDER1" EntitySet="FG_OL_ORDER" />
+          </AssociationSet>
+          <AssociationSet Name="ORDL_ORDL" Association="CST.ISIS.Data.ORDL_ORDL">
+            <End Role="FG_OL_ORDER_LINE" EntitySet="FG_OL_ORDER_LINE" />
+            <End Role="FG_OL_ORDER_LINE1" EntitySet="FG_OL_ORDER_LINE" />
+          </AssociationSet>
+          <AssociationSet Name="PRO_ORDL" Association="CST.ISIS.Data.PRO_ORDL">
+            <End Role="FG_PROD" EntitySet="FG_PROD" />
+            <End Role="FG_OL_ORDER_LINE" EntitySet="FG_OL_ORDER_LINE" />
+          </AssociationSet>
+          </EntityContainer>
+        <EntityType Name="FG_IMAGE">
+          <Key>
+            <PropertyRef Name="FG_IMAGE_ID" />
+          </Key>
+          <Property Name="FG_IMAGE_ID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="FG_IMAGE_DATA" Type="Binary" MaxLength="2147483647" FixedLength="false" />
+          <NavigationProperty Name="FG_IMAGE_INFO" Relationship="CST.ISIS.Data.IMAI_IMA" FromRole="FG_IMAGE" ToRole="FG_IMAGE_INFO" />
+        </EntityType>
+        <EntityType Name="FG_IMAGE_INFO">
+          <Key>
+            <PropertyRef Name="FG_IMAGE_ID" />
+          </Key>
+          <Property Name="FG_IMAGE_ID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="FG_MIME_TYPE_CD" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="FG_DESCRIPTION" Type="String" Nullable="false" MaxLength="250" Unicode="false" FixedLength="false" />
+          <Property Name="FG_FILE_NAME" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="FG_IMAGE" Relationship="CST.ISIS.Data.IMAI_IMA" FromRole="FG_IMAGE_INFO" ToRole="FG_IMAGE" />
+          <NavigationProperty Name="FG_PROD_IMAGE_SET" Relationship="CST.ISIS.Data.IMAI_PROIS" FromRole="FG_IMAGE_INFO" ToRole="FG_PROD_IMAGE_SET" />
+          <NavigationProperty Name="FG_MIME_TYPE" Relationship="CST.ISIS.Data.MIMT_IMAI" FromRole="FG_IMAGE_INFO" ToRole="FG_MIME_TYPE" />
+        </EntityType>
+        <EntityType Name="FG_IMAGE_SET">
+          <Key>
+            <PropertyRef Name="FG_IMAGE_SET_CD" />
+          </Key>
+          <Property Name="FG_IMAGE_SET_CD" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="FG_DESCRIPTION" Type="String" MaxLength="250" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="FG_PROD_IMAGE_SET" Relationship="CST.ISIS.Data.IMAS_PROIS" FromRole="FG_IMAGE_SET" ToRole="FG_PROD_IMAGE_SET" />
+        </EntityType>
+        <EntityType Name="FG_MIME_TYPE">
+          <Key>
+            <PropertyRef Name="FG_MIME_TYPE_CD" />
+          </Key>
+          <Property Name="FG_MIME_TYPE_CD" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="FG_DESCRIPTION" Type="String" Nullable="false" MaxLength="250" Unicode="false" FixedLength="false" />
+          <Property Name="FG_CONTENT_TYPE" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="FG_FILE_EXT" Type="String" Nullable="false" MaxLength="5" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="FG_IMAGE_INFO" Relationship="CST.ISIS.Data.MIMT_IMAI" FromRole="FG_MIME_TYPE" ToRole="FG_IMAGE_INFO" />
+        </EntityType>
+        <EntityType Name="FG_PROD">
+          <Key>
+            <PropertyRef Name="FG_PROD_CD" />
+            <PropertyRef Name="FG_PROD_SETID" />
+          </Key>
+          <Property Name="FG_PROD_CD" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="FG_PROD_SETID" Type="String" Nullable="false" MaxLength="5" Unicode="false" FixedLength="false" />
+          <Property Name="FG_PROD_TYPE_CD" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="FG_INTRO_DT" Type="DateTime" />
+          <Property Name="FG_DISCONTINUE_DT" Type="DateTime" />
+          <Property Name="FG_ORIG_USERID" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="FG_ORIG_DT" Type="DateTime" />
+          <Property Name="FG_LAST_USERID" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="FG_LAST_DT" Type="DateTime" />
+          <Property Name="FG_PARENT_PROD_CD" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="FG_PARENT_PROD_SETID" Type="String" MaxLength="5" Unicode="false" FixedLength="false" />
+          <Property Name="FG_DESCRIPTION" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="FG_DESCRIPTION_UPPER" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="FG_INV_SEARCH_TYPE_CD" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="FG_AGING_DAYS" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="FG_SEL_DISPLAY" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="FG_PROD1" Relationship="CST.ISIS.Data.FG_PRO_PRO" FromRole="FG_PROD" ToRole="FG_PROD1" />
+          <NavigationProperty Name="FG_PROD2" Relationship="CST.ISIS.Data.FG_PRO_PRO" FromRole="FG_PROD1" ToRole="FG_PROD" />
+          <NavigationProperty Name="FG_PROD_IMAGE_SET" Relationship="CST.ISIS.Data.PRO_PROIS" FromRole="FG_PROD" ToRole="FG_PROD_IMAGE_SET" />
+          <NavigationProperty Name="FG_PROD_TYPE" Relationship="CST.ISIS.Data.FG_PROT_PRO" FromRole="FG_PROD" ToRole="FG_PROD_TYPE" />
+          <NavigationProperty Name="FG_OL_ORDER_LINE" Relationship="CST.ISIS.Data.PRO_ORDL" FromRole="FG_PROD" ToRole="FG_OL_ORDER_LINE" />
+        </EntityType>
+        <EntityType Name="FG_PROD_IMAGE_SET">
+          <Key>
+            <PropertyRef Name="FG_PROD_CD" />
+            <PropertyRef Name="FG_PROD_SETID" />
+            <PropertyRef Name="FG_IMAGE_SET_CD" />
+            <PropertyRef Name="FG_IMAGE_ID" />
+          </Key>
+          <Property Name="FG_PROD_CD" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="FG_PROD_SETID" Type="String" Nullable="false" MaxLength="5" Unicode="false" FixedLength="false" />
+          <Property Name="FG_IMAGE_SET_CD" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="FG_IMAGE_ID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="FG_SORT_ORDER" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <NavigationProperty Name="FG_IMAGE_INFO" Relationship="CST.ISIS.Data.IMAI_PROIS" FromRole="FG_PROD_IMAGE_SET" ToRole="FG_IMAGE_INFO" />
+          <NavigationProperty Name="FG_IMAGE_SET" Relationship="CST.ISIS.Data.IMAS_PROIS" FromRole="FG_PROD_IMAGE_SET" ToRole="FG_IMAGE_SET" />
+          <NavigationProperty Name="FG_PROD" Relationship="CST.ISIS.Data.PRO_PROIS" FromRole="FG_PROD_IMAGE_SET" ToRole="FG_PROD" />
+        </EntityType>
+        <EntityType Name="FG_REQ_PART">
+          <Key>
+            <PropertyRef Name="FG_REQUEST_ID" />
+          </Key>
+          <Property Name="FG_CANCEL_DT" Type="DateTime" />
+          <Property Name="FG_CANCEL_USER" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="FG_COLOR_DESC" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="FG_ORDER_BUS_UNIT" Type="String" MaxLength="5" Unicode="false" FixedLength="false" />
+          <Property Name="FG_ORDER_LINE" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="FG_ORDER_NUM" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="FG_PART_DESC" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="FG_PART_NO" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="FG_PROC_COMMENT" Type="String" MaxLength="1000" Unicode="false" FixedLength="false" />
+          <Property Name="FG_PROC_DT" Type="DateTime" />
+          <Property Name="FG_EXP_ARRIVAL_DT" Type="DateTime" />
+          <Property Name="FG_PROC_USER" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="FG_REQUEST_COMMENT" Type="String" MaxLength="1000" Unicode="false" FixedLength="false" />
+          <Property Name="FG_REQUEST_DEPTID" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="FG_REQUEST_DEPTID_SETID" Type="String" Nullable="false" MaxLength="5" Unicode="false" FixedLength="false" />
+          <Property Name="FG_REQUEST_DT" Type="DateTime" Nullable="false" />
+          <Property Name="FG_REQUIRED_DT" Type="DateTime" />
+          <Property Name="FG_SPECIAL" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="false" />
+          <Property Name="FG_REQUEST_STATUS" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="FG_REQUEST_USER" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="FG_SHIP_CONTACT" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="FG_SHIP_DEPTID" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="FG_SHIP_DEPTID_SETID" Type="String" MaxLength="5" Unicode="false" FixedLength="false" />
+          <Property Name="FG_CONF_DT" Type="DateTime" />
+          <Property Name="FG_CONF_USER" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="FG_SHIP_VIA" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="FG_SHIP_VIA_SETID" Type="String" MaxLength="5" Unicode="false" FixedLength="false" />
+          <Property Name="FG_TRACKING_NO" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="FG_IN_PRODUCTION" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+          <Property Name="FG_SHIP_BRANCH_VIA" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="FG_SHIP_BRANCH_VIA_SETID" Type="String" MaxLength="5" Unicode="false" FixedLength="false" />
+          <Property Name="FG_SERIAL_NUM" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="FG_REQUEST_ID" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="FG_REQ_PATTERN" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="FG_SOLD_ITEM" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="false" />
+          <Property Name="FG_MODIFIED_KIT" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="false" />
+          <Property Name="FG_INTERIOR_COLOR" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="PS_SHIP_METHOD">
+          <Key>
+            <PropertyRef Name="SETID" />
+            <PropertyRef Name="SHIP_TYPE_ID" />
+            <PropertyRef Name="DESCR" />
+            <PropertyRef Name="DESCRSHORT" />
+            <PropertyRef Name="MAX_WEIGHT" />
+            <PropertyRef Name="MAX_VOLUME" />
+            <PropertyRef Name="UNIT_MEASURE_WT" />
+            <PropertyRef Name="UNIT_MEASURE_VOL" />
+            <PropertyRef Name="SHIP_OUT_FLAG" />
+          </Key>
+          <Property Name="SETID" Type="String" Nullable="false" MaxLength="5" Unicode="false" FixedLength="false" />
+          <Property Name="SHIP_TYPE_ID" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="DESCR" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="DESCRSHORT" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="MAX_WEIGHT" Type="Decimal" Nullable="false" Precision="15" Scale="4" />
+          <Property Name="MAX_VOLUME" Type="Decimal" Nullable="false" Precision="15" Scale="4" />
+          <Property Name="UNIT_MEASURE_WT" Type="String" Nullable="false" MaxLength="3" Unicode="false" FixedLength="false" />
+          <Property Name="UNIT_MEASURE_VOL" Type="String" Nullable="false" MaxLength="3" Unicode="false" FixedLength="false" />
+          <Property Name="SHIP_OUT_FLAG" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="FG_PROD_VW">
+          <Key>
+            <PropertyRef Name="FG_PROD_CD" />
+            <PropertyRef Name="FG_PROD_SETID" />
+            <PropertyRef Name="FG_PROD_TYPE_CD" />
+          </Key>
+          <Property Name="FG_PROD_CD" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="FG_PROD_SETID" Type="String" Nullable="false" MaxLength="5" Unicode="false" FixedLength="false" />
+          <Property Name="FG_PROD_TYPE_CD" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="FG_PROD_DESC" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="FG_PROD_TYPE_DESC" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="FG_PATTERN" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="FG_PATTERN_DESC" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="FG_COLOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="FG_COLOR_DESC" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="FG_1ST_INSERT" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="FG_1ST_INSERT_DESC" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="FG_2ND_INSERT" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="FG_2ND_INSERT_DESC" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="FG_SPECIAL" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="FG_SPECIAL_DESC" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="FG_ALL_LEATHER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="FG_ALL_LEATHER_DESC" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="FG_ABC_CODE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="FG_ABC_CODE_DESC" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="FG_DI_CHARGE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="FG_DI_CHARGE_DESC" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="FG_EXTRA_QUANTITY" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="FG_EXTRA_QUANTITY_DESC" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="FG_AIRBAGS" Type="String" MaxLength="4000" Unicode="false" FixedLength="false" />
+          <Property Name="FG_AIRBAGS_DESC" Type="String" MaxLength="4000" Unicode="false" FixedLength="false" />
+          <Property Name="FG_TRIM_LEVEL" Type="String" MaxLength="4000" Unicode="false" FixedLength="false" />
+          <Property Name="FG_TRIM_LEVEL_DESC" Type="String" MaxLength="4000" Unicode="false" FixedLength="false" />
+          <Property Name="FG_PROD_COST" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="FG_SUNROOF_TYPE" Type="String" MaxLength="4000" Unicode="false" FixedLength="false" />
+          <Property Name="FG_SUNROOF_TYPE_DESC" Type="String" MaxLength="4000" Unicode="false" FixedLength="false" />
+          <Property Name="FG_MARKET_CONDITIONS" Type="String" MaxLength="4000" Unicode="false" FixedLength="false" />
+          <Property Name="FG_MARKET_CONDITIONS_DESC" Type="String" MaxLength="4000" Unicode="false" FixedLength="false" />
+          <Property Name="FG_MFG_LOCATION" Type="String" MaxLength="4000" Unicode="false" FixedLength="false" />
+          <Property Name="FG_MFG_LOCATION_DESC" Type="String" MaxLength="4000" Unicode="false" FixedLength="false" />
+          <Property Name="FG_PRIMARY_WHSE_ONLY" Type="String" MaxLength="4000" Unicode="false" FixedLength="false" />
+          <Property Name="FG_PRIMARY_WHSE_ONLY_DESC" Type="String" MaxLength="4000" Unicode="false" FixedLength="false" />
+          <Property Name="FG_NUMBER_OF_ROWS" Type="String" MaxLength="4000" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="FG_REQ_PART_ELAP">
+          <Key>
+            <PropertyRef Name="FG_PART_NO" />
+            <PropertyRef Name="FG_REQUEST_DEPTID" />
+            <PropertyRef Name="FG_REQUEST_DEPTID_SETID" />
+            <PropertyRef Name="FG_REQUEST_DT" />
+            <PropertyRef Name="FG_SPECIAL" />
+            <PropertyRef Name="FG_REQUEST_STATUS" />
+            <PropertyRef Name="FG_REQUEST_USER" />
+            <PropertyRef Name="FG_REQUEST_ID" />
+            <PropertyRef Name="FG_SOLD_ITEM" />
+          </Key>
+          <Property Name="FG_CANCEL_DT" Type="DateTime" />
+          <Property Name="FG_CANCEL_USER" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="FG_COLOR_DESC" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="FG_ORDER_BUS_UNIT" Type="String" MaxLength="5" Unicode="false" FixedLength="false" />
+          <Property Name="FG_ORDER_LINE" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="FG_ORDER_NUM" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="FG_PART_DESC" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="FG_PART_NO" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="FG_PROC_COMMENT" Type="String" MaxLength="1000" Unicode="false" FixedLength="false" />
+          <Property Name="FG_PROC_DT" Type="DateTime" />
+          <Property Name="FG_EXP_ARRIVAL_DT" Type="DateTime" />
+          <Property Name="FG_PROC_USER" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="FG_REQUEST_COMMENT" Type="String" MaxLength="1000" Unicode="false" FixedLength="false" />
+          <Property Name="FG_REQUEST_DEPTID" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="FG_REQUEST_DEPTID_SETID" Type="String" Nullable="false" MaxLength="5" Unicode="false" FixedLength="false" />
+          <Property Name="FG_REQUEST_DT" Type="DateTime" Nullable="false" />
+          <Property Name="FG_REQUIRED_DT" Type="DateTime" />
+          <Property Name="FG_SPECIAL" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="false" />
+          <Property Name="FG_REQUEST_STATUS" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="FG_REQUEST_USER" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="FG_SHIP_CONTACT" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="FG_SHIP_DEPTID" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="FG_SHIP_DEPTID_SETID" Type="String" MaxLength="5" Unicode="false" FixedLength="false" />
+          <Property Name="FG_CONF_DT" Type="DateTime" />
+          <Property Name="FG_CONF_USER" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="FG_SHIP_VIA" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="FG_SHIP_VIA_SETID" Type="String" MaxLength="5" Unicode="false" FixedLength="false" />
+          <Property Name="FG_TRACKING_NO" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="FG_IN_PRODUCTION" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+          <Property Name="FG_SHIP_BRANCH_VIA" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="FG_SHIP_BRANCH_VIA_SETID" Type="String" MaxLength="5" Unicode="false" FixedLength="false" />
+          <Property Name="FG_SERIAL_NUM" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="FG_REQUEST_ID" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="FG_REQ_PATTERN" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="FG_SOLD_ITEM" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="false" />
+          <Property Name="DAYS" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="HRS" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="MINS" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="SECS" Type="Decimal" Precision="38" Scale="0" />
+        </EntityType>
+        <Association Name="IMAI_IMA">
+          <End Role="FG_IMAGE_INFO" Type="CST.ISIS.Data.FG_IMAGE_INFO" Multiplicity="1" />
+          <End Role="FG_IMAGE" Type="CST.ISIS.Data.FG_IMAGE" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="FG_IMAGE_INFO">
+              <PropertyRef Name="FG_IMAGE_ID" />
+            </Principal>
+            <Dependent Role="FG_IMAGE">
+              <PropertyRef Name="FG_IMAGE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="IMAI_PROIS">
+          <End Role="FG_IMAGE_INFO" Type="CST.ISIS.Data.FG_IMAGE_INFO" Multiplicity="1" />
+          <End Role="FG_PROD_IMAGE_SET" Type="CST.ISIS.Data.FG_PROD_IMAGE_SET" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FG_IMAGE_INFO">
+              <PropertyRef Name="FG_IMAGE_ID" />
+            </Principal>
+            <Dependent Role="FG_PROD_IMAGE_SET">
+              <PropertyRef Name="FG_IMAGE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="MIMT_IMAI">
+          <End Role="FG_MIME_TYPE" Type="CST.ISIS.Data.FG_MIME_TYPE" Multiplicity="1" />
+          <End Role="FG_IMAGE_INFO" Type="CST.ISIS.Data.FG_IMAGE_INFO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FG_MIME_TYPE">
+              <PropertyRef Name="FG_MIME_TYPE_CD" />
+            </Principal>
+            <Dependent Role="FG_IMAGE_INFO">
+              <PropertyRef Name="FG_MIME_TYPE_CD" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="IMAS_PROIS">
+          <End Role="FG_IMAGE_SET" Type="CST.ISIS.Data.FG_IMAGE_SET" Multiplicity="1" />
+          <End Role="FG_PROD_IMAGE_SET" Type="CST.ISIS.Data.FG_PROD_IMAGE_SET" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FG_IMAGE_SET">
+              <PropertyRef Name="FG_IMAGE_SET_CD" />
+            </Principal>
+            <Dependent Role="FG_PROD_IMAGE_SET">
+              <PropertyRef Name="FG_IMAGE_SET_CD" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FG_PRO_PRO">
+          <End Role="FG_PROD" Type="CST.ISIS.Data.FG_PROD" Multiplicity="0..1" />
+          <End Role="FG_PROD1" Type="CST.ISIS.Data.FG_PROD" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FG_PROD">
+              <PropertyRef Name="FG_PROD_CD" />
+              <PropertyRef Name="FG_PROD_SETID" />
+            </Principal>
+            <Dependent Role="FG_PROD1">
+              <PropertyRef Name="FG_PARENT_PROD_CD" />
+              <PropertyRef Name="FG_PARENT_PROD_SETID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PRO_PROIS">
+          <End Role="FG_PROD" Type="CST.ISIS.Data.FG_PROD" Multiplicity="1" />
+          <End Role="FG_PROD_IMAGE_SET" Type="CST.ISIS.Data.FG_PROD_IMAGE_SET" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FG_PROD">
+              <PropertyRef Name="FG_PROD_CD" />
+              <PropertyRef Name="FG_PROD_SETID" />
+            </Principal>
+            <Dependent Role="FG_PROD_IMAGE_SET">
+              <PropertyRef Name="FG_PROD_CD" />
+              <PropertyRef Name="FG_PROD_SETID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="FG_PROD_TYPE">
+          <Key>
+            <PropertyRef Name="FG_PROD_TYPE_CD" />
+          </Key>
+          <Property Type="String" Name="FG_PROD_TYPE_CD" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FG_SERIALIZED_FLAG" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FG_FINISHED_FLAG" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FG_COST_FLAG" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FG_DI_FLAG" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FG_STATUS" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FG_SUFFIX" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FG_DESCRIPTION" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FG_CONSUMED_FLAG" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FG_INSTALLER_REQUIRED" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="FG_PROD" Relationship="CST.ISIS.Data.FG_PROT_PRO" FromRole="FG_PROD_TYPE" ToRole="FG_PROD" />
+        </EntityType>
+        <Association Name="FG_PROT_PRO">
+          <End Type="CST.ISIS.Data.FG_PROD_TYPE" Role="FG_PROD_TYPE" Multiplicity="1" />
+          <End Type="CST.ISIS.Data.FG_PROD" Role="FG_PROD" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FG_PROD_TYPE">
+              <PropertyRef Name="FG_PROD_TYPE_CD" />
+            </Principal>
+            <Dependent Role="FG_PROD">
+              <PropertyRef Name="FG_PROD_TYPE_CD" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="FG_DEPARTMENT_VW">
+          <Key>
+            <PropertyRef Name="SETID" />
+            <PropertyRef Name="DEPTID" />
+            <PropertyRef Name="EFFDT" />
+            <PropertyRef Name="EFF_STATUS" />
+            <PropertyRef Name="DESCR" />
+            <PropertyRef Name="DESCRSHORT" />
+          </Key>
+          <Property Type="String" Name="SETID" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="DEPTID" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="EFFDT" Nullable="false" />
+          <Property Type="String" Name="EFF_STATUS" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="DESCR" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="DESCRSHORT" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="PS_CUSTOMER">
+          <Key>
+            <PropertyRef Name="SETID" />
+            <PropertyRef Name="CUST_ID" />
+          </Key>
+          <Property Type="String" Name="SETID" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CUST_ID" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CUST_STATUS" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="CUST_STATUS_DT" />
+          <Property Type="String" Name="NAMESHORT" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CUSTOMER_TYPE" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="SINCE_DT" Nullable="false" />
+          <Property Type="DateTime" Name="ADD_DT" Nullable="false" />
+          <Property Type="String" Name="NAME1" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="NAME2" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="NAME3" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="ADDRESS_SEQ_NUM" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="String" Name="CR_ANALYST" Nullable="false" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="SALES_PERSON" Nullable="false" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="COLLECTOR" Nullable="false" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="DB_SETID" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="DB_NUMBER" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="String" Name="CORPORATE_SETID" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CORPORATE_CUST_ID" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="REMIT_FROM_SETID" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="REMIT_FROM_CUST_ID" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CRSPD_SETID" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CRSPD_CUST_ID" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="VENDOR_SETID" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="VENDOR_ID" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="REFER_TO_SETID" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="REFER_TO_CUST_ID" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="SIC_CD1" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="Decimal" Name="SIC_CD2" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="Decimal" Name="SIC_CD3" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="Decimal" Name="REVIEW_DAYS" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="String" Name="FORMER_NAME_1" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FORMER_NAME_2" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="CNTCT_SEQ_NUM" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="String" Name="SUBCUST_USE" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="SUBCUST_QUAL1" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="SUBCUST_QUAL2" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CUR_RT_TYPE" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CURRENCY_CD" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="VAT_CUST_EDIT" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="SHIP_TO_FLG" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="BILL_TO_FLG" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="SOLD_TO_FLG" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CUST_LEVEL" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="ADDRESS_SEQ_SOLD" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="Decimal" Name="CNTCT_SEQ_SOLD" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="Decimal" Name="ADDRESS_SEQ_SHIP" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="Decimal" Name="CNTCT_SEQ_SHIP" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="String" Name="HOLD_UPDATE_SW" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="BILLING_SPECIALIST" Nullable="false" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="BILL_INQUIRY_PHONE" Nullable="false" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ROLEUSER" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="LAST_MAINT_OPRID" Nullable="false" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="DATE_LAST_MAINT" />
+          <Property Type="String" Name="DEPTID" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="NO_STMT_REQD" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="SHIP_ADDRESS" Relationship="CST.ISIS.Data.CUST_SHIP_ADDRESS" FromRole="PS_CUSTOMER" ToRole="PS_CUST_ADDR_EF_VW" />
+        </EntityType>
+        <EntityType Name="PS_CUST_ADDR_EF_VW">
+          <Key>
+            <PropertyRef Name="SETID" />
+            <PropertyRef Name="CUST_ID" />
+            <PropertyRef Name="ADDRESS_SEQ_NUM" />
+          </Key>
+          <Property Type="String" Name="SETID" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CUST_ID" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="ADDRESS_SEQ_NUM" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="String" Name="DESCR" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ADDRESS1" Nullable="false" MaxLength="35" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ADDRESS2" Nullable="false" MaxLength="35" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ADDRESS3" Nullable="false" MaxLength="35" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ADDRESS4" Nullable="false" MaxLength="35" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CITY" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="IN_CITY_LIMIT" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="COUNTY" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="STATE" Nullable="false" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="GEO_CODE" Nullable="false" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="POSTAL" Nullable="false" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="COUNTRY" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="PHONE" Nullable="false" MaxLength="24" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FAX" Nullable="false" MaxLength="24" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ALT_NAME1" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ALT_NAME2" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="LAST_MAINT_OPRID" Nullable="false" MaxLength="8" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="CUSTOMER" Relationship="CST.ISIS.Data.CUST_SHIP_ADDRESS" FromRole="PS_CUST_ADDR_EF_VW" ToRole="PS_CUSTOMER" />
+        </EntityType>
+        <Association Name="CUST_SHIP_ADDRESS">
+          <End Type="CST.ISIS.Data.PS_CUST_ADDR_EF_VW" Role="PS_CUST_ADDR_EF_VW" Multiplicity="1" />
+          <End Type="CST.ISIS.Data.PS_CUSTOMER" Role="PS_CUSTOMER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PS_CUST_ADDR_EF_VW">
+              <PropertyRef Name="SETID" />
+              <PropertyRef Name="CUST_ID" />
+              <PropertyRef Name="ADDRESS_SEQ_NUM" />
+            </Principal>
+            <Dependent Role="PS_CUSTOMER">
+              <PropertyRef Name="SETID" />
+              <PropertyRef Name="CUST_ID" />
+              <PropertyRef Name="ADDRESS_SEQ_SHIP" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="FG_OL_ORDER">
+          <Key>
+            <PropertyRef Name="FG_ORDER_NUM" />
+          </Key>
+          <Property Type="String" Name="FG_ORDER_NUM" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FG_ORDER_TYPE" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FG_INVOICE_NUM" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FG_STATUS" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FG_DEPTID" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FG_DEPTID_SETID" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FG_CAR_NUM" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FG_SOLD_TO_CUST_ID" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FG_SOLD_TO_CUST_SETID" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="FG_SOLD_TO_ADDR_SEQ" Precision="38" Scale="0" />
+          <Property Type="String" Name="FG_SOLD_TO_NAME" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FG_SOLD_TO_ADDR1" MaxLength="35" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FG_SOLD_TO_ADDR2" MaxLength="35" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FG_SOLD_TO_ADDR3" MaxLength="35" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FG_SOLD_TO_ADDR4" MaxLength="35" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FG_SOLD_TO_CITY" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FG_SOLD_TO_COUNTY" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FG_SOLD_TO_STATE" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FG_SOLD_TO_POSTAL" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FG_SOLD_TO_COUNTRY" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FG_SHIP_TO_CUST_ID" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FG_SHIP_TO_CUST_SETID" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="FG_SHIP_TO_ADDR_SEQ" Precision="38" Scale="0" />
+          <Property Type="String" Name="FG_SHIP_TO_NAME" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FG_SHIP_TO_ADDR1" MaxLength="35" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FG_SHIP_TO_ADDR2" MaxLength="35" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FG_SHIP_TO_ADDR3" MaxLength="35" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FG_SHIP_TO_ADDR4" MaxLength="35" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FG_SHIP_TO_CITY" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FG_SHIP_TO_COUNTY" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FG_SHIP_TO_STATE" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FG_SHIP_TO_POSTAL" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FG_SHIP_TO_COUNTRY" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FG_CONTACT" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FG_CONTACT_PHONE" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FG_CUST_PO" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FG_CUST_STOCK" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FG_SHIP_VIA" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FG_SHIP_VIA_SETID" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FG_PYMNT_TERMS_CD" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="FG_OPEN_DT" />
+          <Property Type="DateTime" Name="FG_REQUESTED_DT" />
+          <Property Type="DateTime" Name="FG_INSTALL_DT" />
+          <Property Type="DateTime" Name="FG_PICKUP_DT" />
+          <Property Type="DateTime" Name="FG_DELIVERY_DT" />
+          <Property Type="DateTime" Name="FG_CANCEL_DT" />
+          <Property Type="DateTime" Name="FG_INVOICE_DT" />
+          <Property Type="String" Name="FG_CAR_CD" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FG_YEAR_CD" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FG_INTERIOR" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FG_EXTERIOR" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FG_DOOR_FLAG" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="FG_DOORS" Precision="38" Scale="0" />
+          <Property Type="String" Name="FG_CONDITION" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FG_VIN" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FG_PROCESS_FLAG" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FG_AG_USER" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="FG_SHIPPING" Precision="38" Scale="0" />
+          <Property Type="Decimal" Name="FG_TAX" Precision="38" Scale="0" />
+          <Property Type="Decimal" Name="FG_TRANSPORT" Precision="38" Scale="0" />
+          <Property Type="String" Name="FG_STOCK_TYPE" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FG_COMMENT" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FG_PREPAID_TYPE" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FG_CARD_TYPE" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FG_EXPIRE_MONTH" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FG_EXPIRE_YEAR" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FG_APPROVAL_CD" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="FG_MILEAGE" Precision="38" Scale="0" />
+          <Property Type="String" Name="FG_CR_CARD" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FG_BILL_TO_CUST_ID" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FG_BILL_TO_CUST_SETID" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="FG_BILL_TO_ADDR_SEQ" Precision="38" Scale="0" />
+          <Property Type="String" Name="FG_BILL_TO_NAME" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FG_BILL_TO_ADDR1" MaxLength="35" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FG_BILL_TO_ADDR2" MaxLength="35" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FG_BILL_TO_ADDR3" MaxLength="35" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FG_BILL_TO_ADDR4" MaxLength="35" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FG_BILL_TO_CITY" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FG_BILL_TO_COUNTY" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FG_BILL_TO_STATE" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FG_BILL_TO_POSTAL" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FG_BILL_TO_COUNTRY" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FG_ORDER_REASON_CD" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FG_ADJUST_FLAG" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FG_ADJUST_ORDER_NUM" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FG_ADJUST_ORDER_BUS_UNIT" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FG_CUST_DELIVERY_FLAG" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FG_EXBI_STATUS" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="FG_EXBI_STATUS_DT" />
+          <Property Type="String" Name="FG_CAR_TYPE_CD" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FG_LAST_USERID" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="FG_LAST_DT" />
+          <Property Type="String" Name="FG_CR_CARD_APPROVAL" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FG_VIN_REVERSE" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FG_CR_MERCHANT_ID" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FG_DELIV_CONDITION" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FG_FORCE_SAVE_FLAG" MaxLength="1" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="FG_OL_ORDER_LINE" Relationship="CST.ISIS.Data.FG_OL_ORD_ORDL" FromRole="FG_OL_ORDER" ToRole="FG_OL_ORDER_LINE" />
+          <NavigationProperty Name="FG_OL_ORDER1" Relationship="CST.ISIS.Data.ORD_ORD" FromRole="FG_OL_ORDER" ToRole="FG_OL_ORDER1" />
+          <NavigationProperty Name="FG_OL_ORDER2" Relationship="CST.ISIS.Data.ORD_ORD" FromRole="FG_OL_ORDER1" ToRole="FG_OL_ORDER" />
+        </EntityType>
+        <EntityType Name="FG_OL_ORDER_LINE">
+          <Key>
+            <PropertyRef Name="FG_ORDER_NUM" />
+            <PropertyRef Name="FG_ORDER_LINE" />
+          </Key>
+          <Property Type="String" Name="FG_ORDER_NUM" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="FG_ORDER_LINE" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="String" Name="FG_SERIAL_NUM" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FG_PARTNO" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FG_PART_DESC" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FG_COLOR_DESC" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="FG_UNIT_PRICE" Precision="38" Scale="0" />
+          <Property Type="Decimal" Name="FG_QUANTITY" Precision="38" Scale="0" />
+          <Property Type="Decimal" Name="FG_DISCOUNT" Precision="38" Scale="0" />
+          <Property Type="String" Name="FG_DISCOUNT_CD" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="FG_LINE_TOTAL" Precision="38" Scale="0" />
+          <Property Type="String" Name="FG_SALES_PERSON" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FG_SALES_PERSON_SETID" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FG_TRACKING_NO" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FG_SPECIAL_FLAG" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FG_PATTERN" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FG_INSTALLER" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FG_MFG_SERIAL_NUM" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="FG_SHIP_ID" Precision="38" Scale="0" />
+          <Property Type="String" Name="FG_LR_CERTIFICATE" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FG_ADJUST_REASON_CD" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FG_ADJUST_ORDER_NUM" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="FG_ADJUST_ORDER_LINE" Precision="38" Scale="0" />
+          <Property Type="String" Name="FG_ADJUST_ORDER_BUS_UNIT" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FG_PARTNO_SETID" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FG_REQUEST_ID" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FG_INSERT1_DESCR" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FG_INSERT2_DESCR" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FG_HIDE_PRICE" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="FG_OL_ORDER_LINE_ID" Precision="38" Scale="0" />
+          <Property Type="Decimal" Name="FG_SUGGESTED_PRICE" Precision="38" Scale="0" />
+          <Property Type="Decimal" Name="FG_MINIMUM_PRICE" Precision="38" Scale="0" />
+          <NavigationProperty Name="FG_OL_ORDER" Relationship="CST.ISIS.Data.FG_OL_ORD_ORDL" FromRole="FG_OL_ORDER_LINE" ToRole="FG_OL_ORDER" />
+          <NavigationProperty Name="FG_OL_ORDER_LINE1" Relationship="CST.ISIS.Data.ORDL_ORDL" FromRole="FG_OL_ORDER_LINE" ToRole="FG_OL_ORDER_LINE1" />
+          <NavigationProperty Name="FG_OL_ORDER_LINE2" Relationship="CST.ISIS.Data.ORDL_ORDL" FromRole="FG_OL_ORDER_LINE1" ToRole="FG_OL_ORDER_LINE" />
+          <NavigationProperty Name="FG_PROD" Relationship="CST.ISIS.Data.PRO_ORDL" FromRole="FG_OL_ORDER_LINE" ToRole="FG_PROD" />
+        </EntityType>
+        <Association Name="FG_OL_ORD_ORDL">
+          <End Type="CST.ISIS.Data.FG_OL_ORDER" Role="FG_OL_ORDER" Multiplicity="1" />
+          <End Type="CST.ISIS.Data.FG_OL_ORDER_LINE" Role="FG_OL_ORDER_LINE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FG_OL_ORDER">
+              <PropertyRef Name="FG_ORDER_NUM" />
+            </Principal>
+            <Dependent Role="FG_OL_ORDER_LINE">
+              <PropertyRef Name="FG_ORDER_NUM" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ORD_ORD">
+          <End Type="CST.ISIS.Data.FG_OL_ORDER" Role="FG_OL_ORDER" Multiplicity="0..1" />
+          <End Type="CST.ISIS.Data.FG_OL_ORDER" Role="FG_OL_ORDER1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FG_OL_ORDER">
+              <PropertyRef Name="FG_ORDER_NUM" />
+            </Principal>
+            <Dependent Role="FG_OL_ORDER1">
+              <PropertyRef Name="FG_ADJUST_ORDER_NUM" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ORDL_ORDL">
+          <End Type="CST.ISIS.Data.FG_OL_ORDER_LINE" Role="FG_OL_ORDER_LINE" Multiplicity="0..1" />
+          <End Type="CST.ISIS.Data.FG_OL_ORDER_LINE" Role="FG_OL_ORDER_LINE1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FG_OL_ORDER_LINE">
+              <PropertyRef Name="FG_ORDER_NUM" />
+              <PropertyRef Name="FG_ORDER_LINE" />
+            </Principal>
+            <Dependent Role="FG_OL_ORDER_LINE1">
+              <PropertyRef Name="FG_ADJUST_ORDER_NUM" />
+              <PropertyRef Name="FG_ADJUST_ORDER_LINE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PRO_ORDL">
+          <End Type="CST.ISIS.Data.FG_PROD" Role="FG_PROD" Multiplicity="0..1" />
+          <End Type="CST.ISIS.Data.FG_OL_ORDER_LINE" Role="FG_OL_ORDER_LINE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FG_PROD">
+              <PropertyRef Name="FG_PROD_CD" />
+              <PropertyRef Name="FG_PROD_SETID" />
+            </Principal>
+            <Dependent Role="FG_OL_ORDER_LINE">
+              <PropertyRef Name="FG_PARTNO" />
+              <PropertyRef Name="FG_PARTNO_SETID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CSTISISDataStoreContainer" CdmEntityContainer="IsisEntities">
+          <EntitySetMapping Name="FG_IMAGE"><EntityTypeMapping TypeName="CST.ISIS.Data.FG_IMAGE"><MappingFragment StoreEntitySet="FG_IMAGE">
+            <ScalarProperty Name="FG_IMAGE_ID" ColumnName="FG_IMAGE_ID" />
+            <ScalarProperty Name="FG_IMAGE_DATA" ColumnName="FG_IMAGE_DATA" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="FG_IMAGE_INFO"><EntityTypeMapping TypeName="CST.ISIS.Data.FG_IMAGE_INFO"><MappingFragment StoreEntitySet="FG_IMAGE_INFO">
+            <ScalarProperty Name="FG_IMAGE_ID" ColumnName="FG_IMAGE_ID" />
+            <ScalarProperty Name="FG_MIME_TYPE_CD" ColumnName="FG_MIME_TYPE_CD" />
+            <ScalarProperty Name="FG_DESCRIPTION" ColumnName="FG_DESCRIPTION" />
+            <ScalarProperty Name="FG_FILE_NAME" ColumnName="FG_FILE_NAME" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="FG_IMAGE_SET"><EntityTypeMapping TypeName="CST.ISIS.Data.FG_IMAGE_SET"><MappingFragment StoreEntitySet="FG_IMAGE_SET">
+            <ScalarProperty Name="FG_IMAGE_SET_CD" ColumnName="FG_IMAGE_SET_CD" />
+            <ScalarProperty Name="FG_DESCRIPTION" ColumnName="FG_DESCRIPTION" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="FG_MIME_TYPE"><EntityTypeMapping TypeName="CST.ISIS.Data.FG_MIME_TYPE"><MappingFragment StoreEntitySet="FG_MIME_TYPE">
+            <ScalarProperty Name="FG_MIME_TYPE_CD" ColumnName="FG_MIME_TYPE_CD" />
+            <ScalarProperty Name="FG_DESCRIPTION" ColumnName="FG_DESCRIPTION" />
+            <ScalarProperty Name="FG_CONTENT_TYPE" ColumnName="FG_CONTENT_TYPE" />
+            <ScalarProperty Name="FG_FILE_EXT" ColumnName="FG_FILE_EXT" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="FG_PROD"><EntityTypeMapping TypeName="CST.ISIS.Data.FG_PROD"><MappingFragment StoreEntitySet="FG_PROD">
+            <ScalarProperty Name="FG_PROD_CD" ColumnName="FG_PROD_CD" />
+            <ScalarProperty Name="FG_PROD_SETID" ColumnName="FG_PROD_SETID" />
+            <ScalarProperty Name="FG_PROD_TYPE_CD" ColumnName="FG_PROD_TYPE_CD" />
+            <ScalarProperty Name="FG_INTRO_DT" ColumnName="FG_INTRO_DT" />
+            <ScalarProperty Name="FG_DISCONTINUE_DT" ColumnName="FG_DISCONTINUE_DT" />
+            <ScalarProperty Name="FG_ORIG_USERID" ColumnName="FG_ORIG_USERID" />
+            <ScalarProperty Name="FG_ORIG_DT" ColumnName="FG_ORIG_DT" />
+            <ScalarProperty Name="FG_LAST_USERID" ColumnName="FG_LAST_USERID" />
+            <ScalarProperty Name="FG_LAST_DT" ColumnName="FG_LAST_DT" />
+            <ScalarProperty Name="FG_PARENT_PROD_CD" ColumnName="FG_PARENT_PROD_CD" />
+            <ScalarProperty Name="FG_PARENT_PROD_SETID" ColumnName="FG_PARENT_PROD_SETID" />
+            <ScalarProperty Name="FG_DESCRIPTION" ColumnName="FG_DESCRIPTION" />
+            <ScalarProperty Name="FG_DESCRIPTION_UPPER" ColumnName="FG_DESCRIPTION_UPPER" />
+            <ScalarProperty Name="FG_INV_SEARCH_TYPE_CD" ColumnName="FG_INV_SEARCH_TYPE_CD" />
+            <ScalarProperty Name="FG_AGING_DAYS" ColumnName="FG_AGING_DAYS" />
+            <ScalarProperty Name="FG_SEL_DISPLAY" ColumnName="FG_SEL_DISPLAY" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="FG_PROD_IMAGE_SET"><EntityTypeMapping TypeName="CST.ISIS.Data.FG_PROD_IMAGE_SET"><MappingFragment StoreEntitySet="FG_PROD_IMAGE_SET">
+            <ScalarProperty Name="FG_PROD_CD" ColumnName="FG_PROD_CD" />
+            <ScalarProperty Name="FG_PROD_SETID" ColumnName="FG_PROD_SETID" />
+            <ScalarProperty Name="FG_IMAGE_SET_CD" ColumnName="FG_IMAGE_SET_CD" />
+            <ScalarProperty Name="FG_IMAGE_ID" ColumnName="FG_IMAGE_ID" />
+            <ScalarProperty Name="FG_SORT_ORDER" ColumnName="FG_SORT_ORDER" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="FG_REQ_PART"><EntityTypeMapping TypeName="CST.ISIS.Data.FG_REQ_PART"><MappingFragment StoreEntitySet="FG_REQ_PART">
+            <ScalarProperty Name="FG_CANCEL_DT" ColumnName="FG_CANCEL_DT" />
+            <ScalarProperty Name="FG_CANCEL_USER" ColumnName="FG_CANCEL_USER" />
+            <ScalarProperty Name="FG_COLOR_DESC" ColumnName="FG_COLOR_DESC" />
+            <ScalarProperty Name="FG_ORDER_BUS_UNIT" ColumnName="FG_ORDER_BUS_UNIT" />
+            <ScalarProperty Name="FG_ORDER_LINE" ColumnName="FG_ORDER_LINE" />
+            <ScalarProperty Name="FG_ORDER_NUM" ColumnName="FG_ORDER_NUM" />
+            <ScalarProperty Name="FG_PART_DESC" ColumnName="FG_PART_DESC" />
+            <ScalarProperty Name="FG_PART_NO" ColumnName="FG_PART_NO" />
+            <ScalarProperty Name="FG_PROC_COMMENT" ColumnName="FG_PROC_COMMENT" />
+            <ScalarProperty Name="FG_PROC_DT" ColumnName="FG_PROC_DT" />
+            <ScalarProperty Name="FG_EXP_ARRIVAL_DT" ColumnName="FG_EXP_ARRIVAL_DT" />
+            <ScalarProperty Name="FG_PROC_USER" ColumnName="FG_PROC_USER" />
+            <ScalarProperty Name="FG_REQUEST_COMMENT" ColumnName="FG_REQUEST_COMMENT" />
+            <ScalarProperty Name="FG_REQUEST_DEPTID" ColumnName="FG_REQUEST_DEPTID" />
+            <ScalarProperty Name="FG_REQUEST_DEPTID_SETID" ColumnName="FG_REQUEST_DEPTID_SETID" />
+            <ScalarProperty Name="FG_REQUEST_DT" ColumnName="FG_REQUEST_DT" />
+            <ScalarProperty Name="FG_REQUIRED_DT" ColumnName="FG_REQUIRED_DT" />
+            <ScalarProperty Name="FG_SPECIAL" ColumnName="FG_SPECIAL" />
+            <ScalarProperty Name="FG_REQUEST_STATUS" ColumnName="FG_REQUEST_STATUS" />
+            <ScalarProperty Name="FG_REQUEST_USER" ColumnName="FG_REQUEST_USER" />
+            <ScalarProperty Name="FG_SHIP_CONTACT" ColumnName="FG_SHIP_CONTACT" />
+            <ScalarProperty Name="FG_SHIP_DEPTID" ColumnName="FG_SHIP_DEPTID" />
+            <ScalarProperty Name="FG_SHIP_DEPTID_SETID" ColumnName="FG_SHIP_DEPTID_SETID" />
+            <ScalarProperty Name="FG_CONF_DT" ColumnName="FG_CONF_DT" />
+            <ScalarProperty Name="FG_CONF_USER" ColumnName="FG_CONF_USER" />
+            <ScalarProperty Name="FG_SHIP_VIA" ColumnName="FG_SHIP_VIA" />
+            <ScalarProperty Name="FG_SHIP_VIA_SETID" ColumnName="FG_SHIP_VIA_SETID" />
+            <ScalarProperty Name="FG_TRACKING_NO" ColumnName="FG_TRACKING_NO" />
+            <ScalarProperty Name="FG_IN_PRODUCTION" ColumnName="FG_IN_PRODUCTION" />
+            <ScalarProperty Name="FG_SHIP_BRANCH_VIA" ColumnName="FG_SHIP_BRANCH_VIA" />
+            <ScalarProperty Name="FG_SHIP_BRANCH_VIA_SETID" ColumnName="FG_SHIP_BRANCH_VIA_SETID" />
+            <ScalarProperty Name="FG_SERIAL_NUM" ColumnName="FG_SERIAL_NUM" />
+            <ScalarProperty Name="FG_REQUEST_ID" ColumnName="FG_REQUEST_ID" />
+            <ScalarProperty Name="FG_REQ_PATTERN" ColumnName="FG_REQ_PATTERN" />
+            <ScalarProperty Name="FG_SOLD_ITEM" ColumnName="FG_SOLD_ITEM" />
+            <ScalarProperty Name="FG_MODIFIED_KIT" ColumnName="FG_MODIFIED_KIT" />
+            <ScalarProperty Name="FG_INTERIOR_COLOR" ColumnName="FG_INTERIOR_COLOR" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="PS_SHIP_METHOD"><EntityTypeMapping TypeName="CST.ISIS.Data.PS_SHIP_METHOD"><MappingFragment StoreEntitySet="PS_SHIP_METHOD">
+            <ScalarProperty Name="SETID" ColumnName="SETID" />
+            <ScalarProperty Name="SHIP_TYPE_ID" ColumnName="SHIP_TYPE_ID" />
+            <ScalarProperty Name="DESCR" ColumnName="DESCR" />
+            <ScalarProperty Name="DESCRSHORT" ColumnName="DESCRSHORT" />
+            <ScalarProperty Name="MAX_WEIGHT" ColumnName="MAX_WEIGHT" />
+            <ScalarProperty Name="MAX_VOLUME" ColumnName="MAX_VOLUME" />
+            <ScalarProperty Name="UNIT_MEASURE_WT" ColumnName="UNIT_MEASURE_WT" />
+            <ScalarProperty Name="UNIT_MEASURE_VOL" ColumnName="UNIT_MEASURE_VOL" />
+            <ScalarProperty Name="SHIP_OUT_FLAG" ColumnName="SHIP_OUT_FLAG" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="FG_PROD_VW"><EntityTypeMapping TypeName="CST.ISIS.Data.FG_PROD_VW"><MappingFragment StoreEntitySet="FG_PROD_VW">
+            <ScalarProperty Name="FG_PROD_CD" ColumnName="FG_PROD_CD" />
+            <ScalarProperty Name="FG_PROD_SETID" ColumnName="FG_PROD_SETID" />
+            <ScalarProperty Name="FG_PROD_TYPE_CD" ColumnName="FG_PROD_TYPE_CD" />
+            <ScalarProperty Name="FG_PROD_DESC" ColumnName="FG_PROD_DESC" />
+            <ScalarProperty Name="FG_PROD_TYPE_DESC" ColumnName="FG_PROD_TYPE_DESC" />
+            <ScalarProperty Name="FG_PATTERN" ColumnName="FG_PATTERN" />
+            <ScalarProperty Name="FG_PATTERN_DESC" ColumnName="FG_PATTERN_DESC" />
+            <ScalarProperty Name="FG_COLOR" ColumnName="FG_COLOR" />
+            <ScalarProperty Name="FG_COLOR_DESC" ColumnName="FG_COLOR_DESC" />
+            <ScalarProperty Name="FG_1ST_INSERT" ColumnName="FG_1ST_INSERT" />
+            <ScalarProperty Name="FG_1ST_INSERT_DESC" ColumnName="FG_1ST_INSERT_DESC" />
+            <ScalarProperty Name="FG_2ND_INSERT" ColumnName="FG_2ND_INSERT" />
+            <ScalarProperty Name="FG_2ND_INSERT_DESC" ColumnName="FG_2ND_INSERT_DESC" />
+            <ScalarProperty Name="FG_SPECIAL" ColumnName="FG_SPECIAL" />
+            <ScalarProperty Name="FG_SPECIAL_DESC" ColumnName="FG_SPECIAL_DESC" />
+            <ScalarProperty Name="FG_ALL_LEATHER" ColumnName="FG_ALL_LEATHER" />
+            <ScalarProperty Name="FG_ALL_LEATHER_DESC" ColumnName="FG_ALL_LEATHER_DESC" />
+            <ScalarProperty Name="FG_ABC_CODE" ColumnName="FG_ABC_CODE" />
+            <ScalarProperty Name="FG_ABC_CODE_DESC" ColumnName="FG_ABC_CODE_DESC" />
+            <ScalarProperty Name="FG_DI_CHARGE" ColumnName="FG_DI_CHARGE" />
+            <ScalarProperty Name="FG_DI_CHARGE_DESC" ColumnName="FG_DI_CHARGE_DESC" />
+            <ScalarProperty Name="FG_EXTRA_QUANTITY" ColumnName="FG_EXTRA_QUANTITY" />
+            <ScalarProperty Name="FG_EXTRA_QUANTITY_DESC" ColumnName="FG_EXTRA_QUANTITY_DESC" />
+            <ScalarProperty Name="FG_AIRBAGS" ColumnName="FG_AIRBAGS" />
+            <ScalarProperty Name="FG_AIRBAGS_DESC" ColumnName="FG_AIRBAGS_DESC" />
+            <ScalarProperty Name="FG_TRIM_LEVEL" ColumnName="FG_TRIM_LEVEL" />
+            <ScalarProperty Name="FG_TRIM_LEVEL_DESC" ColumnName="FG_TRIM_LEVEL_DESC" />
+            <ScalarProperty Name="FG_PROD_COST" ColumnName="FG_PROD_COST" />
+            <ScalarProperty Name="FG_SUNROOF_TYPE" ColumnName="FG_SUNROOF_TYPE" />
+            <ScalarProperty Name="FG_SUNROOF_TYPE_DESC" ColumnName="FG_SUNROOF_TYPE_DESC" />
+            <ScalarProperty Name="FG_MARKET_CONDITIONS" ColumnName="FG_MARKET_CONDITIONS" />
+            <ScalarProperty Name="FG_MARKET_CONDITIONS_DESC" ColumnName="FG_MARKET_CONDITIONS_DESC" />
+            <ScalarProperty Name="FG_MFG_LOCATION" ColumnName="FG_MFG_LOCATION" />
+            <ScalarProperty Name="FG_MFG_LOCATION_DESC" ColumnName="FG_MFG_LOCATION_DESC" />
+            <ScalarProperty Name="FG_PRIMARY_WHSE_ONLY" ColumnName="FG_PRIMARY_WHSE_ONLY" />
+            <ScalarProperty Name="FG_PRIMARY_WHSE_ONLY_DESC" ColumnName="FG_PRIMARY_WHSE_ONLY_DESC" />
+            <ScalarProperty Name="FG_NUMBER_OF_ROWS" ColumnName="FG_NUMBER_OF_ROWS" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="FG_REQ_PART_ELAP"><EntityTypeMapping TypeName="CST.ISIS.Data.FG_REQ_PART_ELAP"><MappingFragment StoreEntitySet="FG_REQ_PART_ELAP">
+            <ScalarProperty Name="FG_CANCEL_DT" ColumnName="FG_CANCEL_DT" />
+            <ScalarProperty Name="FG_CANCEL_USER" ColumnName="FG_CANCEL_USER" />
+            <ScalarProperty Name="FG_COLOR_DESC" ColumnName="FG_COLOR_DESC" />
+            <ScalarProperty Name="FG_ORDER_BUS_UNIT" ColumnName="FG_ORDER_BUS_UNIT" />
+            <ScalarProperty Name="FG_ORDER_LINE" ColumnName="FG_ORDER_LINE" />
+            <ScalarProperty Name="FG_ORDER_NUM" ColumnName="FG_ORDER_NUM" />
+            <ScalarProperty Name="FG_PART_DESC" ColumnName="FG_PART_DESC" />
+            <ScalarProperty Name="FG_PART_NO" ColumnName="FG_PART_NO" />
+            <ScalarProperty Name="FG_PROC_COMMENT" ColumnName="FG_PROC_COMMENT" />
+            <ScalarProperty Name="FG_PROC_DT" ColumnName="FG_PROC_DT" />
+            <ScalarProperty Name="FG_EXP_ARRIVAL_DT" ColumnName="FG_EXP_ARRIVAL_DT" />
+            <ScalarProperty Name="FG_PROC_USER" ColumnName="FG_PROC_USER" />
+            <ScalarProperty Name="FG_REQUEST_COMMENT" ColumnName="FG_REQUEST_COMMENT" />
+            <ScalarProperty Name="FG_REQUEST_DEPTID" ColumnName="FG_REQUEST_DEPTID" />
+            <ScalarProperty Name="FG_REQUEST_DEPTID_SETID" ColumnName="FG_REQUEST_DEPTID_SETID" />
+            <ScalarProperty Name="FG_REQUEST_DT" ColumnName="FG_REQUEST_DT" />
+            <ScalarProperty Name="FG_REQUIRED_DT" ColumnName="FG_REQUIRED_DT" />
+            <ScalarProperty Name="FG_SPECIAL" ColumnName="FG_SPECIAL" />
+            <ScalarProperty Name="FG_REQUEST_STATUS" ColumnName="FG_REQUEST_STATUS" />
+            <ScalarProperty Name="FG_REQUEST_USER" ColumnName="FG_REQUEST_USER" />
+            <ScalarProperty Name="FG_SHIP_CONTACT" ColumnName="FG_SHIP_CONTACT" />
+            <ScalarProperty Name="FG_SHIP_DEPTID" ColumnName="FG_SHIP_DEPTID" />
+            <ScalarProperty Name="FG_SHIP_DEPTID_SETID" ColumnName="FG_SHIP_DEPTID_SETID" />
+            <ScalarProperty Name="FG_CONF_DT" ColumnName="FG_CONF_DT" />
+            <ScalarProperty Name="FG_CONF_USER" ColumnName="FG_CONF_USER" />
+            <ScalarProperty Name="FG_SHIP_VIA" ColumnName="FG_SHIP_VIA" />
+            <ScalarProperty Name="FG_SHIP_VIA_SETID" ColumnName="FG_SHIP_VIA_SETID" />
+            <ScalarProperty Name="FG_TRACKING_NO" ColumnName="FG_TRACKING_NO" />
+            <ScalarProperty Name="FG_IN_PRODUCTION" ColumnName="FG_IN_PRODUCTION" />
+            <ScalarProperty Name="FG_SHIP_BRANCH_VIA" ColumnName="FG_SHIP_BRANCH_VIA" />
+            <ScalarProperty Name="FG_SHIP_BRANCH_VIA_SETID" ColumnName="FG_SHIP_BRANCH_VIA_SETID" />
+            <ScalarProperty Name="FG_SERIAL_NUM" ColumnName="FG_SERIAL_NUM" />
+            <ScalarProperty Name="FG_REQUEST_ID" ColumnName="FG_REQUEST_ID" />
+            <ScalarProperty Name="FG_REQ_PATTERN" ColumnName="FG_REQ_PATTERN" />
+            <ScalarProperty Name="FG_SOLD_ITEM" ColumnName="FG_SOLD_ITEM" />
+            <ScalarProperty Name="DAYS" ColumnName="DAYS" />
+            <ScalarProperty Name="HRS" ColumnName="HRS" />
+            <ScalarProperty Name="MINS" ColumnName="MINS" />
+            <ScalarProperty Name="SECS" ColumnName="SECS" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="FG_PROD_TYPE">
+            <EntityTypeMapping TypeName="CST.ISIS.Data.FG_PROD_TYPE">
+              <MappingFragment StoreEntitySet="FG_PROD_TYPE">
+                <ScalarProperty Name="FG_INSTALLER_REQUIRED" ColumnName="FG_INSTALLER_REQUIRED" />
+                <ScalarProperty Name="FG_CONSUMED_FLAG" ColumnName="FG_CONSUMED_FLAG" />
+                <ScalarProperty Name="FG_DESCRIPTION" ColumnName="FG_DESCRIPTION" />
+                <ScalarProperty Name="FG_SUFFIX" ColumnName="FG_SUFFIX" />
+                <ScalarProperty Name="FG_STATUS" ColumnName="FG_STATUS" />
+                <ScalarProperty Name="FG_DI_FLAG" ColumnName="FG_DI_FLAG" />
+                <ScalarProperty Name="FG_COST_FLAG" ColumnName="FG_COST_FLAG" />
+                <ScalarProperty Name="FG_FINISHED_FLAG" ColumnName="FG_FINISHED_FLAG" />
+                <ScalarProperty Name="FG_SERIALIZED_FLAG" ColumnName="FG_SERIALIZED_FLAG" />
+                <ScalarProperty Name="FG_PROD_TYPE_CD" ColumnName="FG_PROD_TYPE_CD" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FG_DEPARTMENT_VW">
+            <EntityTypeMapping TypeName="CST.ISIS.Data.FG_DEPARTMENT_VW">
+              <MappingFragment StoreEntitySet="FG_DEPARTMENT_VW">
+                <ScalarProperty Name="DESCRSHORT" ColumnName="DESCRSHORT" />
+                <ScalarProperty Name="DESCR" ColumnName="DESCR" />
+                <ScalarProperty Name="EFF_STATUS" ColumnName="EFF_STATUS" />
+                <ScalarProperty Name="EFFDT" ColumnName="EFFDT" />
+                <ScalarProperty Name="DEPTID" ColumnName="DEPTID" />
+                <ScalarProperty Name="SETID" ColumnName="SETID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PS_CUSTOMER">
+            <EntityTypeMapping TypeName="CST.ISIS.Data.PS_CUSTOMER">
+              <MappingFragment StoreEntitySet="PS_CUSTOMER">
+                <ScalarProperty Name="NO_STMT_REQD" ColumnName="NO_STMT_REQD" />
+                <ScalarProperty Name="DEPTID" ColumnName="DEPTID" />
+                <ScalarProperty Name="DATE_LAST_MAINT" ColumnName="DATE_LAST_MAINT" />
+                <ScalarProperty Name="LAST_MAINT_OPRID" ColumnName="LAST_MAINT_OPRID" />
+                <ScalarProperty Name="ROLEUSER" ColumnName="ROLEUSER" />
+                <ScalarProperty Name="BILL_INQUIRY_PHONE" ColumnName="BILL_INQUIRY_PHONE" />
+                <ScalarProperty Name="BILLING_SPECIALIST" ColumnName="BILLING_SPECIALIST" />
+                <ScalarProperty Name="HOLD_UPDATE_SW" ColumnName="HOLD_UPDATE_SW" />
+                <ScalarProperty Name="CNTCT_SEQ_SHIP" ColumnName="CNTCT_SEQ_SHIP" />
+                <ScalarProperty Name="ADDRESS_SEQ_SHIP" ColumnName="ADDRESS_SEQ_SHIP" />
+                <ScalarProperty Name="CNTCT_SEQ_SOLD" ColumnName="CNTCT_SEQ_SOLD" />
+                <ScalarProperty Name="ADDRESS_SEQ_SOLD" ColumnName="ADDRESS_SEQ_SOLD" />
+                <ScalarProperty Name="CUST_LEVEL" ColumnName="CUST_LEVEL" />
+                <ScalarProperty Name="SOLD_TO_FLG" ColumnName="SOLD_TO_FLG" />
+                <ScalarProperty Name="BILL_TO_FLG" ColumnName="BILL_TO_FLG" />
+                <ScalarProperty Name="SHIP_TO_FLG" ColumnName="SHIP_TO_FLG" />
+                <ScalarProperty Name="VAT_CUST_EDIT" ColumnName="VAT_CUST_EDIT" />
+                <ScalarProperty Name="CURRENCY_CD" ColumnName="CURRENCY_CD" />
+                <ScalarProperty Name="CUR_RT_TYPE" ColumnName="CUR_RT_TYPE" />
+                <ScalarProperty Name="SUBCUST_QUAL2" ColumnName="SUBCUST_QUAL2" />
+                <ScalarProperty Name="SUBCUST_QUAL1" ColumnName="SUBCUST_QUAL1" />
+                <ScalarProperty Name="SUBCUST_USE" ColumnName="SUBCUST_USE" />
+                <ScalarProperty Name="CNTCT_SEQ_NUM" ColumnName="CNTCT_SEQ_NUM" />
+                <ScalarProperty Name="FORMER_NAME_2" ColumnName="FORMER_NAME_2" />
+                <ScalarProperty Name="FORMER_NAME_1" ColumnName="FORMER_NAME_1" />
+                <ScalarProperty Name="REVIEW_DAYS" ColumnName="REVIEW_DAYS" />
+                <ScalarProperty Name="SIC_CD3" ColumnName="SIC_CD3" />
+                <ScalarProperty Name="SIC_CD2" ColumnName="SIC_CD2" />
+                <ScalarProperty Name="SIC_CD1" ColumnName="SIC_CD1" />
+                <ScalarProperty Name="REFER_TO_CUST_ID" ColumnName="REFER_TO_CUST_ID" />
+                <ScalarProperty Name="REFER_TO_SETID" ColumnName="REFER_TO_SETID" />
+                <ScalarProperty Name="VENDOR_ID" ColumnName="VENDOR_ID" />
+                <ScalarProperty Name="VENDOR_SETID" ColumnName="VENDOR_SETID" />
+                <ScalarProperty Name="CRSPD_CUST_ID" ColumnName="CRSPD_CUST_ID" />
+                <ScalarProperty Name="CRSPD_SETID" ColumnName="CRSPD_SETID" />
+                <ScalarProperty Name="REMIT_FROM_CUST_ID" ColumnName="REMIT_FROM_CUST_ID" />
+                <ScalarProperty Name="REMIT_FROM_SETID" ColumnName="REMIT_FROM_SETID" />
+                <ScalarProperty Name="CORPORATE_CUST_ID" ColumnName="CORPORATE_CUST_ID" />
+                <ScalarProperty Name="CORPORATE_SETID" ColumnName="CORPORATE_SETID" />
+                <ScalarProperty Name="DB_NUMBER" ColumnName="DB_NUMBER" />
+                <ScalarProperty Name="DB_SETID" ColumnName="DB_SETID" />
+                <ScalarProperty Name="COLLECTOR" ColumnName="COLLECTOR" />
+                <ScalarProperty Name="SALES_PERSON" ColumnName="SALES_PERSON" />
+                <ScalarProperty Name="CR_ANALYST" ColumnName="CR_ANALYST" />
+                <ScalarProperty Name="ADDRESS_SEQ_NUM" ColumnName="ADDRESS_SEQ_NUM" />
+                <ScalarProperty Name="NAME3" ColumnName="NAME3" />
+                <ScalarProperty Name="NAME2" ColumnName="NAME2" />
+                <ScalarProperty Name="NAME1" ColumnName="NAME1" />
+                <ScalarProperty Name="ADD_DT" ColumnName="ADD_DT" />
+                <ScalarProperty Name="SINCE_DT" ColumnName="SINCE_DT" />
+                <ScalarProperty Name="CUSTOMER_TYPE" ColumnName="CUSTOMER_TYPE" />
+                <ScalarProperty Name="NAMESHORT" ColumnName="NAMESHORT" />
+                <ScalarProperty Name="CUST_STATUS_DT" ColumnName="CUST_STATUS_DT" />
+                <ScalarProperty Name="CUST_STATUS" ColumnName="CUST_STATUS" />
+                <ScalarProperty Name="CUST_ID" ColumnName="CUST_ID" />
+                <ScalarProperty Name="SETID" ColumnName="SETID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PS_CUST_ADDR_EF_VW">
+            <EntityTypeMapping TypeName="CST.ISIS.Data.PS_CUST_ADDR_EF_VW">
+              <MappingFragment StoreEntitySet="PS_CUST_ADDR_EF_VW">
+                <ScalarProperty Name="LAST_MAINT_OPRID" ColumnName="LAST_MAINT_OPRID" />
+                <ScalarProperty Name="ALT_NAME2" ColumnName="ALT_NAME2" />
+                <ScalarProperty Name="ALT_NAME1" ColumnName="ALT_NAME1" />
+                <ScalarProperty Name="FAX" ColumnName="FAX" />
+                <ScalarProperty Name="PHONE" ColumnName="PHONE" />
+                <ScalarProperty Name="COUNTRY" ColumnName="COUNTRY" />
+                <ScalarProperty Name="POSTAL" ColumnName="POSTAL" />
+                <ScalarProperty Name="GEO_CODE" ColumnName="GEO_CODE" />
+                <ScalarProperty Name="STATE" ColumnName="STATE" />
+                <ScalarProperty Name="COUNTY" ColumnName="COUNTY" />
+                <ScalarProperty Name="IN_CITY_LIMIT" ColumnName="IN_CITY_LIMIT" />
+                <ScalarProperty Name="CITY" ColumnName="CITY" />
+                <ScalarProperty Name="ADDRESS4" ColumnName="ADDRESS4" />
+                <ScalarProperty Name="ADDRESS3" ColumnName="ADDRESS3" />
+                <ScalarProperty Name="ADDRESS2" ColumnName="ADDRESS2" />
+                <ScalarProperty Name="ADDRESS1" ColumnName="ADDRESS1" />
+                <ScalarProperty Name="DESCR" ColumnName="DESCR" />
+                <ScalarProperty Name="ADDRESS_SEQ_NUM" ColumnName="ADDRESS_SEQ_NUM" />
+                <ScalarProperty Name="CUST_ID" ColumnName="CUST_ID" />
+                <ScalarProperty Name="SETID" ColumnName="SETID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FG_OL_ORDER">
+            <EntityTypeMapping TypeName="CST.ISIS.Data.FG_OL_ORDER">
+              <MappingFragment StoreEntitySet="FG_OL_ORDER">
+                <ScalarProperty Name="FG_FORCE_SAVE_FLAG" ColumnName="FG_FORCE_SAVE_FLAG" />
+                <ScalarProperty Name="FG_DELIV_CONDITION" ColumnName="FG_DELIV_CONDITION" />
+                <ScalarProperty Name="FG_CR_MERCHANT_ID" ColumnName="FG_CR_MERCHANT_ID" />
+                <ScalarProperty Name="FG_VIN_REVERSE" ColumnName="FG_VIN_REVERSE" />
+                <ScalarProperty Name="FG_CR_CARD_APPROVAL" ColumnName="FG_CR_CARD_APPROVAL" />
+                <ScalarProperty Name="FG_LAST_DT" ColumnName="FG_LAST_DT" />
+                <ScalarProperty Name="FG_LAST_USERID" ColumnName="FG_LAST_USERID" />
+                <ScalarProperty Name="FG_CAR_TYPE_CD" ColumnName="FG_CAR_TYPE_CD" />
+                <ScalarProperty Name="FG_EXBI_STATUS_DT" ColumnName="FG_EXBI_STATUS_DT" />
+                <ScalarProperty Name="FG_EXBI_STATUS" ColumnName="FG_EXBI_STATUS" />
+                <ScalarProperty Name="FG_CUST_DELIVERY_FLAG" ColumnName="FG_CUST_DELIVERY_FLAG" />
+                <ScalarProperty Name="FG_ADJUST_ORDER_BUS_UNIT" ColumnName="FG_ADJUST_ORDER_BUS_UNIT" />
+                <ScalarProperty Name="FG_ADJUST_ORDER_NUM" ColumnName="FG_ADJUST_ORDER_NUM" />
+                <ScalarProperty Name="FG_ADJUST_FLAG" ColumnName="FG_ADJUST_FLAG" />
+                <ScalarProperty Name="FG_ORDER_REASON_CD" ColumnName="FG_ORDER_REASON_CD" />
+                <ScalarProperty Name="FG_BILL_TO_COUNTRY" ColumnName="FG_BILL_TO_COUNTRY" />
+                <ScalarProperty Name="FG_BILL_TO_POSTAL" ColumnName="FG_BILL_TO_POSTAL" />
+                <ScalarProperty Name="FG_BILL_TO_STATE" ColumnName="FG_BILL_TO_STATE" />
+                <ScalarProperty Name="FG_BILL_TO_COUNTY" ColumnName="FG_BILL_TO_COUNTY" />
+                <ScalarProperty Name="FG_BILL_TO_CITY" ColumnName="FG_BILL_TO_CITY" />
+                <ScalarProperty Name="FG_BILL_TO_ADDR4" ColumnName="FG_BILL_TO_ADDR4" />
+                <ScalarProperty Name="FG_BILL_TO_ADDR3" ColumnName="FG_BILL_TO_ADDR3" />
+                <ScalarProperty Name="FG_BILL_TO_ADDR2" ColumnName="FG_BILL_TO_ADDR2" />
+                <ScalarProperty Name="FG_BILL_TO_ADDR1" ColumnName="FG_BILL_TO_ADDR1" />
+                <ScalarProperty Name="FG_BILL_TO_NAME" ColumnName="FG_BILL_TO_NAME" />
+                <ScalarProperty Name="FG_BILL_TO_ADDR_SEQ" ColumnName="FG_BILL_TO_ADDR_SEQ" />
+                <ScalarProperty Name="FG_BILL_TO_CUST_SETID" ColumnName="FG_BILL_TO_CUST_SETID" />
+                <ScalarProperty Name="FG_BILL_TO_CUST_ID" ColumnName="FG_BILL_TO_CUST_ID" />
+                <ScalarProperty Name="FG_CR_CARD" ColumnName="FG_CR_CARD" />
+                <ScalarProperty Name="FG_MILEAGE" ColumnName="FG_MILEAGE" />
+                <ScalarProperty Name="FG_APPROVAL_CD" ColumnName="FG_APPROVAL_CD" />
+                <ScalarProperty Name="FG_EXPIRE_YEAR" ColumnName="FG_EXPIRE_YEAR" />
+                <ScalarProperty Name="FG_EXPIRE_MONTH" ColumnName="FG_EXPIRE_MONTH" />
+                <ScalarProperty Name="FG_CARD_TYPE" ColumnName="FG_CARD_TYPE" />
+                <ScalarProperty Name="FG_PREPAID_TYPE" ColumnName="FG_PREPAID_TYPE" />
+                <ScalarProperty Name="FG_COMMENT" ColumnName="FG_COMMENT" />
+                <ScalarProperty Name="FG_STOCK_TYPE" ColumnName="FG_STOCK_TYPE" />
+                <ScalarProperty Name="FG_TRANSPORT" ColumnName="FG_TRANSPORT" />
+                <ScalarProperty Name="FG_TAX" ColumnName="FG_TAX" />
+                <ScalarProperty Name="FG_SHIPPING" ColumnName="FG_SHIPPING" />
+                <ScalarProperty Name="FG_AG_USER" ColumnName="FG_AG_USER" />
+                <ScalarProperty Name="FG_PROCESS_FLAG" ColumnName="FG_PROCESS_FLAG" />
+                <ScalarProperty Name="FG_VIN" ColumnName="FG_VIN" />
+                <ScalarProperty Name="FG_CONDITION" ColumnName="FG_CONDITION" />
+                <ScalarProperty Name="FG_DOORS" ColumnName="FG_DOORS" />
+                <ScalarProperty Name="FG_DOOR_FLAG" ColumnName="FG_DOOR_FLAG" />
+                <ScalarProperty Name="FG_EXTERIOR" ColumnName="FG_EXTERIOR" />
+                <ScalarProperty Name="FG_INTERIOR" ColumnName="FG_INTERIOR" />
+                <ScalarProperty Name="FG_YEAR_CD" ColumnName="FG_YEAR_CD" />
+                <ScalarProperty Name="FG_CAR_CD" ColumnName="FG_CAR_CD" />
+                <ScalarProperty Name="FG_INVOICE_DT" ColumnName="FG_INVOICE_DT" />
+                <ScalarProperty Name="FG_CANCEL_DT" ColumnName="FG_CANCEL_DT" />
+                <ScalarProperty Name="FG_DELIVERY_DT" ColumnName="FG_DELIVERY_DT" />
+                <ScalarProperty Name="FG_PICKUP_DT" ColumnName="FG_PICKUP_DT" />
+                <ScalarProperty Name="FG_INSTALL_DT" ColumnName="FG_INSTALL_DT" />
+                <ScalarProperty Name="FG_REQUESTED_DT" ColumnName="FG_REQUESTED_DT" />
+                <ScalarProperty Name="FG_OPEN_DT" ColumnName="FG_OPEN_DT" />
+                <ScalarProperty Name="FG_PYMNT_TERMS_CD" ColumnName="FG_PYMNT_TERMS_CD" />
+                <ScalarProperty Name="FG_SHIP_VIA_SETID" ColumnName="FG_SHIP_VIA_SETID" />
+                <ScalarProperty Name="FG_SHIP_VIA" ColumnName="FG_SHIP_VIA" />
+                <ScalarProperty Name="FG_CUST_STOCK" ColumnName="FG_CUST_STOCK" />
+                <ScalarProperty Name="FG_CUST_PO" ColumnName="FG_CUST_PO" />
+                <ScalarProperty Name="FG_CONTACT_PHONE" ColumnName="FG_CONTACT_PHONE" />
+                <ScalarProperty Name="FG_CONTACT" ColumnName="FG_CONTACT" />
+                <ScalarProperty Name="FG_SHIP_TO_COUNTRY" ColumnName="FG_SHIP_TO_COUNTRY" />
+                <ScalarProperty Name="FG_SHIP_TO_POSTAL" ColumnName="FG_SHIP_TO_POSTAL" />
+                <ScalarProperty Name="FG_SHIP_TO_STATE" ColumnName="FG_SHIP_TO_STATE" />
+                <ScalarProperty Name="FG_SHIP_TO_COUNTY" ColumnName="FG_SHIP_TO_COUNTY" />
+                <ScalarProperty Name="FG_SHIP_TO_CITY" ColumnName="FG_SHIP_TO_CITY" />
+                <ScalarProperty Name="FG_SHIP_TO_ADDR4" ColumnName="FG_SHIP_TO_ADDR4" />
+                <ScalarProperty Name="FG_SHIP_TO_ADDR3" ColumnName="FG_SHIP_TO_ADDR3" />
+                <ScalarProperty Name="FG_SHIP_TO_ADDR2" ColumnName="FG_SHIP_TO_ADDR2" />
+                <ScalarProperty Name="FG_SHIP_TO_ADDR1" ColumnName="FG_SHIP_TO_ADDR1" />
+                <ScalarProperty Name="FG_SHIP_TO_NAME" ColumnName="FG_SHIP_TO_NAME" />
+                <ScalarProperty Name="FG_SHIP_TO_ADDR_SEQ" ColumnName="FG_SHIP_TO_ADDR_SEQ" />
+                <ScalarProperty Name="FG_SHIP_TO_CUST_SETID" ColumnName="FG_SHIP_TO_CUST_SETID" />
+                <ScalarProperty Name="FG_SHIP_TO_CUST_ID" ColumnName="FG_SHIP_TO_CUST_ID" />
+                <ScalarProperty Name="FG_SOLD_TO_COUNTRY" ColumnName="FG_SOLD_TO_COUNTRY" />
+                <ScalarProperty Name="FG_SOLD_TO_POSTAL" ColumnName="FG_SOLD_TO_POSTAL" />
+                <ScalarProperty Name="FG_SOLD_TO_STATE" ColumnName="FG_SOLD_TO_STATE" />
+                <ScalarProperty Name="FG_SOLD_TO_COUNTY" ColumnName="FG_SOLD_TO_COUNTY" />
+                <ScalarProperty Name="FG_SOLD_TO_CITY" ColumnName="FG_SOLD_TO_CITY" />
+                <ScalarProperty Name="FG_SOLD_TO_ADDR4" ColumnName="FG_SOLD_TO_ADDR4" />
+                <ScalarProperty Name="FG_SOLD_TO_ADDR3" ColumnName="FG_SOLD_TO_ADDR3" />
+                <ScalarProperty Name="FG_SOLD_TO_ADDR2" ColumnName="FG_SOLD_TO_ADDR2" />
+                <ScalarProperty Name="FG_SOLD_TO_ADDR1" ColumnName="FG_SOLD_TO_ADDR1" />
+                <ScalarProperty Name="FG_SOLD_TO_NAME" ColumnName="FG_SOLD_TO_NAME" />
+                <ScalarProperty Name="FG_SOLD_TO_ADDR_SEQ" ColumnName="FG_SOLD_TO_ADDR_SEQ" />
+                <ScalarProperty Name="FG_SOLD_TO_CUST_SETID" ColumnName="FG_SOLD_TO_CUST_SETID" />
+                <ScalarProperty Name="FG_SOLD_TO_CUST_ID" ColumnName="FG_SOLD_TO_CUST_ID" />
+                <ScalarProperty Name="FG_CAR_NUM" ColumnName="FG_CAR_NUM" />
+                <ScalarProperty Name="FG_DEPTID_SETID" ColumnName="FG_DEPTID_SETID" />
+                <ScalarProperty Name="FG_DEPTID" ColumnName="FG_DEPTID" />
+                <ScalarProperty Name="FG_STATUS" ColumnName="FG_STATUS" />
+                <ScalarProperty Name="FG_INVOICE_NUM" ColumnName="FG_INVOICE_NUM" />
+                <ScalarProperty Name="FG_ORDER_TYPE" ColumnName="FG_ORDER_TYPE" />
+                <ScalarProperty Name="FG_ORDER_NUM" ColumnName="FG_ORDER_NUM" />
+                <Condition ColumnName="FG_ORDER_BUS_UNIT" Value="CST" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FG_OL_ORDER_LINE">
+            <EntityTypeMapping TypeName="CST.ISIS.Data.FG_OL_ORDER_LINE">
+              <MappingFragment StoreEntitySet="FG_OL_ORDER_LINE">
+                <ScalarProperty Name="FG_MINIMUM_PRICE" ColumnName="FG_MINIMUM_PRICE" />
+                <ScalarProperty Name="FG_SUGGESTED_PRICE" ColumnName="FG_SUGGESTED_PRICE" />
+                <ScalarProperty Name="FG_OL_ORDER_LINE_ID" ColumnName="FG_OL_ORDER_LINE_ID" />
+                <ScalarProperty Name="FG_HIDE_PRICE" ColumnName="FG_HIDE_PRICE" />
+                <ScalarProperty Name="FG_INSERT2_DESCR" ColumnName="FG_INSERT2_DESCR" />
+                <ScalarProperty Name="FG_INSERT1_DESCR" ColumnName="FG_INSERT1_DESCR" />
+                <ScalarProperty Name="FG_REQUEST_ID" ColumnName="FG_REQUEST_ID" />
+                <ScalarProperty Name="FG_PARTNO_SETID" ColumnName="FG_PARTNO_SETID" />
+                <ScalarProperty Name="FG_ADJUST_ORDER_BUS_UNIT" ColumnName="FG_ADJUST_ORDER_BUS_UNIT" />
+                <ScalarProperty Name="FG_ADJUST_ORDER_LINE" ColumnName="FG_ADJUST_ORDER_LINE" />
+                <ScalarProperty Name="FG_ADJUST_ORDER_NUM" ColumnName="FG_ADJUST_ORDER_NUM" />
+                <ScalarProperty Name="FG_ADJUST_REASON_CD" ColumnName="FG_ADJUST_REASON_CD" />
+                <ScalarProperty Name="FG_LR_CERTIFICATE" ColumnName="FG_LR_CERTIFICATE" />
+                <ScalarProperty Name="FG_SHIP_ID" ColumnName="FG_SHIP_ID" />
+                <ScalarProperty Name="FG_MFG_SERIAL_NUM" ColumnName="FG_MFG_SERIAL_NUM" />
+                <ScalarProperty Name="FG_INSTALLER" ColumnName="FG_INSTALLER" />
+                <ScalarProperty Name="FG_PATTERN" ColumnName="FG_PATTERN" />
+                <ScalarProperty Name="FG_SPECIAL_FLAG" ColumnName="FG_SPECIAL_FLAG" />
+                <ScalarProperty Name="FG_TRACKING_NO" ColumnName="FG_TRACKING_NO" />
+                <ScalarProperty Name="FG_SALES_PERSON_SETID" ColumnName="FG_SALES_PERSON_SETID" />
+                <ScalarProperty Name="FG_SALES_PERSON" ColumnName="FG_SALES_PERSON" />
+                <ScalarProperty Name="FG_LINE_TOTAL" ColumnName="FG_LINE_TOTAL" />
+                <ScalarProperty Name="FG_DISCOUNT_CD" ColumnName="FG_DISCOUNT_CD" />
+                <ScalarProperty Name="FG_DISCOUNT" ColumnName="FG_DISCOUNT" />
+                <ScalarProperty Name="FG_QUANTITY" ColumnName="FG_QUANTITY" />
+                <ScalarProperty Name="FG_UNIT_PRICE" ColumnName="FG_UNIT_PRICE" />
+                <ScalarProperty Name="FG_COLOR_DESC" ColumnName="FG_COLOR_DESC" />
+                <ScalarProperty Name="FG_PART_DESC" ColumnName="FG_PART_DESC" />
+                <ScalarProperty Name="FG_PARTNO" ColumnName="FG_PARTNO" />
+                <ScalarProperty Name="FG_SERIAL_NUM" ColumnName="FG_SERIAL_NUM" />
+                <ScalarProperty Name="FG_ORDER_LINE" ColumnName="FG_ORDER_LINE" />
+                <ScalarProperty Name="FG_ORDER_NUM" ColumnName="FG_ORDER_NUM" />
+                <Condition ColumnName="FG_ORDER_BUS_UNIT" Value="CST" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="IsisModel" ZoomLevel="27">
+        <EntityTypeShape EntityType="CST.ISIS.Data.FG_IMAGE" Width="1.5" PointX="7.75" PointY="6.625" Height="0.4" IsExpanded="false" />
+        <EntityTypeShape EntityType="CST.ISIS.Data.FG_IMAGE_INFO" Width="1.5" PointX="8" PointY="4.875" Height="0.4" IsExpanded="false" />
+        <EntityTypeShape EntityType="CST.ISIS.Data.FG_IMAGE_SET" Width="1.5" PointX="8.125" PointY="2.75" Height="0.4" IsExpanded="false" />
+        <EntityTypeShape EntityType="CST.ISIS.Data.FG_MIME_TYPE" Width="1.5" PointX="6.875" PointY="5.5" Height="0.4" IsExpanded="false" />
+        <EntityTypeShape EntityType="CST.ISIS.Data.FG_PROD" Width="1.5" PointX="5.75" PointY="1.75" Height="0.4" IsExpanded="false" />
+        <EntityTypeShape EntityType="CST.ISIS.Data.FG_PROD_IMAGE_SET" Width="2" PointX="7.875" PointY="3.875" Height="0.4" IsExpanded="false" />
+        <EntityTypeShape EntityType="CST.ISIS.Data.FG_REQ_PART" Width="1.5" PointX="9.875" PointY="0.5" Height="0.4" IsExpanded="false" />
+        <EntityTypeShape EntityType="CST.ISIS.Data.PS_SHIP_METHOD" Width="1.875" PointX="12.75" PointY="2" Height="0.4" IsExpanded="false" />
+        <EntityTypeShape EntityType="CST.ISIS.Data.FG_PROD_VW" Width="1.5" PointX="7.75" PointY="1.75" Height="0.4" IsExpanded="false" />
+        <EntityTypeShape EntityType="CST.ISIS.Data.FG_REQ_PART_ELAP" Width="2" PointX="9.625" PointY="1.375" Height="0.4" IsExpanded="false" />
+        <AssociationConnector Association="CST.ISIS.Data.IMAI_IMA" ManuallyRouted="false">
+          <ConnectorPoint PointX="8.84375" PointY="5.275" />
+          <ConnectorPoint PointX="8.84375" PointY="6.625" />
+        </AssociationConnector>
+        <AssociationConnector Association="CST.ISIS.Data.IMAI_PROIS" ManuallyRouted="false">
+          <ConnectorPoint PointX="8.75" PointY="4.875" />
+          <ConnectorPoint PointX="8.75" PointY="4.275" />
+        </AssociationConnector>
+        <AssociationConnector Association="CST.ISIS.Data.MIMT_IMAI" ManuallyRouted="false">
+          <ConnectorPoint PointX="8.1875" PointY="5.5" />
+          <ConnectorPoint PointX="8.1875" PointY="5.275" />
+        </AssociationConnector>
+        <AssociationConnector Association="CST.ISIS.Data.IMAS_PROIS" ManuallyRouted="false">
+          <ConnectorPoint PointX="9.625" PointY="3.11474326653588" />
+          <ConnectorPoint PointX="9.875" PointY="3.11474326653588" />
+          <ConnectorPoint PointX="9.875" PointY="3.4000000000000004" />
+          <ConnectorPoint PointX="8.875" PointY="3.4000000000000004" />
+          <ConnectorPoint PointX="8.875" PointY="3.875" />
+        </AssociationConnector>
+        <AssociationConnector Association="CST.ISIS.Data.FG_PRO_PRO" ManuallyRouted="false">
+          <ConnectorPoint PointX="6.264153846153846" PointY="2.15" />
+          <ConnectorPoint PointX="6.264153846153846" PointY="2.4" />
+          <ConnectorPoint PointX="6.7470769230769232" PointY="2.4" />
+          <ConnectorPoint PointX="6.7470769230769232" PointY="2.15" />
+        </AssociationConnector>
+        <AssociationConnector Association="CST.ISIS.Data.PRO_PROIS" ManuallyRouted="false">
+          <ConnectorPoint PointX="5.9758244230769231" PointY="2.15" />
+          <ConnectorPoint PointX="5.9758244230769231" PointY="4.075" />
+          <ConnectorPoint PointX="7.875" PointY="4.075" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="CST.ISIS.Data.FG_PROD_TYPE" Width="1.5" PointX="5.625" PointY="0.5" Height="0.4" IsExpanded="false" />
+        <AssociationConnector Association="CST.ISIS.Data.FG_PROT_PRO" >
+          <ConnectorPoint PointX="6.3802588047807829" PointY="0.9" />
+          <ConnectorPoint PointX="6.3802588047807829" PointY="1.275" />
+          <ConnectorPoint PointX="6.4744407719146473" PointY="1.275" />
+          <ConnectorPoint PointX="6.4744407719146473" PointY="1.75" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="CST.ISIS.Data.FG_DEPARTMENT_VW" Width="2.125" PointX="7.625" PointY="0.75" Height="0.4" IsExpanded="false" />
+        <EntityTypeShape EntityType="CST.ISIS.Data.PS_CUSTOMER" Width="2.625" PointX="11.75" PointY="0.5" Height="0.4" IsExpanded="false" />
+        <EntityTypeShape EntityType="CST.ISIS.Data.PS_CUST_ADDR_EF_VW" Width="2.625" PointX="15" PointY="0.5" Height="0.4" IsExpanded="false" />
+        <AssociationConnector Association="CST.ISIS.Data.CUST_SHIP_ADDRESS">
+          <ConnectorPoint PointX="15" PointY="0.7" />
+          <ConnectorPoint PointX="14.375" PointY="0.7" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="CST.ISIS.Data.FG_OL_ORDER" Width="2" PointX="0.5" PointY="0.5" Height="20.248922526041667" />
+        <EntityTypeShape EntityType="CST.ISIS.Data.FG_OL_ORDER_LINE" Width="1.5" PointX="3" PointY="0.5" Height="7.9416308593749978" />
+        <AssociationConnector Association="CST.ISIS.Data.FG_OL_ORD_ORDL" >
+          <ConnectorPoint PointX="2.5" PointY="4.4708154296874989" />
+          <ConnectorPoint PointX="3" PointY="4.4708154296874989" />
+        </AssociationConnector>
+        <AssociationConnector Association="CST.ISIS.Data.ORD_ORD" >
+          <ConnectorPoint PointX="1.2092307692307691" PointY="20.748922526041667" />
+          <ConnectorPoint PointX="1.2092307692307691" PointY="20.998922526041667" />
+          <ConnectorPoint PointX="1.8046153846153845" PointY="20.998922526041667" />
+          <ConnectorPoint PointX="1.8046153846153845" PointY="20.748922526041667" />
+        </AssociationConnector>
+        <AssociationConnector Association="CST.ISIS.Data.ORDL_ORDL" >
+          <ConnectorPoint PointX="3.5319230769230767" PointY="8.4416308593749978" />
+          <ConnectorPoint PointX="3.5319230769230767" PointY="8.6916308593749978" />
+          <ConnectorPoint PointX="3.9784615384615383" PointY="8.6916308593749978" />
+          <ConnectorPoint PointX="3.9784615384615383" PointY="8.4416308593749978" />
+        </AssociationConnector>
+        <AssociationConnector Association="CST.ISIS.Data.PRO_ORDL" >
+          <ConnectorPoint PointX="5.75" PointY="1.9500000000000002" />
+          <ConnectorPoint PointX="4.5" PointY="1.9500000000000002" />
+        </AssociationConnector>
+        </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

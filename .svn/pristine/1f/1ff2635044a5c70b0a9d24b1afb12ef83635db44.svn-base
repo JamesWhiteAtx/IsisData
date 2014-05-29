@@ -1,0 +1,395 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="CST.ISIS.Data.Store" Alias="Self" Provider="Oracle.DataAccess.Client" ProviderManifestToken="10.2" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="CSTISISDataStoreContainer">
+          <EntitySet Name="FG_IMAGE" EntityType="CST.ISIS.Data.Store.FG_IMAGE" store:Type="Tables" Schema="SYSADM" />
+          <EntitySet Name="FG_IMAGE_INFO" EntityType="CST.ISIS.Data.Store.FG_IMAGE_INFO" store:Type="Tables" Schema="SYSADM" />
+          <EntitySet Name="FG_IMAGE_SET" EntityType="CST.ISIS.Data.Store.FG_IMAGE_SET" store:Type="Tables" Schema="SYSADM" />
+          <EntitySet Name="FG_MIME_TYPE" EntityType="CST.ISIS.Data.Store.FG_MIME_TYPE" store:Type="Tables" Schema="SYSADM" />
+          <EntitySet Name="FG_PROD_IMAGE_SET" EntityType="CST.ISIS.Data.Store.FG_PROD_IMAGE_SET" store:Type="Tables" Schema="SYSADM" />
+          <EntitySet Name="FG_SLS_DEPT_VW" EntityType="CST.ISIS.Data.Store.FG_SLS_DEPT_VW" store:Type="Views" store:Schema="SYSADM" store:Name="FG_SLS_DEPT_VW">
+            <DefiningQuery>SELECT 
+      "FG_SLS_DEPT_VW"."SETID" AS "SETID", 
+      "FG_SLS_DEPT_VW"."DEPTID" AS "DEPTID", 
+      "FG_SLS_DEPT_VW"."EFFDT" AS "EFFDT", 
+      "FG_SLS_DEPT_VW"."EFF_STATUS" AS "EFF_STATUS", 
+      "FG_SLS_DEPT_VW"."DESCR" AS "DESCR", 
+      "FG_SLS_DEPT_VW"."DESCRSHORT" AS "DESCRSHORT", 
+      "FG_SLS_DEPT_VW"."MANAGER_NAME" AS "MANAGER_NAME"
+      FROM "SYSADM"."FG_SLS_DEPT_VW" "FG_SLS_DEPT_VW"</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="IMAI_IMA" Association="CST.ISIS.Data.Store.IMAI_IMA">
+            <End Role="FG_IMAGE_INFO" EntitySet="FG_IMAGE_INFO" />
+            <End Role="FG_IMAGE" EntitySet="FG_IMAGE" />
+          </AssociationSet>
+          <AssociationSet Name="IMAI_PROIS" Association="CST.ISIS.Data.Store.IMAI_PROIS">
+            <End Role="FG_IMAGE_INFO" EntitySet="FG_IMAGE_INFO" />
+            <End Role="FG_PROD_IMAGE_SET" EntitySet="FG_PROD_IMAGE_SET" />
+          </AssociationSet>
+          <AssociationSet Name="IMAS_PROIS" Association="CST.ISIS.Data.Store.IMAS_PROIS">
+            <End Role="FG_IMAGE_SET" EntitySet="FG_IMAGE_SET" />
+            <End Role="FG_PROD_IMAGE_SET" EntitySet="FG_PROD_IMAGE_SET" />
+          </AssociationSet>
+          <AssociationSet Name="MIMT_IMAI" Association="CST.ISIS.Data.Store.MIMT_IMAI">
+            <End Role="FG_MIME_TYPE" EntitySet="FG_MIME_TYPE" />
+            <End Role="FG_IMAGE_INFO" EntitySet="FG_IMAGE_INFO" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="FG_IMAGE">
+          <Key>
+            <PropertyRef Name="FG_IMAGE_ID" />
+          </Key>
+          <Property Name="FG_IMAGE_ID" Type="number" Nullable="false" />
+          <Property Name="FG_IMAGE_DATA" Type="long raw" />
+        </EntityType>
+        <EntityType Name="FG_IMAGE_INFO">
+          <Key>
+            <PropertyRef Name="FG_IMAGE_ID" />
+          </Key>
+          <Property Name="FG_IMAGE_ID" Type="number" Nullable="false" />
+          <Property Name="FG_MIME_TYPE_CD" Type="varchar2" Nullable="false" MaxLength="30" />
+          <Property Name="FG_DESCRIPTION" Type="varchar2" Nullable="false" MaxLength="250" />
+          <Property Name="FG_FILE_NAME" Type="varchar2" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="FG_IMAGE_SET">
+          <Key>
+            <PropertyRef Name="FG_IMAGE_SET_CD" />
+          </Key>
+          <Property Name="FG_IMAGE_SET_CD" Type="varchar2" Nullable="false" MaxLength="30" />
+          <Property Name="FG_DESCRIPTION" Type="varchar2" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="FG_MIME_TYPE">
+          <Key>
+            <PropertyRef Name="FG_MIME_TYPE_CD" />
+          </Key>
+          <Property Name="FG_MIME_TYPE_CD" Type="varchar2" Nullable="false" MaxLength="30" />
+          <Property Name="FG_DESCRIPTION" Type="varchar2" Nullable="false" MaxLength="250" />
+          <Property Name="FG_CONTENT_TYPE" Type="varchar2" Nullable="false" MaxLength="30" />
+          <Property Name="FG_FILE_EXT" Type="varchar2" Nullable="false" MaxLength="5" />
+        </EntityType>
+        <EntityType Name="FG_PROD_IMAGE_SET">
+          <Key>
+            <PropertyRef Name="FG_PROD_CD" />
+            <PropertyRef Name="FG_PROD_SETID" />
+            <PropertyRef Name="FG_IMAGE_SET_CD" />
+            <PropertyRef Name="FG_IMAGE_ID" />
+          </Key>
+          <Property Name="FG_PROD_CD" Type="varchar2" Nullable="false" MaxLength="30" />
+          <Property Name="FG_PROD_SETID" Type="varchar2" Nullable="false" MaxLength="5" />
+          <Property Name="FG_IMAGE_SET_CD" Type="varchar2" Nullable="false" MaxLength="30" />
+          <Property Name="FG_IMAGE_ID" Type="number" Nullable="false" />
+          <Property Name="FG_SORT_ORDER" Type="number" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'SYSADM.FG_SLS_DEPT_VW' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="FG_SLS_DEPT_VW">
+          <Key>
+            <PropertyRef Name="SETID" />
+            <PropertyRef Name="DEPTID" />
+            <PropertyRef Name="EFFDT" />
+            <PropertyRef Name="EFF_STATUS" />
+            <PropertyRef Name="DESCR" />
+            <PropertyRef Name="DESCRSHORT" />
+            <PropertyRef Name="MANAGER_NAME" />
+          </Key>
+          <Property Name="SETID" Type="varchar2" Nullable="false" MaxLength="5" />
+          <Property Name="DEPTID" Type="varchar2" Nullable="false" MaxLength="10" />
+          <Property Name="EFFDT" Type="date" Nullable="false" />
+          <Property Name="EFF_STATUS" Type="varchar2" Nullable="false" MaxLength="1" />
+          <Property Name="DESCR" Type="varchar2" Nullable="false" MaxLength="30" />
+          <Property Name="DESCRSHORT" Type="varchar2" Nullable="false" MaxLength="10" />
+          <Property Name="MANAGER_NAME" Type="varchar2" Nullable="false" MaxLength="30" />
+        </EntityType>
+        <Association Name="IMAI_IMA">
+          <End Role="FG_IMAGE_INFO" Type="CST.ISIS.Data.Store.FG_IMAGE_INFO" Multiplicity="1" />
+          <End Role="FG_IMAGE" Type="CST.ISIS.Data.Store.FG_IMAGE" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="FG_IMAGE_INFO">
+              <PropertyRef Name="FG_IMAGE_ID" />
+            </Principal>
+            <Dependent Role="FG_IMAGE">
+              <PropertyRef Name="FG_IMAGE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="IMAI_PROIS">
+          <End Role="FG_IMAGE_INFO" Type="CST.ISIS.Data.Store.FG_IMAGE_INFO" Multiplicity="1" />
+          <End Role="FG_PROD_IMAGE_SET" Type="CST.ISIS.Data.Store.FG_PROD_IMAGE_SET" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FG_IMAGE_INFO">
+              <PropertyRef Name="FG_IMAGE_ID" />
+            </Principal>
+            <Dependent Role="FG_PROD_IMAGE_SET">
+              <PropertyRef Name="FG_IMAGE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="IMAS_PROIS">
+          <End Role="FG_IMAGE_SET" Type="CST.ISIS.Data.Store.FG_IMAGE_SET" Multiplicity="1" />
+          <End Role="FG_PROD_IMAGE_SET" Type="CST.ISIS.Data.Store.FG_PROD_IMAGE_SET" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FG_IMAGE_SET">
+              <PropertyRef Name="FG_IMAGE_SET_CD" />
+            </Principal>
+            <Dependent Role="FG_PROD_IMAGE_SET">
+              <PropertyRef Name="FG_IMAGE_SET_CD" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="MIMT_IMAI">
+          <End Role="FG_MIME_TYPE" Type="CST.ISIS.Data.Store.FG_MIME_TYPE" Multiplicity="1" />
+          <End Role="FG_IMAGE_INFO" Type="CST.ISIS.Data.Store.FG_IMAGE_INFO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FG_MIME_TYPE">
+              <PropertyRef Name="FG_MIME_TYPE_CD" />
+            </Principal>
+            <Dependent Role="FG_IMAGE_INFO">
+              <PropertyRef Name="FG_MIME_TYPE_CD" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CST.ISIS.Data" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="IsisEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="FG_IMAGE" EntityType="CST.ISIS.Data.FG_IMAGE" />
+          <EntitySet Name="FG_IMAGE_INFO" EntityType="CST.ISIS.Data.FG_IMAGE_INFO" />
+          <EntitySet Name="FG_IMAGE_SET" EntityType="CST.ISIS.Data.FG_IMAGE_SET" />
+          <EntitySet Name="FG_MIME_TYPE" EntityType="CST.ISIS.Data.FG_MIME_TYPE" />
+          <EntitySet Name="FG_PROD_IMAGE_SET" EntityType="CST.ISIS.Data.FG_PROD_IMAGE_SET" />
+          <AssociationSet Name="IMAI_IMA" Association="CST.ISIS.Data.IMAI_IMA">
+            <End Role="FG_IMAGE_INFO" EntitySet="FG_IMAGE_INFO" />
+            <End Role="FG_IMAGE" EntitySet="FG_IMAGE" />
+          </AssociationSet>
+          <AssociationSet Name="IMAI_PROIS" Association="CST.ISIS.Data.IMAI_PROIS">
+            <End Role="FG_IMAGE_INFO" EntitySet="FG_IMAGE_INFO" />
+            <End Role="FG_PROD_IMAGE_SET" EntitySet="FG_PROD_IMAGE_SET" />
+          </AssociationSet>
+          <AssociationSet Name="MIMT_IMAI" Association="CST.ISIS.Data.MIMT_IMAI">
+            <End Role="FG_MIME_TYPE" EntitySet="FG_MIME_TYPE" />
+            <End Role="FG_IMAGE_INFO" EntitySet="FG_IMAGE_INFO" />
+          </AssociationSet>
+          <AssociationSet Name="IMAS_PROIS" Association="CST.ISIS.Data.IMAS_PROIS">
+            <End Role="FG_IMAGE_SET" EntitySet="FG_IMAGE_SET" />
+            <End Role="FG_PROD_IMAGE_SET" EntitySet="FG_PROD_IMAGE_SET" />
+          </AssociationSet>
+          <EntitySet Name="SalesDepts" EntityType="CST.ISIS.Data.SalesDept" />
+          </EntityContainer>
+        <EntityType Name="FG_IMAGE">
+          <Key>
+            <PropertyRef Name="FG_IMAGE_ID" />
+          </Key>
+          <Property Name="FG_IMAGE_ID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="FG_IMAGE_DATA" Type="Binary" MaxLength="2147483647" FixedLength="false" />
+          <NavigationProperty Name="FG_IMAGE_INFO" Relationship="CST.ISIS.Data.IMAI_IMA" FromRole="FG_IMAGE" ToRole="FG_IMAGE_INFO" />
+        </EntityType>
+        <EntityType Name="FG_IMAGE_INFO">
+          <Key>
+            <PropertyRef Name="FG_IMAGE_ID" />
+          </Key>
+          <Property Name="FG_IMAGE_ID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="FG_MIME_TYPE_CD" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="FG_DESCRIPTION" Type="String" Nullable="false" MaxLength="250" Unicode="false" FixedLength="false" />
+          <Property Name="FG_FILE_NAME" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="FG_IMAGE" Relationship="CST.ISIS.Data.IMAI_IMA" FromRole="FG_IMAGE_INFO" ToRole="FG_IMAGE" />
+          <NavigationProperty Name="FG_PROD_IMAGE_SET" Relationship="CST.ISIS.Data.IMAI_PROIS" FromRole="FG_IMAGE_INFO" ToRole="FG_PROD_IMAGE_SET" />
+          <NavigationProperty Name="FG_MIME_TYPE" Relationship="CST.ISIS.Data.MIMT_IMAI" FromRole="FG_IMAGE_INFO" ToRole="FG_MIME_TYPE" />
+        </EntityType>
+        <EntityType Name="FG_IMAGE_SET">
+          <Key>
+            <PropertyRef Name="FG_IMAGE_SET_CD" />
+          </Key>
+          <Property Name="FG_IMAGE_SET_CD" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="FG_DESCRIPTION" Type="String" MaxLength="250" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="FG_PROD_IMAGE_SET" Relationship="CST.ISIS.Data.IMAS_PROIS" FromRole="FG_IMAGE_SET" ToRole="FG_PROD_IMAGE_SET" />
+        </EntityType>
+        <EntityType Name="FG_MIME_TYPE">
+          <Key>
+            <PropertyRef Name="FG_MIME_TYPE_CD" />
+          </Key>
+          <Property Name="FG_MIME_TYPE_CD" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="FG_DESCRIPTION" Type="String" Nullable="false" MaxLength="250" Unicode="false" FixedLength="false" />
+          <Property Name="FG_CONTENT_TYPE" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="FG_FILE_EXT" Type="String" Nullable="false" MaxLength="5" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="FG_IMAGE_INFO" Relationship="CST.ISIS.Data.MIMT_IMAI" FromRole="FG_MIME_TYPE" ToRole="FG_IMAGE_INFO" />
+        </EntityType>
+        <EntityType Name="FG_PROD_IMAGE_SET">
+          <Key>
+            <PropertyRef Name="FG_PROD_CD" />
+            <PropertyRef Name="FG_PROD_SETID" />
+            <PropertyRef Name="FG_IMAGE_SET_CD" />
+            <PropertyRef Name="FG_IMAGE_ID" />
+          </Key>
+          <Property Name="FG_PROD_CD" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="FG_PROD_SETID" Type="String" Nullable="false" MaxLength="5" Unicode="false" FixedLength="false" />
+          <Property Name="FG_IMAGE_SET_CD" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="FG_IMAGE_ID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="FG_SORT_ORDER" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <NavigationProperty Name="FG_IMAGE_INFO" Relationship="CST.ISIS.Data.IMAI_PROIS" FromRole="FG_PROD_IMAGE_SET" ToRole="FG_IMAGE_INFO" />
+          <NavigationProperty Name="FG_IMAGE_SET" Relationship="CST.ISIS.Data.IMAS_PROIS" FromRole="FG_PROD_IMAGE_SET" ToRole="FG_IMAGE_SET" />
+        </EntityType>
+        <Association Name="IMAI_IMA">
+          <End Role="FG_IMAGE_INFO" Type="CST.ISIS.Data.FG_IMAGE_INFO" Multiplicity="1" />
+          <End Role="FG_IMAGE" Type="CST.ISIS.Data.FG_IMAGE" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="FG_IMAGE_INFO">
+              <PropertyRef Name="FG_IMAGE_ID" />
+            </Principal>
+            <Dependent Role="FG_IMAGE">
+              <PropertyRef Name="FG_IMAGE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="IMAI_PROIS">
+          <End Role="FG_IMAGE_INFO" Type="CST.ISIS.Data.FG_IMAGE_INFO" Multiplicity="1" />
+          <End Role="FG_PROD_IMAGE_SET" Type="CST.ISIS.Data.FG_PROD_IMAGE_SET" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FG_IMAGE_INFO">
+              <PropertyRef Name="FG_IMAGE_ID" />
+            </Principal>
+            <Dependent Role="FG_PROD_IMAGE_SET">
+              <PropertyRef Name="FG_IMAGE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="MIMT_IMAI">
+          <End Role="FG_MIME_TYPE" Type="CST.ISIS.Data.FG_MIME_TYPE" Multiplicity="1" />
+          <End Role="FG_IMAGE_INFO" Type="CST.ISIS.Data.FG_IMAGE_INFO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FG_MIME_TYPE">
+              <PropertyRef Name="FG_MIME_TYPE_CD" />
+            </Principal>
+            <Dependent Role="FG_IMAGE_INFO">
+              <PropertyRef Name="FG_MIME_TYPE_CD" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="IMAS_PROIS">
+          <End Role="FG_IMAGE_SET" Type="CST.ISIS.Data.FG_IMAGE_SET" Multiplicity="1" />
+          <End Role="FG_PROD_IMAGE_SET" Type="CST.ISIS.Data.FG_PROD_IMAGE_SET" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FG_IMAGE_SET">
+              <PropertyRef Name="FG_IMAGE_SET_CD" />
+            </Principal>
+            <Dependent Role="FG_PROD_IMAGE_SET">
+              <PropertyRef Name="FG_IMAGE_SET_CD" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="SalesDept">
+          <Key>
+            <PropertyRef Name="Setid" />
+            <PropertyRef Name="DeptID" />
+            <PropertyRef Name="EffDt" />
+            <PropertyRef Name="EffStatus" />
+            <PropertyRef Name="Description" />
+            <PropertyRef Name="DescrShort" />
+            <PropertyRef Name="ManagerName" />
+          </Key>
+          <Property Type="String" Name="Setid" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="DeptID" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="EffDt" Nullable="false" />
+          <Property Type="String" Name="EffStatus" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Description" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="DescrShort" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ManagerName" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+        </EntityType>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CSTISISDataStoreContainer" CdmEntityContainer="IsisEntities">
+          <EntitySetMapping Name="FG_IMAGE"><EntityTypeMapping TypeName="CST.ISIS.Data.FG_IMAGE"><MappingFragment StoreEntitySet="FG_IMAGE">
+            <ScalarProperty Name="FG_IMAGE_ID" ColumnName="FG_IMAGE_ID" />
+            <ScalarProperty Name="FG_IMAGE_DATA" ColumnName="FG_IMAGE_DATA" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="FG_IMAGE_INFO"><EntityTypeMapping TypeName="CST.ISIS.Data.FG_IMAGE_INFO"><MappingFragment StoreEntitySet="FG_IMAGE_INFO">
+            <ScalarProperty Name="FG_IMAGE_ID" ColumnName="FG_IMAGE_ID" />
+            <ScalarProperty Name="FG_MIME_TYPE_CD" ColumnName="FG_MIME_TYPE_CD" />
+            <ScalarProperty Name="FG_DESCRIPTION" ColumnName="FG_DESCRIPTION" />
+            <ScalarProperty Name="FG_FILE_NAME" ColumnName="FG_FILE_NAME" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="FG_IMAGE_SET"><EntityTypeMapping TypeName="CST.ISIS.Data.FG_IMAGE_SET"><MappingFragment StoreEntitySet="FG_IMAGE_SET">
+            <ScalarProperty Name="FG_IMAGE_SET_CD" ColumnName="FG_IMAGE_SET_CD" />
+            <ScalarProperty Name="FG_DESCRIPTION" ColumnName="FG_DESCRIPTION" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="FG_MIME_TYPE"><EntityTypeMapping TypeName="CST.ISIS.Data.FG_MIME_TYPE"><MappingFragment StoreEntitySet="FG_MIME_TYPE">
+            <ScalarProperty Name="FG_MIME_TYPE_CD" ColumnName="FG_MIME_TYPE_CD" />
+            <ScalarProperty Name="FG_DESCRIPTION" ColumnName="FG_DESCRIPTION" />
+            <ScalarProperty Name="FG_CONTENT_TYPE" ColumnName="FG_CONTENT_TYPE" />
+            <ScalarProperty Name="FG_FILE_EXT" ColumnName="FG_FILE_EXT" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="FG_PROD_IMAGE_SET"><EntityTypeMapping TypeName="CST.ISIS.Data.FG_PROD_IMAGE_SET"><MappingFragment StoreEntitySet="FG_PROD_IMAGE_SET">
+            <ScalarProperty Name="FG_PROD_CD" ColumnName="FG_PROD_CD" />
+            <ScalarProperty Name="FG_PROD_SETID" ColumnName="FG_PROD_SETID" />
+            <ScalarProperty Name="FG_IMAGE_SET_CD" ColumnName="FG_IMAGE_SET_CD" />
+            <ScalarProperty Name="FG_IMAGE_ID" ColumnName="FG_IMAGE_ID" />
+            <ScalarProperty Name="FG_SORT_ORDER" ColumnName="FG_SORT_ORDER" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="SalesDepts">
+            <EntityTypeMapping TypeName="CST.ISIS.Data.SalesDept">
+              <MappingFragment StoreEntitySet="FG_SLS_DEPT_VW">
+                <ScalarProperty Name="ManagerName" ColumnName="MANAGER_NAME" />
+                <ScalarProperty Name="DescrShort" ColumnName="DESCRSHORT" />
+                <ScalarProperty Name="Description" ColumnName="DESCR" />
+                <ScalarProperty Name="EffStatus" ColumnName="EFF_STATUS" />
+                <ScalarProperty Name="EffDt" ColumnName="EFFDT" />
+                <ScalarProperty Name="DeptID" ColumnName="DEPTID" />
+                <ScalarProperty Name="Setid" ColumnName="SETID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="IsisModel" ZoomLevel="88">
+        <EntityTypeShape EntityType="CST.ISIS.Data.FG_IMAGE" Width="1.5" PointX="7.125" PointY="6.625" Height="1.5956835937499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="CST.ISIS.Data.FG_IMAGE_INFO" Width="1.5" PointX="7" PointY="3.25" Height="2.3648893229166665" IsExpanded="true" />
+        <EntityTypeShape EntityType="CST.ISIS.Data.FG_IMAGE_SET" Width="1.5" PointX="3.875" PointY="1" Height="1.59568359375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CST.ISIS.Data.FG_MIME_TYPE" Width="1.875" PointX="10" PointY="3" Height="1.9802864583333335" IsExpanded="true" />
+        <EntityTypeShape EntityType="CST.ISIS.Data.FG_PROD_IMAGE_SET" Width="2" PointX="3.875" PointY="3.25" Height="2.3648893229166656" IsExpanded="true" />
+        <AssociationConnector Association="CST.ISIS.Data.IMAI_IMA" ManuallyRouted="false">
+          <ConnectorPoint PointX="7.8125" PointY="5.6148893229166665" />
+          <ConnectorPoint PointX="7.8125" PointY="6.625" />
+        </AssociationConnector>
+        <AssociationConnector Association="CST.ISIS.Data.IMAI_PROIS" ManuallyRouted="false">
+          <ConnectorPoint PointX="7" PointY="4.4324446614583337" />
+          <ConnectorPoint PointX="5.875" PointY="4.4324446614583337" />
+        </AssociationConnector>
+        <AssociationConnector Association="CST.ISIS.Data.MIMT_IMAI" ManuallyRouted="false">
+          <ConnectorPoint PointX="10" PointY="4.1151432291666676" />
+          <ConnectorPoint PointX="8.5" PointY="4.1151432291666676" />
+        </AssociationConnector>
+        <AssociationConnector Association="CST.ISIS.Data.IMAS_PROIS" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.625" PointY="2.59568359375" />
+          <ConnectorPoint PointX="4.625" PointY="3.25" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="CST.ISIS.Data.SalesDept" Width="2" PointX="0.75" PointY="0.75" Height="2.3648893229166674" />
+        </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

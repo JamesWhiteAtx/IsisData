@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <connectionStrings>
+    <add name="IsisEntities" connectionString="metadata=res://*/IsisModel.csdl|res://*/IsisModel.ssdl|res://*/IsisModel.msl;provider=Oracle.DataAccess.Client;provider connection string=&quot;DATA SOURCE=TEST;PASSWORD=tigger;USER ID=SYSADM&quot;" providerName="System.Data.EntityClient" />
+  </connectionStrings>
+</configuration>

@@ -1,0 +1,42 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Data.Common;
+using System.Data.Entity;
+using CST.ISIS.Data;
+
+namespace ConsoleTestIsisData
+{
+    class Program
+    {
+        static void Link()
+        {
+            using (IsisEntities ctx = new IsisEntities())
+            {
+                var list = ctx.FG_IMAGE.Take(20);
+
+                foreach (var i in list)
+                {
+                    Console.WriteLine(
+                        i.FG_IMAGE_DATA
+                        +" "+
+                        i.FG_IMAGE_INFO.FG_FILE_NAME
+                        +" "+
+                        i.FG_IMAGE_INFO.FG_MIME_TYPE.FG_CONTENT_TYPE
+                        );
+                }
+                Console.WriteLine();
+                Console.ReadLine();                
+            }
+        }
+
+        static void Main(string[] args)
+        {
+            //Link();
+            List<ProdOptDefn> l = ProdOptDefn.ProdOptions("1111-PT");
+            Console.WriteLine(l);
+            Console.ReadLine();
+        }
+    }
+}
